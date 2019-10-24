@@ -1,0 +1,69 @@
+<div class="container-fluid dashboard-main" style="padding:0 !important">
+    <div class="wrapper">
+      <div class="sidenav">
+         
+          <div class="sidenav-content">
+         <div class="row">
+           <div class="col-md-12">
+             <!-- <a  (click)="move(unreads.chat_id)">
+                <div class="row">
+                      <div class="col-md-3" *ngIf="unreads.reciever_id == id || unreads.reg_id == id">{{unreads.name}}</div>
+                      <div class="col-md-3" *ngIf="unreads.reg_id !== id">hyyy</div>
+                      <div class="col-md-9">{{unreads.message}}</div>
+                 </div>
+              </a> -->
+              <div class="row heading">
+                <div class="col-md-12">
+                   <div class="row">
+                      <div class="col-sm-3 col-xs-3 heading-avatar"><div class="heading-avatar-icon"> <img src="https://bootdey.com/img/Content/avatar/avatar1.png"></div></div>
+                    <div class="col-sm-6 col-xs-1  heading-dot  pull-right"> <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true"></i></div>
+                    <div class="col-sm-2 col-xs-2 heading-compose  pull-right"> <i class="fa fa-comments fa-2x  pull-right" aria-hidden="true"></i></div>
+                   </div>
+                </div>
+              </div>
+              <div class="row searchBox">
+                <div class="col-sm-12 searchBox-inner">
+                  <div class="form-group has-feedback">
+                    <input id="searchText" type="text" class="form-control" name="searchText" placeholder="Search">
+                    <span class="fa fa-search form-control-feedback"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="row sideBar">
+                <div class="col-md-12" style="padding: 0px;">
+                    <div class="row sideBar-body" *ngFor="let unreads of unread">
+                        <div class="col-sm-12"  (click)="move(unreads.chat_id)">
+                            <div class="row">
+                                <div class="col-sm-3 col-xs-3 sideBar-avatar">
+                                    <div class="avatar-icon">
+                                      <img src="https://bootdey.com/img/Content/avatar/avatar1.png">
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-9 col-xs-9 sideBar-main">
+                                      <div class="row"><div class="col-sm-8 col-xs-8 sideBar-name">
+                                        <span class="name-meta"  *ngIf="unreads.reg_id == id">{{unreads.reciever_name}}</span>
+                                        <span class="name-meta" *ngIf="unreads.reg_id != id">{{unreads.name}}</span>
+                                      </div>
+                                      <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
+                                        <span class="time-meta pull-right">18:18 </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+           </div>
+         </div>
+          </div>
+        
+      </div> 
+  
+      <div class="container-fluid main-content">
+        <router-outlet></router-outlet>
+      </div>
+  
+    </div>
+  </div>
+  

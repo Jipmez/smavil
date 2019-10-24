@@ -1,0 +1,584 @@
+
+<div class="page-wrapper" *ngFor="let infos of info" style="overflow: hidden;  background: #f9f9f9;">
+  <div class="container-fluid">
+    <div class="Agent-profile">
+     <!-- <div class="sm-banner">
+       <div class="over-lay"></div>
+       <div class="roww">
+         <div class="row">
+           <div class="col-md-6 col-6">
+              <div class="agent-image-wrap">
+                  <div class="agent-image">
+                    <img src= {{infos.pix}} class="img-fluid" alt="">
+                  </div>
+                </div>
+           </div>
+           <div class="col-md-6 col-6">
+              <div class="header_info col cols18 lastCol" style="color:white" itemprop="about" itemscope="" itemtype="http://schema.org/Person">
+                <h1 class="h2 mvn contextName" itemprop="name">{{infos.name}}</h1>
+                <h1 class="h2 mvn contextName" itemprop="name"><star-rating [value]="rating.rating" checkedcolor="gold" uncheckedcolor="gray" size="18px"   readonly="true" ></star-rating></h1>
+                <p class="h2 mvn contextName" itemprop="name"><span>+789384980</span> Agent with <span>realty relators</span></p>
+              </div>
+           </div>
+         </div>
+         
+       </div>
+     </div> -->
+
+     <div class="box box-transperent profile-info set-margin">
+      <div class="row">
+        <div class="col col-md-3 col-12">
+          <div class="profile-photo">
+            <div class="chosen-image">
+              <img [src]='infos.pix' alt="">
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-5 col-12 text-center">
+          <div class="favorite-widget">
+            <a href=""><star-rating [value]="rating.rating" checkedcolor="gold" uncheckedcolor="gray" size="28px"   readonly="true" ></star-rating></a>
+          </div>
+          <h1 class="member-name">{{infos.name}}</h1>
+          <br>
+          <ul class="overview defualt">
+            <li>fiij</li>
+            <li>rij</li>
+            <li>rijjg</li>
+          </ul>
+        </div>
+        <div class="col col-md-4 col-12">
+            <div id="last-active" class="last-online online-now dashed-rounded-border">
+                Online Now
+            </div>
+            <div class="box messaging ">
+                <a class="button start-conversation with_popup bg-success"><i class="fa fa-whatsapp "></i>Message Me</a>
+              </div>
+        </div>
+      </div>
+    </div>
+
+     <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="index.php">Home</a>
+      </li>
+      <li class="breadcrumb-item active">Blog</li>
+    </ol>
+
+     <section class="agent-info container-fluid">
+       <div class="row">
+         <div class="col-md-8">
+            <div class="tabs " data-tab="true">
+                <div class="tab-list _menu ptn pbs">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="pill" href="#home">OverView</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="pill" href="#menu1">Reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="pill" href="#menu2">Properties</a>
+                          </li>
+                      </ul>
+                </div>
+                      <div class="tab-content">
+                          <div id="home" class=" tab-pane active"><br>
+                            <h2>About {{infos.name}}</h2>
+                <div class="social">
+                   <div class="row">
+                     <div class="col-md-8">
+                        <div class="line   sale_prices">
+                            <div class="h5 mbn">{{infos.name}}'s Sale Prices</div>
+                            <div class="has_sales pts  mbl">
+                            
+                              <div class="row text-center">
+                                <div class="col-md-4 col-4">
+                                  <div class="card short_price min_short_price">
+                                      <div class="h4 mbn">₦<span class="min_sale_price">{{min}}</span></div>
+                                      <div class="h6 typeWeightNormal mtn">Min</div>
+                                  </div>
+                                </div>
+                                <div class="col-md-4 col-4 short_price pln mvn">
+                                  <div class="card">
+                                      <div class="h4 typeEmphasize mbn">₦<span class="min_sale_price">{{average}}</span></div>
+                                      <div class="h6 typeWeightNormal mtn">Average</div>
+                                  </div>
+                                </div>
+                                <div class="col-md-4 col-4">
+                                  <div class="card short_price max_short_price">
+                                      <div class="h4 mbn">₦<span class="min_sale_price">{{max}}</span></div>
+                                      <div class="h6 typeWeightNormal mtn">Max</div>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                             
+                            </div>
+                           
+                          </div>
+                     </div>
+                     <div class="col-md-4">
+                        <ul class="listInline mvn pts main_websites">
+                            <li class="mvn prs h4 Linkedin social_link">
+                        <a href="http://www.linkedin.com/" target="_blank" class="social_button Linkedin"><i class="fa fa-linkedin"></i></a>
+                      </li>
+                            <li class="mvn prs h4 Twitter social_link">
+                        <a href="http://www.twitter.com/jackgillisdfw" target="_blank" class="social_button Twitter"><i class="fa fa-twitter"></i></a>
+                      </li>
+                            <li class="mvn prs h4 Yelp social_link hideFully">
+                        <a href="http://www.yelp.com/" target="_blank" class="social_button Yelp"><i class="fa fa-yelp"></i></a>
+                      </li>
+                            <li class="mvn prs h4 Facebook social_link hideFully">
+                        <a href="http://www.facebook.com/" target="_blank" class="social_button Facebook"><i class="fa fa-facebook"></i></a>
+                      </li>
+                            <li class="mvn prs h4 Foursquare social_link hideFully">
+                        <a href="http://www.foursquare.com/" target="_blank" class="social_button Foursquare"><i class="fa fa-foursquare"></i></a>
+                      </li>
+                            <li class="mvn prs h4 Gplus social_link hideFully">
+                        <a href="http://plus.google.com/" target="_blank" class="social_button Gplus"><i class="fa fa-Gplus"></i></a>
+                      </li>
+                            <li class="mvn prs h4 Activerain social_link hideFully">
+                        <a href="http://activerain.trulia.com/profile/" target="_blank" class="social_button Activerain"><i class="iconActiverain"></i></a>
+                      </li>
+                      
+                    </ul>
+
+                    <div class="h6 ptm other_websites_list_header">
+                        {{infos.name}}'s Websites
+                      </div>
+                      <ul class="other_websites mvn">
+                              <li class="mvn"><a href="http://www.jackgillisrealtor.com">Website</a></li>
+                              <li class="mvn"><a href="http://">Blog</a></li>
+                        
+                      </ul>
+                     
+                     </div>
+                     
+                   </div>
+                   <hr>
+                   <div class="line pts pbm mln">
+                      <div class="h5 mbm pbm">{{infos.name}}'s Experience &amp; Skills</div>
+                      <div class="about_experience_skills" data-skills-whitelist="[&quot;awards&quot;,&quot;client_types&quot;,&quot;property_types&quot;,&quot;skills&quot;,&quot;specialties&quot;,&quot;languages&quot;]">
+                        
+                                                                      <div class="line mbm pbm">
+                                      <div class="skill_list typeCapitalize mln pvn  ">
+                    <div class="typeEmphasize skill_header pbn">
+                      <i class="iconStar h4 prm"></i>
+                      <span class="skill_name_text">specialties</span>
+                    </div>
+                    <ul class="skill_list specialties_list listInline">
+                        <li class="prn">Consulting,</li>
+                        <li class="prn">Buyer's Agent,</li>
+                        <li class="prn">Listing Agent,</li>
+                        <li class="prn">Relocation</li>
+                    
+                    </ul>
+                  </div>
+                  
+                                                        
+                                  <div class="lastCol"></div>
+                          </div>
+                            </div>
+                        
+                    </div>
+                    <hr>
+
+                    <div class="line pbn">
+                        <div class="">
+                          <div class="typeEmphasize">Most Recent Review</div>
+                          <div class="">
+                           
+                  <div class="line media">
+                   
+                    <div class="mediaBody">
+                      <div class="line mln">
+                        <div class="col cols-9 pln">
+                          <ul class="review_info listInlineDivider mvn">
+                            <li class="typeEmphasize mvn"><span class="review_author" itemprop="author">JustinMorehead5</span> reviewed <span class="review_subject">{{infos.name}}</span></li>
+                            <li class="review_date typeLowlight mvn" itemprop="dateCreated" datetime="2015-10-31">10/31/2015</li>
+                            <li class="mvn"><span class="review_relationship typeLowlight">Helped me sell a home</span></li>
+                          </ul>
+                        </div>
+                       
+                      </div>
+                      <div class="line mln review_contents readmore-js-section shortened readmore-js-collapsed" data-lines="2" data-expandtext="Read More" data-usercollapsetext="Less" itemprop="description" style="height: 42px;">We used Jack to both buy and sell our home.  We knew we were only going to be in our home for ~ 2 years we Jack initially helped us buy the home.  We outlined the parameters we were looking for in the home, but also said that we would like to ensure we did not lose any money we were sold the home in 2 years.  Jack more than delivered and found us a home our family loved and indicated that the area we were in was going to appreciate in value.  We the time came to move 2 years later Jack certainly delivered on his word he made 2 years early and turned a profit on the home.  
+                  
+                  The best part about working with Jack is that all you have to do is tell him what you're goals are and he makes it work.  I would (and have) recommend Jack to anyone looking for a home in the Dallas area.</div><a href="#" class="readmore-js-toggle"><span class="phm h7 typeEmphasize">Read More</span></a>
+                     
+                      
+                     
+                    </div>
+                  </div>
+                  
+                          </div>
+                        </div>
+                      </div>
+                      <hr>
+                </div>
+                          </div>
+                <div id="menu1" class=" tab-pane fade"><br>
+                <h3>Menu 2</h3>
+                <div class="social">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="">
+                        <h2 class="mbn">Reviews Summary</h2>
+                        <div class="reviews_summary_box">
+                          <ul class="listInline mvn overallRatingSection">
+                            <li class="man pvn">Overall on Smavil</li>
+                            <li class="man pan">
+                              <ul class="listInline mvn hasAverageRating" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+                                <li class="typeLowlight prn">
+                                    <star-rating [value]="rating.rating" checkedcolor="gold" uncheckedcolor="gray" size="18px"    readonly="true" (rate)="onRate($event)"></star-rating>
+                                         </li>
+                                <li class="h7 typeLowlight typeWeightNormal mvn">
+                                  (<span class="starred_reviews_count" itemprop="ratingCount">5</span>)
+                                </li>
+                              </ul>
+                            </li>
+                          
+                          </ul>
+                          <ul class="listInline mvn">
+                         
+                            <li class="mvn reviews_summary_donut_legend">
+                              <div class="typeEmphasize">Review Distribution</div>
+                              <div class="donut_legend_positive_count">
+                                <span class="typeSoftHighlight typeEmphasize">
+                                  <span class="legend_percentage">{{rating.Good}}</span><span class="legend_percentage_character">%</span>
+                                </span>
+                                Positive Reviews
+                              </div>
+                              <div class="donut_legend_neutral_count ">
+                                <span class="typeStrongLowlight">
+                                  <span class="legend_percentage">{{rating.medium}}</span><span class="legend_percentage_character">%</span>
+                                </span>
+                                Neutral Reviews
+                              </div>
+                              <div class="donut_legend_negative_count">
+                                <span class="typeWarning">
+                                  <span class="legend_percentage">{{rating.critical}}</span><span class="legend_percentage_character">%</span>
+                                </span>
+                                Critical Reviews
+                              </div>
+                             
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 " style=" margin:auto">
+                     <div class="table-wrap">
+                        <div class="skill_ratings">
+                            <div class="row">
+                              <div class="col-md-6 col-6" >Overall Rating</div>
+                              <div class="col-md-6 col-6"><star-rating [value]="rating.rating" checkedcolor="gold" uncheckedcolor="gray" size="18px"    readonly="true" ></star-rating></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-6">Responsiveness</div>
+                                <div class="col-md-6 col-6"><star-rating [value]="rating.response" checkedcolor="gold" uncheckedcolor="gray" size="18px"    readonly="true"></star-rating></div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-6 col-6">Negotiation</div>
+                                  <div class="col-md-6 col-6"><star-rating [value]="rating.negotiate" checkedcolor="gold" uncheckedcolor="gray" size="18px"    readonly="true"></star-rating></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 col-6">Process Expertise</div>
+                                    <div class="col-md-6 col-6"><star-rating [value]="rating.expertise" checkedcolor="gold" uncheckedcolor="gray" size="18px"    readonly="true"></star-rating></div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col-md-6 col-6">Local Knowlegde</div>
+                                      <div class="col-md-6 col-6"><star-rating [value]="rating.knowledge" checkedcolor="gold" uncheckedcolor="gray" size="18px"    readonly="true"></star-rating></div>
+                                    </div> 
+                          </div>
+                     </div>
+                    </div>
+                  </div>
+                  <div data-name="_reviews" class="menu_section _zillowSource" data-refreshable="true" data-loaded="true">
+                      <hr>
+                      <div class="line has_reviews">
+                        <div class="row">
+                        <div class="col cols4">
+                          <h2 class="mbn">Reviews</h2>
+                        </div>
+                        <div class="col cols8 form mbn">
+                          <span class="fieldItem select">
+                            <select class="reviews_sort list_altering" data-sort-type="reviews_sort" data-spinner-li="reviews">
+                              <option value="newest">Sort: Newest First</option>
+                              <option value="oldest">Sort: Oldest First</option>
+                              <option value="score">Sort: By Score</option>
+                              <option value="helped_me_buy">Sort: Helped Me Buy</option>
+                              <option value="helped_me_sell">Sort: Helped Me Sell</option>
+                              <option value="with_replies">Sort: Reviews with replies</option>
+                            </select>
+                          </span>
+                        </div>
+                        <div class="col cols12 lastCol txtR pts">
+                                  <a class="btn btnPrimary write_new_review" data-toggle="modal" data-target="#myModal">Write a Review</a>
+                              </div>
+                           </div> 
+
+                      </div>
+                      <div class="no_reviews mrl hideFully" *ngIf="rev == ''">
+                        <h2>Do you know Jack Gillis?</h2>
+                        <div class="pbm">Share your experience by writing a review. You'll help others in their search to find the perfect agent!</div>
+                          <a class="btn btnPrimary write_new_review" href="#">Write a Review Now</a>
+                      </div>
+                      <ul class="reviews_list listBordered mtn mbn" *ngIf="rev">
+                        <li class="review_row pvm mvn " data-comment-id="z26707344" *ngFor="let revs of rev" data-user-id="z29744236">
+                      <div class="line typeLowlight review_star_rating">
+                          <div class="narrowIcon h5 mrm mvn" title="Rating: 5">
+                              <star-rating [value]="revs.average_rating" checkedcolor="gold" uncheckedcolor="gray" size="14px"    readonly="true" (rate)="onRate($event)"></star-rating>
+                    </div>
+                      </div>
+                    <div class="line media">
+                      <div class="mediaImg">
+                        <a class="connection_link" href="#"><img class="connection_image hideFully" src="" alt=""></a>
+                      </div>
+                      <div class="mediaBody">
+                        <div class="line mln">
+                          <div class="col cols20 pln">
+                            <ul class="review_info listInlineDivider mvn">
+                              <li class="typeEmphasize mvn"><span class="review_author">{{revs.author_name}}</span> reviewed <span class="review_subject">{{infos.name}}</span></li>
+                              <li class="review_date typeLowlight mvn">{{revs.review_date}}</li>
+                              <li class="mvn"><span class="review_relationship typeLowlight">{{revs.author_relationship}}</span></li>
+                            </ul>
+                          </div>
+                          <div class="col cols4 txtR pln"><div class="_migrationRemoval"><span class="review_flag clickable h7 mvn typeLowlight linkTypeWarning prm"><i class="fa fa-flag-checkered"></i></span></div></div>
+                        </div>
+                        <div class="line mln review_contents shortened" [innerHTML]="revs.review_content" data-lines="10" data-expandtext="Read More" data-usercollapsetext="Less">
+                
+                    </div>
+                        <div class="review_response hideFully line media backgroundLowlight mll pvs phm">
+                              </div>
+                          </div>
+                    </div>
+                    <hr>
+                    </li>
+           </ul>
+           
+                    </div>
+                </div>
+              </div>
+              <div id="menu2" class="container tab-pane fade"><br>
+                <div class="line">
+                  <div class="row">
+                  <div class="col col-6 txtL">
+                    <h2>{{infos.name}} Properties&nbsp;(<span class="listings_count">113</span>)</h2>
+                  </div>
+                  <div class="col col-6 txtR form ptm prl">
+                    <span class="fieldItem select">
+                      <select class="listings_filter fieldSml list_altering" data-sort-type="listings_filter" data-spinner-li="listings">
+                        <option value="all">Filter: All Properties</option>
+                        <option value="for_sale">Filter: For Sale Properties</option>
+                        <option value="seller">Filter: Past Sales</option>
+                        <option value="buyer">Filter: Past Purchases</option>
+                      </select>
+                    </span>
+                    <span class="fieldItem select plm">
+                      <select class="listings_sort fieldSml list_altering" data-sort-type="listings_sort" data-spinner-li="listings">
+                        <option value="youngest">Sort: Most Recent First</option>
+                        <option value="oldest">Sort: Oldest First</option>
+                        <option value="type">Sort: Listings Type</option>
+                        <option value="price_highest">Sort: Price, Highest to Lowest</option>
+                        <option value="price_lowest">Sort: Price, Lowest to Highest</option>
+                        <option value="city">Sort: City</option>
+                      </select>
+                    </span>
+                  </div>
+                  </div>
+                </div>
+                <div class="listings_empty_state hideFully" *ngIf="list == ''">
+                    <ul class="listInline">
+                      <li><div class="homeblock backgroundLowlight txtC txtM"><i class="iconHome mrn"></i></div></li>
+                      <li class="h4 typeWeightNormal pls">{{infos.name}} has not posted any listings yet.</li>
+                    </ul>
+                  </div>
+
+                  <div class="line pts pbm mln" *ngIf="list">
+                    <div class="row">
+                        <div class="col-md-6" *ngFor="let lists of list">
+                            <div class="propertie-item set-bg">
+                                <img [src]='lists.pix' alt=""> 
+                              <div *ngIf = 'lists.category == "1"' class="rent-notic">FOR Rent</div>
+                               <div  *ngIf = 'lists.category == "2"' class="sale-notic">FOR SALE</div> 
+                              <div class="propertie-info text-white">
+                                <div class="info-warp">
+                                  <h5>{{infos.name}}<small>(agent)</small></h5>
+                                  <p><i class="fa fa-map-marker"></i> {{lists.state}}, NG 748</p>
+                                </div>
+                                <div class="price">₦{{lists.cost}}</div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                    </div>
+                  </div>
+
+              </div>
+            </div>
+      </div>
+      </div>
+        
+              
+        
+         <div class="col-md-4">
+           <div class="right-rail">
+              <div class="_zillowSource">
+                  <div class="_right_rail_contact">
+                  <p class="h6 mvn">Contact {{infos.name}}</p>
+                  <form class="send_message_form form pbs" id="dossier_send_message_form">
+                    <input type="hidden" class="csrf_hash" value="">
+                    <div class="field pts">
+                      <span class="your_name_field fieldItem text">
+                        <input type="text" name="name" placeholder="John Smith" value="Mezj972" required="" title="Your Name">
+                      </span>
+                    </div>
+                    <div class="your_email_field field pts">
+                      <span class="fieldItem text">
+                        <input type="text" name="email" placeholder="johnsmith@example.com" value="mezj972@gmail.com" title="Your Email Address">
+                      </span>
+                    </div>
+                    <div class="phone_field field pts">
+                      <span class="fieldItem text">
+                        <input type="text" name="phone" placeholder="(415) 555-1234" value="" title="Your 10-Digit Phone Number">
+                      </span>
+                    </div>
+                    <div class="field pvs">
+                      <span class="fieldItem text">
+                        <textarea class="textarea" rows="4" placeholder="Hi {{infos.name}}. I saw your profile on Smavil and wanted to see if you could help me." name="msg"></textarea>
+                      </span>
+                    </div>
+                    <button class="btn btnPrimary btnFullWidth send_email_to_agent_button">Send Message</button>
+                   
+          
+                  </form>
+                </div>
+                
+                </div>
+           </div>
+         </div>
+       </div>
+     </section>
+    </div>
+  </div>
+   <!-- The Modal -->
+   <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h2>Review {{infos.name}}</h2>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="boxBody phl ptl mhl mvm click_edit_target" data-spinner=".submission_spinner" data-interval-length="1">
+           
+            
+            <form class="form profile_new_review_form" id="profile_new_review_form" (ngSubmit)="Rev(ad)" #ad='ngForm'>
+        
+              <div class="prl pbs">
+                Tell us about your experience with this agent. Your review will help other Trulia users find the agent that's right for them.
+              </div>
+        
+              <div class="field fieldWarningHolder ptm">
+                <span class="fieldItem select">
+                  <select class="select write_review_service_type" ngModel name="author_relationship" id="how_do_u_know" (change)="detect()" data-tooltip-skin="tooltipDark">
+                    <option value=""  selected  disabled>Select a service that was provided to continue</option>
+                    <option  value="Helped me buy a home">Helped me buy a home</option>
+                    <option  value="Helped me sell a home">Helped me sell a home</option>
+                    <option value="Helped me rent a home">Helped me rent a home</option>
+                    <option  value="Helped me rent out my home">Helped me rent out my home</option>
+                    <option  value="It didn't work out">It didn't work out</option>
+                    <option  value="Did not respond to my email/phone call">Did not respond to my email/phone call</option>
+                  </select>
+                </span>
+              </div>
+        
+              <div class="initial_hide">
+                <div class="field review_author_name ptm hideFully fieldWarningHolder">
+                  <label for="recommend_author_name" class="fieldLabel blackFieldLabel">Your Name</label>
+                  <span class="fieldItem text">
+                    <input type="text" class="recommend_author_name" id="recommend_author_name" ngModel name="author_name" placeholder="Jane Doe" data-tooltip-anchor="top" data-tooltip-skin="tooltipDark" pattern="[a-zA-Z\s]+" title="Your full name (no special characters)">
+                  </span>
+                </div>
+              </div>
+        
+              <div class="field review_address ptm initial_hide fieldWarningHolder">
+                <label for="recommend_address" class="fieldLabel blackFieldLabel">
+                  Address of Home
+                  <span class="h7 typeDeemphasize typeLowlight">This is for verification purposes and will be kept private.</span>
+                </label>
+                <span class="fieldItem text">
+                  <input type="text" class="recommend_address" id="recommend_address" ngModel name="address" placeholder="Address of home you bought" data-prefix="Address of home you " data-tooltip-anchor="top" data-tooltip-skin="tooltipDark" required="required">
+                </span>
+                <div class="address_lookup_success h6 typeWeightNormal typeHighlight ptm hideFully"><i class="iconCheck"></i> We found ths address in our records.</div>
+                <div class="address_lookup_success h6 typeWeightNormal typeHighlight ptm hideFully"><i class="iconCheck"></i> We didnt find ths address in our records.</div>
+              </div>
+        
+              <div class="skills pts initial_hide">
+                <div class="h6 typeEmphasized">Rate this real estate professional's skills</div>
+                <div class="skill_ratings">
+                  <div class="row">
+                    <div class="col-md-6 col-6" >Responsiveness</div>
+                    <div class="col-md-6 col-6"><star-rating value="0" checkedcolor="gold" uncheckedcolor="gray" size="14px" readonly="false" (rate)="Response($event)"></star-rating></div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6 col-6">Local Knowledge</div>
+                      <div class="col-md-6 col-6"><star-rating value="0" checkedcolor="gold" uncheckedcolor="gray" size="14px"    readonly="false" (rate)="Knowledge($event)"></star-rating></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-6">Negotiation</div>
+                        <div class="col-md-6 col-6"><star-rating value="0" checkedcolor="gold" uncheckedcolor="gray" size="14px"    readonly="false" (rate)="Negotiate($event)"></star-rating></div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-6 col-6">Process Expretise</div>
+                          <div class="col-md-6 col-6"><star-rating value="0" checkedcolor="gold" uncheckedcolor="gray" size="14px"    readonly="false" (rate)="Expertise($event)"></star-rating></div>
+                        </div>
+                </div>
+              </div>
+        
+              <div class="field review_comments pts initial_hide fieldWarningHolder">
+                <label for="comments" class="fieldLabel blackFieldLabel">Written Review</label>
+                <span class="fieldItem text">
+                  <textarea ngModel name="content" id="comments" class="comments" rows="8" placeholder="Your review helps others decide on the right agent for them. Please tell others why you recommend this agent, using 150-5000 characters." required="" minlength="150" maxlength="5000" pattern=".{150,5000}" title="You must enter between 150 and 5000 characters to submit your review for Jack Gillis." data-tooltip-anchor="bottom" data-tooltip-skin="tooltipDark" data-remove-placeholder="true">          </textarea>
+                </span>
+              </div>
+        
+              <div class="modal_actions line mln ptl initial_hide">
+                <div class="col cols7 txtL pln">
+                  <div class="h7 mvn typeLowlight">
+                    All field are required
+                  </div>
+                  <div class="h7 mvn">
+                    <a href="/review_guidelines/" target="_blank">Read review guidelines</a>
+                  </div>
+                </div>
+                <div class="col cols17 lastCol txtR pln media">
+                  <ul class="listInline mvn mediaImgExt mln">
+                    <li class="prn mvn"><input type="submit" name="submit" class="btn btnPrimary save_new_review" data-tooltip-anchor="bottom" data-tooltip-skin="tooltipDark" value="Done" required="required"></li>
+                  </ul>
+                 
+                </div>
+              </div>
+        
+              <input type="hidden" id="recommend_author_email" name="author_email" value="">
+              <input type="hidden" id="agent_user_id" name="agent_user_id" value="zg2kb70x">
+              <input type="hidden" class="review_id" name="review_id">
+            </form>
+          </div>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" id="te" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+ 

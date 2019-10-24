@@ -1,0 +1,25 @@
+
+
+
+
+<div id="preloder">
+    <div class="loader"></div>
+  </div>
+  
+  
+  <section class="page-section categories-page">
+    <div class="container">
+      <div class="session">
+         
+        <div class="account-form">
+            <div id="notify" class="alert alert-success" *ngIf="this.confirm == '1'">
+                <strong>Success!</strong> Your email has been confirmed successfully. You can now <a routerLink="/forgot_pass" class="alert-link">“Login ”</a>to your dashboard.
+              </div>
+              <div id="notify" class="alert alert-warning" *ngIf="this.confirm == '2'">
+                  <strong>Warning!</strong> Either the provided token does not match that on file or you have already confirmed your email. You can request a<a routerLink="/forgot_pass" class="alert-link">“Resend”</a> of email.
+                </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

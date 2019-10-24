@@ -1,0 +1,466 @@
+ 
+
+<section class="view"  *ngFor = "let lists of list" style="overflow: hidden;">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a routerLink="">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Single</li>
+      </ol>
+
+<div class="page_wrapper">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-12">
+            <div class="thanos" style="background-color: #f5f6f7">
+                <div class="container hero-container"  style="margin-bottom: 10px; margin-top:10px;">
+                  <div class="row" style="margin-bottom: 10px;">
+                    <div class="col-md-12">
+                      <div class="bx" [ngStyle]="{'background-image': 'url(' + lists.pix + ')'}" data-toggle="modal" data-toggle="modal" data-target="#myPix">
+                        
+                       <div class="media" style="height: 578px; width: 992px;" >
+                         <!-- <a target="_blank" [href]="lists.pix1"> <img [src]="lists.pix1" alt="Los Angeles" width="1100" height="628"></a>  -->
+                         <div id="mediaCount" class="overlayLowlight overlayRight overlayBottom pas mam backgroundInverse boxHighlight baz"   data-toggle="modal" data-target="#myPix">
+                            <span class="noWrap">
+                              See {{lists.pixcount}} photos
+                            </span>
+                          </div>
+                         <!-- <button type="button" class="Button__ButtonBase-sc-1ea9wz-0 PrimaryButton-sc-16zopmz-0 AddReviewButton__StyledPrimaryButton-wbg9gb-1 jHgjvE" data-toggle="modal" data-target="#pic">Add Your Review</button> -->
+                       </div>
+                      
+                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-12">
+            <section class="BasicPageLayout__BasicPageContent-mfegza-1 dyVWBq" style="padding-top: 0px;">
+                <div class="single-list-content">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="Grid__CellBox-sc-144isrp-0 HomeDetailsContentOverview__HiddenExceptLargeCell-sc-1lql7o5-1 eNNXco">
+                        <div class="cadd">
+                      <div class="home-detail">
+                        <h5 style="margin-bottom: 30px;">
+                          <span>{{lists.title}}</span>
+                        </h5>
+                        <div class="row">
+                          <div class="col-md-8">
+                            <h1 class="homeh1">
+                              <span>{{lists.address}}</span>
+                              <br>
+                              <span class="HomeSummaryShared__CityStateAddress-vqaylf-0 fyHNRA Text__TextBase-sc-1cait9d-0 hUlhgk">{{lists.state}},{{lists.locality}}</span>
+                            </h1>
+                          </div>
+                          <div class="col-md-4">
+                              <a href="#" class="price-btn">N{{lists.cost}}</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="bbs mbl homeDetailsHeading">
+                        <span class="h5 prm backgroundBasic">Overview</span>
+                    </div>
+                      <div class=" property-details-list">
+                         <!-- <div class="col-md-4 col-sm-6">
+                            <p><i class="fa fa-th-large"></i> {{lists.rmsize}} Square foot</p>
+                            <p><i class="fa fa-bed"></i> {{lists.bedroom}} Bedrooms</p>
+                            <p><i class="fa fa-user"></i> Gina Wesley</p>
+                          </div>
+                          <div class="col-md-4 col-sm-6">
+                            <p><i class="fa fa-car"></i> 2 Garages</p>
+                            <p><i class="fa fa-building-o"></i> {{lists.Type}}</p>
+                            <p><i class="fa fa-clock-o"></i>{{lists.uploadT}}</p>
+                          </div>
+                          <div class="col-md-4">
+                            <p><i class="fa fa-bath"></i> {{lists.bathroom}} Bathrooms</p>
+                            <p><i class="fa fa-trophy"></i> 5 years age</p>
+                          </div> -->
+                          <div class="property-spec-item">
+                             <div class="property-sepc">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="qodef-spec-item qodef-label-items-item">
+                                        <span class="qodef-spec-item-label qodef-label-items-label">
+                                        <span class="qodef-label-icon">
+                                            <i class="fa fa-car"></i>
+                                        </span>
+                                        <span class="qodef-label-text">
+                                        Bedrooms: </span>
+                                        </span>
+                                        <span class="qodef-spec-item-value qodef-label-items-value">
+                                        8 </span>
+                                        </div>
+                                       </div>
+
+
+                                       <div class="col-6">
+                                          <div class="qodef-spec-item qodef-label-items-item">
+                                          <span class="qodef-spec-item-label qodef-label-items-label">
+                                          <span class="qodef-label-icon">
+                                              <i class="fa fa-car"></i>
+                                          </span>
+                                          <span class="qodef-label-text">
+                                          Bedrooms: </span>
+                                          </span>
+                                          <span class="qodef-spec-item-value qodef-label-items-value">
+                                          8 </span>
+                                          </div>
+                                         </div>
+            
+          
+                                </div>
+                             </div>
+                          </div>
+
+                         
+
+                        </div> 
+                        <div class="bbs mbl homeDetailsHeading">
+                          <span class="h5 prm backgroundBasic">Description</span>
+                      </div>
+                        <div class="description" [innerHTML]="lists.Description">
+                       
+                      </div>
+                  </div>
+                      </div>
+                      </div>
+                    </div>
+                    
+                <div class="container-fluid">
+                  <div class="bbs mbl homeDetailsHeading">
+                    <span class="h5 prm backgroundBasic">Neighbour Overview</span>
+                </div>
+                    <div class="overview">
+                        <div class="qodef-property-reviews">
+                            <div class="qodef-property-reviews-list-top">
+                                <div class="qodef-reviews-list-info qodef-reviews-stars">
+                          <h5 class="qodef-reviews-summary">
+                                      <span class="qodef-reviews-number">
+                                          1	            </span>
+                            <span class="qodef-reviews-label">
+                                          Review	            </span>
+                          </h5>
+                          <span class="qodef-stars">
+                                        <span class="qodef-stars-wrapper-inner">
+                                      <span class="qodef-stars-items">
+                                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                        </span>
+                                  </span>
+                                </span>
+                        </div>    </div>
+                            <div class="qodef-property-reviews-list">
+                                  <div class="qodef-comment-holder clearfix" id="comments">
+                                  <div class="qodef-comment-holder-inner">
+                                        <div class="qodef-comments">
+                                  <ul class="qodef-comment-list">
+                                    <li *ngFor = "let reviews of review">
+                          <div class="qodef-comment clearfix">
+                                  <div class="qodef-comment-image"> <img src="https://static.trulia-cdn.com/userimg/user_m_00_s.gif" style="width: 85px; height: 85px;"> </div>
+                                <div class="qodef-comment-text">
+                              <div class="qodef-comment-arrow"></div>
+                              <div class="qodef-comment-info">
+                                <h5 class="qodef-comment-name vcard">
+                                  {{reviews.name}}				</h5>
+                                
+                              </div>
+                                      <div class="qodef-text-holder" id="comment-41">
+                                  <p>{{reviews.review}}</p>
+                                  <span class="qodef-comment-date">
+                                                    March 30, 2018                        </span>
+                                </div>
+                                  </div>
+                          </div>
+                        <!-- li is closed by wordpress after comment rendering --></li><!-- #comment-## -->
+                                  </ul>
+                                  <section class="AddReviewButton__StyledButtonPosition-wbg9gb-0 htTwJT">
+                                    <button type="button" class="Button__ButtonBase-sc-1ea9wz-0 PrimaryButton-sc-16zopmz-0 AddReviewButton__StyledPrimaryButton-wbg9gb-1 jHgjvE" data-toggle="modal" data-target="#myModal">Add Your Review</button>
+                                  </section>
+                                </div>
+                              </div>
+                                  </div>
+                          
+                                  </div>
+                        </div>
+                    </div>
+                    <h3 class="sl-sp-title">Map</h3>
+                <div class="maps">
+                   <!--  <agm-map [latitude]="lat" [longitude]="lng">
+                        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                      </agm-map>  -->
+                </div> 
+                </div>
+                    
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                      <div class="modal-content">
+                      
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h1 class="modal-title">Modal Heading</h1>
+                          <button type="button" class="close" data-dismiss="modal">×</button>
+                        </div>
+                        
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <div class="FlexContainers__Row-zvngfq-1 kTfOhQ">
+                            <div class="ReviewContent__ContentHeader-sc-1qnvgmu-0 fYrouA">
+                              <h3>Kingsbridge</h3>
+                            </div>
+                            <form (ngSubmit) = "Rev(ad)"  #ad='ngForm' >
+                              <div class="AddReviewCard__DialogText-sc-19fp3v2-0 etLKX">
+                                <h3 style="margin: 0px 0px 8px;">
+                                  <div class="Text__TextBase-sc-1cait9d-0-div Text__TextContainerBase-sc-1cait9d-1 gpkXTH">What makes your neighborhood unique?</div>
+                                </h3>
+                                <textarea placeholder="I've lived in this neighborhood for three years and love it. Folks are friendly and look out for..."  ngModel required name="review" content="" id="review" class="TextArea-sc-1r2pbof-0 kCCPGw"></textarea>
+                                <div class="AddReviewCard__InvalidTextPadding-sc-19fp3v2-11 eCpNsR"></div>
+                                <h3 style="margin: 0px 0px 8px;"><div class="Text__TextBase-sc-1cait9d-0-div Text__TextContainerBase-sc-1cait9d-1 gpkXTH">How do you know this area?</div></h3>
+                                <ul class="AddReviewCard__UnorderedList-sc-19fp3v2-1 klTmwz">
+                                  <li class="AddReviewCard__ListItem-sc-19fp3v2-3 cQGsEj">
+                                    <label>
+                                      <input type="radio" ngModel required name="reasons" value="currentResident">
+                                      <span class="AddReviewCard__ItemDescription-sc-19fp3v2-2 eOMyg">I live here</span>
+                                    </label>
+                                  </li>
+                                  <li class="AddReviewCard__ListItem-sc-19fp3v2-3 cQGsEj"><label>
+                                    <input type="radio"  ngModel required name="reasons" value="previousResident">
+                                    <span class="AddReviewCard__ItemDescription-sc-19fp3v2-2 eOMyg">I used to live here</span>
+                                  </label>
+                                </li>
+                                <li class="AddReviewCard__ListItem-sc-19fp3v2-3 cQGsEj">
+                                  <label>
+                                  <input type="radio"  ngModel required name="reasons" value="justVisited"><span class="AddReviewCard__ItemDescription-sc-19fp3v2-2 eOMyg">I'm just visiting</span>
+                                </label>
+                              </li>
+                            </ul>
+                            <div class="Padding-sc-1tki7vp-0 bsJNRb">
+                              <span class="AddReviewCard__DisplayMeText-sc-19fp3v2-12 fFyuTM Text__TextBase-sc-1cait9d-0 eJlYAH">display me as</span>
+                            </div>
+                            <div class="AddReviewCard__StyledDisplayNameBlock-sc-19fp3v2-7 kwsPrA MediaBlock__MediaContainer-skmvlj-0 bOGJGe">
+                              <div style="display: flex; flex-direction: column;">
+                                
+                                  <div size="35" class="CircleBox-n5nj62-0 eohylV">
+                                    <img src="https://static.trulia-cdn.com/userimg/user_m_00_s.gif" style="width: 24px; height: 24px;">
+                                  </div>
+                                
+                        
+                              </div>
+                              <div class="MediaBlock__MediaContent-skmvlj-1 fkyExN">
+                               
+                              </div>
+                            </div>
+                            <div class="Padding-sc-1tki7vp-0 IWxMN">
+                              <label for="terms" class="AddReviewCard__StyledGuidelines-sc-19fp3v2-9 eRDeQV">
+                                <div class="MediaBlock__MediaContainer-skmvlj-0 bOGJGe">
+                                  <span>
+                                    <div class="Switch__SwitchContainer-sc-1qpqr1p-0 bOrRuX">
+                                      <input type="checkbox" name="terms" id="terms" class="Switch__Input-sc-1qpqr1p-2 kscLAE">
+                                      <div class="Switch__Slider-sc-1qpqr1p-1 JwFdr"></div>
+                                    </div>
+                                  </span>
+                                  <div class="MediaBlock__MediaContent-skmvlj-1 fkyExN">&nbsp;I agree to  Trulia's <a href="https://www.trulia.com/neighborhood_guidelines/" target="_blank" rel="nofollow">Community Guidelines</a>
+                                  </div></div></label></div><div class="Padding-sc-1tki7vp-0 AddReviewCard__StyledGuidelinesPadding-sc-19fp3v2-8 cZGlgA"></div>
+                                </div>
+                                <button type="submit" class="Button__ButtonBase-sc-1ea9wz-0 PrimaryButton-sc-16zopmz-0 hnPhDx" style="width: 20vh;">Submit</button>
+                              </form>
+                            </div>
+                         </div>
+                        
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  
+                
+                       
+                    
+                  </div>
+                  
+                </section>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+        <div width="0,0,0,0,0.334" data-testid="leadFormCell" class="Grid__CellBox-sc-144isrp-0 HomeDetailsContentOverview__HiddenExceptLargeCell-sc-1lql7o5-1 eNNXco">
+            <div data-testid="PDP_TOP_THIRD" style="padding:16px;" class="Card-qyhhuy-0 hOGMHJ FlexContainers__Rows-zvngfq-0 kyprhW">
+              <div class="FlexContainers__Row-zvngfq-1 Card__CardContent-qyhhuy-2 krpusx"><div>
+                <div class="FlexContainers__Row-zvngfq-1 eXyrMc" data-toggle="collapse" data-target="#demo">
+                  <div class="Padding-sc-1tki7vp-0 jaUUeG">
+                    <h3 style="margin:0 0 8px 0">
+                      <div class="Text__TextBase-sc-1cait9d-0-div Text__TextContainerBase-sc-1cait9d-1 cbaLyG" >Contact Listing Agent </div>
+                    </h3>
+                  </div>
+                </div>
+                <div class="collapse show" id="demo">
+                <div class="FlexContainers__Row-zvngfq-1 eXyrMc">
+                  <div class="Padding-sc-1tki7vp-0 kpvrDv">
+                    <div class="MediaBlock__MediaContainer-skmvlj-0 bOGJGe">
+                      <a href="https://www.trulia.com/profile/zg1jx6h1" target="_blank" class="Anchor-sc-5lya7g-0 iaaIkd">
+                        <div width="36px" height="36px" style="display:inline-block" class="Tiles__TileContainer-fk0fs3-1 AUCtz">
+                          <div class="Tiles__TileBackground-fk0fs3-0 cSObNX">
+                            <img [src]="agent.pix" class="Image-sc-8exg3k-0 grCmwT">
+                          </div>
+                        </div>
+                      </a>
+                      <div class="MediaBlock__MediaContent-skmvlj-1 fkyExN">
+                        <div class="Text__TextBase-sc-1cait9d-0-div Text__TextContainerBase-sc-1cait9d-1 eSIHnQ">
+                          <a  (click)="select(agent.reg_id)" target="_blank" class="Anchor-sc-5lya7g-0 iaaIkd">{{agent.name}}</a>
+                        </div>
+                        <div class="Text__TextBase-sc-1cait9d-0-div Text__TextContainerBase-sc-1cait9d-1 kEDjlv">{{agent.companyName}}</div>
+                        <div class="Text__TextBase-sc-1cait9d-0-div Text__TextContainerBase-sc-1cait9d-1 kEDjlv">{{agent.phonenumber}}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="FlexContainers__Row-zvngfq-1 eXyrMc">
+                    <div class="Padding-sc-1tki7vp-0 jaUUeG">
+                    <div class="Divider-se9ck7-0 euGwvC"></div>
+                    <h3 style="margin:0 0 8px 0">
+                      <div class="Text__TextBase-sc-1cait9d-0-div Text__TextContainerBase-sc-1cait9d-1 cbaLyG">Contact Premier Agent </div>
+                     </h3>
+                      </div>
+                    </div>
+                  
+                  <form>
+                    <div style="padding:0 2px" class="FlexContainers__Rows-zvngfq-0 dpwmPm">
+                      <div class="FlexContainers__Row-zvngfq-1 eXyrMc">
+                        <div class="FormattedFields__Column-sc-18r3d2-0 ekjmFU">
+                          <div class="Padding-sc-1tki7vp-0 liNAjm">
+                            <input id="name_PDP_TOP_THIRD" name="name" placeholder="Name" required="" style="height:36px" data-testid="lead-form-text-input-name" value="Mezj972" aria-label="name" class="Input-sc-1d1vffg-0 fmHXoU">
+                          </div>
+                        </div>
+                        <div class="FormattedFields__Column-sc-18r3d2-0 ekjmFU">
+                          <div class="Padding-sc-1tki7vp-0 liNAjm">
+                            <input type="tel" id="phone_PDP_TOP_THIRD" name="phone" placeholder="Phone" required="" style="height:36px" data-testid="lead-form-text-input-phone" value="" aria-label="phone" class="Input-sc-1d1vffg-0 fmHXoU">
+                          </div>
+                        </div>
+                        <div class="FlexContainers__Row-zvngfq-1 eXyrMc">
+                          <div class="Padding-sc-1tki7vp-0 liNAjm">
+                            <input type="email" id="email_PDP_TOP_THIRD" name="email" placeholder="Email" required="" style="height:36px" data-testid="lead-form-text-input-email" value="mezj972@gmail.com" aria-label="email" class="Input-sc-1d1vffg-0 fmHXoU">
+                          </div>
+                        </div>
+                        <div class="FlexContainers__Row-zvngfq-1 eXyrMc">
+                          <div class="Padding-sc-1tki7vp-0 liNAjm">
+                            <textarea placeholder="" id="message_PDP_TOP_THIRD" name="message"  content="iiijiii" value="pjrojjo"  class="TextArea-sc-1r2pbof-0 jybaqo"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="FlexContainers__Row-zvngfq-1 eXyrMc">
+                        <button type="submit" data-testid="lead-form-submit" style="margin-bottom:8px" class="Button__ButtonBase-sc-1ea9wz-0 TertiaryButton-sc-1ve5gq4-0 fENbfA">Request Info</button>
+                      </div>
+                      <div style="padding-top:8px" class="FlexContainers__Row-zvngfq-1 eXyrMc">
+                        <div data-testid="top-lead-form-disclaimer-container" class="Text__TextBase-sc-1cait9d-0-div Text__TextContainerBase-sc-1cait9d-1 bTcwq">
+                          By pressing Request Info, you agree that Smartville and real estate professionals may contact you
+                           via phone/text about your inquiry, which may involve the use of automated means. You are not
+                            required to consent as a condition of purchasing any property, goods or services. Message/data
+                             rates may apply. You also agree to our <a target="_blank" href="https://www.trulia.com/terms">Terms of Use
+                            </a>
+                            &nbsp;Smartville does not endorse any
+                            <span>
+                              <a target="_blank">real estate professionals</a>
+                            </span>
+                            &nbsp;
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+                <div>
+                   <div class="average_rating card">
+                     <div class="heading"><h6>Statistics</h6></div>
+                     <div class="rating">
+                       <ul>
+                         <li class="hover-item">
+                           <div class="line">
+                             <div class="row">
+                               <div class="col-md-6 col-6"><p style="font-size: 12px;">Average price of {{lists.bedroom}} bedroom {{lists.Type}} in Nigeria</p></div>
+                               <div class="col-md-6 col-6"> 
+                                <div class="price">
+                                  <p >{{countryA}}</p>
+                                </div>
+                                </div>
+                             </div>
+                           </div>
+                         </li>
+                         <li>
+                            <div class="line">
+                              <div class="row">
+                                <div class="col-md-6 col-6"><p style="font-size: 12px;">Average price of {{lists.bedroom}} bedroom {{lists.Type}} in {{lists.state}}</p></div>
+                                <div class="col-md-6 col-6"> 
+                                 <div class="price " >
+                                   <p >{{stateA}}</p>
+                                 </div>
+                                 </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="hover-item">
+                              <div class="line">
+                                <div class="row">
+                                  <div class="col-md-6 col-6"><p style="font-size: 12px;">Average price of {{lists.bedroom}} bedroom {{lists.Type}} in {{lists.locality}}</p></div>
+                                  <div class="col-md-6 col-6"> 
+                                   <div class="price " >
+                                     <p >{{localA}}</p>
+                                   </div>
+                                   </div>
+                                </div>
+                              </div>
+                            </li>
+                       </ul>
+                     </div>
+                   </div>
+                </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal" style="background: black !important;" id="myPix" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" style="background: black !important;" role="document">
+            <div class="modal-content" style="background: black !important;">
+                <div class="modal-header">
+                    <button type="button" class="close" style="color: white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body p-4" style="padding: 0 !important;" id="result">
+                      <div class="grid">
+                        <div class="span-col-3"> <img [src]="lists.pix" style="width:100%; height:500px"></div>
+                        <div *ngFor="let pixs of pix"> 
+                          <a [href]="pixs.pix">
+                              <img [src]="pixs.pix" style="width:100%">
+                          </a>
+                        </div>
+                      </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+       

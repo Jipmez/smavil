@@ -1,0 +1,129 @@
+.dash-container{
+    
+    margin-top: 20px;
+
+    .border-left-primary {
+        border-left: .25rem solid #4e73df!important;
+    }
+       
+}
+
+
+.Modal-header-text {
+    color: #2a2a33;
+    overflow: hidden;
+    padding-right: 30px;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.SpacerRow {
+    clear: both;
+    padding: 8px 0;
+}
+.border-left-success{
+    border-left: 0.25rem solid #28a745 !important;
+}
+
+.pro_all{
+    .card {
+        margin-bottom: 1.5rem;
+        border-radius: 0;
+        .swt{
+            height: 120px;
+        }
+        .card-body {
+            padding: 15px;
+            .stat-widget {
+                .stat-icon {
+                    vertical-align: top;
+                    i {
+                        font-size: 30px;
+                        border-width: 3px;
+                        border-style: solid;
+                        border-radius: 100px;
+                        padding: 15px;
+                        font-weight: 900;
+                        display: inline-block;
+                    }
+                }
+                .dib {
+                    display: inline-block;
+                }
+                .stat-content {
+                    margin-left: 15px;
+                    margin-top: 7px;
+                    .stat-text {
+                        font-size: 14px;
+                        color: #868e96;
+                    }
+                    .stat-digit {
+                        font-size: 24px;
+                        color: #373757;
+                    }
+                }                
+            }
+            
+        }
+
+
+        .twt-card {
+            max-height: 155px;
+            -webkit-border-radius: 4px 4px 0 0;
+            color: #FFFFFF;
+            padding: 40px 10px 10px;
+            position: relative;
+            min-height: 170px;
+        }
+
+       .blue-bg {
+            background: #58C9F3;
+            .corner-ribon {
+                text-align: center;
+                width: 71px;
+                height: 71px;
+                position: absolute;
+                right: 0;
+                top: 0;
+                font-size: 20px;
+            }
+             .wtt-mark {
+                color: rgba(255, 255, 255, 0.15);
+                font-size: 160px;
+                position: absolute;
+                top: 10px;
+                left: 40%;
+            }
+            .media{
+
+            }
+        }
+        .twt-category {
+            display: inline-block;
+            margin-bottom: 11px;
+            margin-top: 10px;
+            width: 100%;
+            padding: 15px 0;
+            ul, ol {
+                padding-left: 0;
+                 li {
+                    color: #bdbdbd;
+                    font-size: 13px;
+                    width: 32%;
+                    text-align: center;
+                    border-right: 1px solid #e6e6e6;
+                    display: inline-block;
+                }
+            }
+        }
+        .twt-footer {
+            padding: 12px 15px;
+            color: #d2d2d2;
+            a {
+                color: #d2d2d2;
+            }
+        }
+    }
+}
+

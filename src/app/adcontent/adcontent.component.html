@@ -1,0 +1,100 @@
+<div class="container-fluid">
+  <div class="wrapper">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Hello admin</h2>
+      
+          <div class="alert alert-success fade in">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+              <strong><span class="fa fa-bullhorn fa-2x"></span> </strong> <strong>&nbsp;&nbsp;Welcome to your Admin Dashboard!!</strong>.
+              </div>
+      </div>
+
+      <div id="topbuttons">
+          <div class="btn-group btn-group-lg visible-md visible-lg all_records pull-left">
+            <a class="btn btn-success"  data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-circle"></i>Add New</a>
+          </div>
+      </div>
+
+    </div>
+   
+
+    <div class="row">
+      <div class="col-md-3">
+          <div class="panel panel-info">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-md-6 col-6">
+                    <i class="fa fa-rss fa-5x"></i>
+                  </div>
+                  <div class="col-md-6 col-6 text-right">
+                    <p class="announcement-heading">7</p>
+                    <p class="announcement-text"><strong>Blogs</strong></p>
+                  </div>
+                </div>
+              </div>
+              <a routerLink="./blog_view">
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="col-md-6 col-6">
+                      View
+                    </div>
+                    <div class="col-md-6 col-6 text-right">
+                      <i class="fa fa-arrow-circle-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <div class="Modal-header-text">Edit Property</div>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form (ngSubmit)="AddBlog(ad)"  #ad='ngForm'>
+            <label for="">Email</label>
+           <div class="form-group">
+             <input type="text" class="form-control" name="email" id="">
+           </div>
+           <label for="">User</label>
+           <div class="form-group">
+            <input type="text" class="form-control" name="user" id="">
+          </div>
+          <label for="">Group</label>
+          <select name="group" id="" class="form-control">
+            <option value=" " selected>_Select</option>
+            <option value="2">Admin(Properties)</option>
+            <option value="3">Admin(Roomates)</option>
+            <option value="4">Editor</option>
+          </select>
+          <label for="">Password</label>
+           <div class="form-group">
+            <input type="password" class="form-control" name="password" id="">
+          </div>
+          <label for="">Confirm password</label>
+          <div class="form-group">
+            <input type="password" class="form-control" name="cpass" id="">
+          </div>
+        </form>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" id="te" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>

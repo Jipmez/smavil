@@ -1,0 +1,109 @@
+<div id="preloder">
+    <div class="loader"></div>
+  </div>
+  <div class="wrapper">
+      <section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg" style="background-image: url('../../assets/images/page-top-bg.jpg')">
+        <div class="container text-white">
+          <h2>Logde Listings</h2>
+        </div>
+      </section>
+
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="index.php">Home</a>
+          </li>
+          <li class="breadcrumb-item active">Blog</li>
+        </ol>
+
+        <section class="main-content">
+          <div class="container-fluid">
+              <h3 class="tittle">Blog Posts</h3>
+              <div class="row inner-section">
+                <div class="col-md-9">
+                  <div class="row">
+                    <div class="col-md-4 card" *ngFor="let blogs of blog">
+                        <a routerLink="view/{{blogs.blog_id}}">
+                            <img src="../../assets/lodges/75169600_1555893259.jpg" class="card-img-top img-fluid" alt="fantastic cms" style="width:500px;height:300px">
+                          </a>
+                          <div class="card-body">
+                              <ul class="blog-icons my-4">
+                                  <li>
+                                    <a href="#">
+                                      <i class="fa fa-calendar"></i>{{blogs.date}}</a>
+                                  </li>
+                                  <li class="mx-2">
+                                    <a href="#">
+                                      <i class="fa fa-user"></i> {{blogs.author}}</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">
+                                      <i class="fa fa-tags"></i> {{blogs.tags}}</a>
+                                  </li>
+                                </ul>
+                                <h5 class="card-title ">
+                                    <a routerLink="../view/{{blogs.blog_id}}">{{blogs.title}}</a>
+                                  </h5>
+                                  <a routerLink="./view/{{blogs.blog_id}}" class="btn btn-primary read-m">Read More</a>
+                          </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="right-blog-info text-left">
+                      <div class="tech-btm widget_social">
+                          <h4>Stay Connected</h4>
+                          <ul>
+            
+                            <li>
+                              <a class="twitter" href="http://www.twitter.com">
+                                <i class="fa fa-twitter"></i>
+                                <span class="count"></span> Twitter</a>
+                              </li>
+                              <li>
+                                <a class="facebook" href="http://www.facebook.com">
+                                  <i class="fa fa-facebook-f"></i>
+                                  <span class="count"></span> Facebook</a>
+                                </li>
+                                <li>
+                                  <a class="dribble" href="http://www.dribble.com">
+                                    <i class="fa fa-dribbble"></i>
+            
+                                    <span class="count"></span> Dribble</a>
+                                  </li>
+                                  <li>
+                                    <a class="pin" href="http://www.pinterest.com">
+                                      <i class="fa fa-pinterest"></i>
+                                      <span class="count"></span> Pinterest</a>
+                                    </li>
+            
+                                  </ul>
+                                </div>
+                          <div class="tech-btm">
+                              <h4>Older Posts</h4>
+                              <div class="blog-grids row mb-3" *ngFor="let olds of old">
+                                <div class="col-md-5 col-5 blog-grid-left">
+                                  <a href="single.php?id=2">
+                                    <img src="../../assets/lodges/84762700_1555893876.jpg" class="img-fluid" alt="fantastic cms">
+                                  </a>
+                                </div>
+                                  <div class="col-md-7 col-7 blog-grid-right">
+                                  <h5>
+                                  <a href="single.php?id=2">{{olds.title}}</a>
+                                  </h5>
+                                  <div class="sub-meta">
+                                  <span>
+                                  <i class="fa fa-clock-o"></i>{{olds.date}}</span>
+                                  </div>
+                                  </div>
+                            
+                                </div>
+                          </div>      
+                  </div>
+                </div>
+              </div>
+          </div>
+        </section>
+  </div>
+  
+  

@@ -1,0 +1,32 @@
+.blog{
+
+    h1, .h1, h2, .h2, h3, .h3 {
+        margin-top: 21px;
+        margin-bottom: 10.5px;
+    }
+    .page-header {
+        margin: 20px 0 10px;
+        padding-bottom: 0;
+        border-bottom: 1px solid #dddddd;
+
+        .input-group {
+            position: relative;
+            display: table;
+            border-collapse: separate;
+            .form-control {
+                font-size: 12px;
+                height: auto;
+                padding: 4px 6px;
+                width: 100% !important;
+            }
+        }
+    }
+    .table-view{
+        margin-top: 10px;
+        
+    }
+
+    table {
+        font-size: 12px;
+    }
+}

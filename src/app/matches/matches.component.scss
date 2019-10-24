@@ -1,0 +1,96 @@
+
+.user{
+    margin: 10px auto;
+    position: relative;
+    max-height: 289px;
+    .user-title {
+        color: #666666;
+        text-align: center;
+        margin: 15px auto 5px;
+    }
+    .fb-verification-icon {
+        height: 16px;
+        padding: 0;
+        margin-bottom: 3px;
+        margin-left: 6px;
+        width: 16px;
+    }
+    .meta {
+        display: block;
+        text-align: center;
+        color: gray;
+        font-weight: 100;
+        font-size: 0.9em;
+        b {
+            color: #f26b21;
+        }
+    }
+    .user-image-wrap {
+        margin: 0 auto;
+        position: relative;
+        width: 175px;
+        height: 175px;
+        .user-image {
+            width: 175px;
+            height: 175px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            img {
+                display: block;
+                min-width: 100%;
+                min-height: 100%;
+                position: relative;
+                z-index: 1;
+            }
+        }
+        .user-actions{
+            .button {
+                position: absolute;
+                z-index: 1;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                text-align: center;
+                padding: 0;
+                bottom: -60px;
+                color: #737373;
+                transition: all 0.5s;
+                i {
+                    font-size: 1.5em;
+                    transition: all 0.5s;
+                }
+            }
+            .right-position {
+                right: 0;
+            }
+            .tiny {
+                padding-top: 0.625rem;
+                padding-right: 1.25rem;
+                padding-bottom: 0.6875rem;
+                padding-left: 1.25rem;
+                font-size: 0.6875rem;
+            }
+            .open-send-message-modal {
+                border-radius: 20px !important;
+                width: 80px !important;
+                height: 30px !important;
+                position: absolute;
+                left: 47px;
+                bottom: -55px !important;
+                z-index: 9;
+            }
+
+        }
+       
+    }
+
+    .user-title-wrap {
+        display: block;
+        text-align: center;
+        margin-top: 46px;
+        margin-bottom: 4px;
+        height: 19px;
+    }
+    
+}

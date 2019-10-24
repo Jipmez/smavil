@@ -1,0 +1,369 @@
+<!-- <div class="form-field" *ngIf="this.question == 'questions' && this.property == 'new'">
+    <label for="request_issue_type_select">Please tell us who you are</label>
+    <select   name="request_id" class="form-control" id="" (change)="open($event.target.value)" required>
+      <option value="" disabled >-</option>
+      <option value="House"  [attr.selected]="this.property == House ? true : null">Consumer</option>
+      <option value="Land" [attr.selected]="this.property == Land ? true : null">Real Estate Professional</option>
+    </select>
+</div>
+ -->
+
+
+
+<div class="page-section">
+  <div class="container">
+      <div class="session">
+          <div class="account-form">
+            <div class="form">
+                
+            <form  (ngSubmit)="offer(of)" #of="ngForm">
+                
+                <!-- One "tab" for each step in the form: -->
+                <div class="tab">
+                    <h1>Are you the owner of this home</h1>
+                    <div class="box">
+                        <select class="form-control" ngModel name="owner" required id="ki">
+                          <option value="" selected disabled >__select</option>
+                          <option value="YES">YES</option>
+                          <option value="NO">NO</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="tab">
+                  <h1>Lets Start with the basics</h1>
+                  <div class="box">
+                     <div class="bed">
+                       <div class="row">
+                         <div class="col-md-6">
+                           <label for="" class="label">Bedroom</label>
+                         </div>
+                         <div class="col-md-6">
+                           <input type="number" ngModel name="bedroom" class="form-control" id="">
+                         </div>
+                       </div>
+                     </div>
+                     <div class="bath">
+                        <h3 class="section-title">Bathrooms</h3>
+                        <div class="full">
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <label for="" class="label">Full</label>
+                                  <div class="zsg-fineprint example-text">Tub, shower, sink and toilet</div>
+                                </div>
+                                <div class="col-md-6">
+                                  <input type="number" ngModel name="b_full" required class="form-control" id="">
+                                </div>
+                              </div>
+                        </div>
+                        <div class="threQurtz">
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <label for="" class="label">3/4</label>
+                                  <div class="zsg-fineprint example-text">shower, sink and toilet</div>
+                                </div>
+                                <div class="col-md-6">
+                                  <input type="number" ngModel name="b_threqurtz" required class="form-control" id="">
+                                </div>
+                              </div>
+                        </div>
+                        <div class="half">
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <label for="" class="label">1/2</label>
+                                  <div class="zsg-fineprint example-text"> sink and toilet</div>
+                                </div>
+                                <div class="col-md-6">
+                                  <input type="number" ngModel name="b_half" required class="form-control" id="">
+                                </div>
+                              </div>
+                        </div>
+                        <div class="qurtz">
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <label for="" class="label">1/4</label>
+                                  <div class="zsg-fineprint example-text">toilet</div>
+                                </div>
+                                <div class="col-md-6">
+                                  <input type="number" ngModel name="b_qurtz" required class="form-control" id="">
+                                </div>
+                              </div>
+                        </div>
+                     </div>
+                  </div>
+                 
+                </div>
+                
+                <div class="tab">
+                    <h1>Dates and Sizes</h1>
+                    <div class="box">
+                        <div class="section">
+                            <h3 class="input-field-title">Finished sq. ft.</h3>
+                            <span class="input-field-sub-title">Do not include garage or basement.</span>
+                            <div class="input-box zsg-form-field">
+                              <input type="number" maxlength="500" pattern="[0-9]*" ngModel name="sqft" required id="sqft" class="form-control" placeholder="" autocomplete="off" value="3452">
+                            </div>
+                          </div>
+                          <div class="scetion">
+                            <div class="year_built">
+                                <h3 class="input-field-title">Year built</h3>
+                                <input type="number" maxlength="500" pattern="[0-9]*" ngModel name="yearBuilt" required id="yearBuilt" class="form-control" placeholder="" autocomplete="off" value="1994">
+                            </div>
+                            <div class="year_Purchased">
+                                <h3 class="input-field-title">Year purchsed</h3>
+                                <input type="number" maxlength="500" pattern="[0-9]*" id="yearPurch" ngModel name="yearBought" required class="form-control" placeholder="" autocomplete="off" value="1994">
+                     
+                            </div>
+                            
+                          </div>
+                    </div>
+                    
+               
+                </div>
+                
+                <div class="tab">
+                    <h1>Do any of these apply to your home</h1>
+                 <div class="box">
+                    <div class="inputGroup">
+                        <input id="option" name="association" type="checkbox" (change)="onChangeCategory($event.target.checked, 'Association')">
+                        <label for="option">Home owner association</label>
+                      </div>
+      
+                      <div class="inputGroup">
+                          <input id="opon2" name="water" type="checkbox" (change)="onChangeCategory($event.target.checked, 'Water')">
+                          <label for="opon2">Well water</label>
+                        </div>
+      
+                      <div class="inputGroup">
+                          <input id="solar" name="solar" type="checkbox" (change)="onChangeCategory($event.target.checked, 'Solar')">
+                          <label for="solar">Solar Panel</label>
+                        </div>
+      
+                    <div class="inputGroup">
+                        <input id="none" name="none" type="checkbox" (change)="onChangeCategory($event.target.checked, 'None')">
+                        <label for="none">None of these/know</label>
+                      </div>
+                 </div>
+                </div>
+      
+      
+                <div class="tab">
+                    <h1>Have You Made any major improvement</h1>
+                 <div class="box">
+                    <div class="inputGroup">
+                        <input id="option1" name="renovated_bathroom" type="checkbox" (change)="Renovations($event.target.checked, 'Bathroom')">
+                        <label for="option1">Revovated Bathroom</label>
+                      </div>
+      
+                      <div class="inputGroup">
+                          <input id="option2" name="main_flooring" type="checkbox" (change)="Renovations($event.target.checked, 'Flooring')">
+                          <label for="option2">Replaced Main Flooring</label>
+                        </div>
+      
+                      <div class="inputGroup">
+                          <input id="option3" name="repainted_exterior" type="checkbox" (change)="Renovations($event.target.checked, 'Painted Exterior')">
+                          <label for="option3">Fully Repainted Exterior</label>
+                        </div>
+      
+                    <div class="inputGroup">
+                        <input id="option4" name="None" type="checkbox" (change)="Renovations($event.target.checked, 'None')">
+                        <label for="option4">None of these/know</label>
+                      </div>
+                 </div>
+                </div>
+
+                <div class="tab">
+                    <h1>what are the main type of flooring in your home</h1>
+                 <div class="box">
+                    <div class="inputGroup">
+                        <input id="option33" name="hard_wood" type="checkbox" (change)="Flooring($event.target.checked, 'Hardwood')">
+                        <label for="option33">Hard wood</label>
+                      </div>
+      
+                      <div class="inputGroup">
+                          <input id="option34" name="main_flooring" type="checkbox" (change)="Flooring($event.target.checked, 'Tile')">
+                          <label for="option34">Tile</label>
+                        </div>
+      
+                      <div class="inputGroup">
+                          <input id="option35" name="repainted_exterior" type="checkbox" (change)="Flooring($event.target.checked, 'Cement')">
+                          <label for="option35">Cement Floor</label>
+                        </div>
+      
+                    <div class="inputGroup">
+                        <input id="option45" name="None" type="checkbox" (change)="Flooring($event.target.checked, 'Laminate')">
+                        <label for="option45">Laminate</label>
+                      </div>
+
+                      <div class="inputGroup">
+                          <input id="option55" name="None" type="checkbox" (change)="Flooring($event.target.checked, 'Carpet')">
+                          <label for="option55">Carpet</label>
+                        </div>
+
+                        <div class="inputGroup">
+                            <input id="option65" name="None" type="checkbox" (change)="Flooring($event.target.checked, 'Other')">
+                            <label for="option65">Other/Dont know</label>
+                          </div>
+                 </div>
+                </div>
+
+                <div class="tab">
+                    <h1>what special feature does your home have</h1>
+                 <div class="box">
+                    <div class="inputGroup">
+                        <input id="option5" name="hard_wood" type="checkbox" (change)="Special($event.target.checked, 'Garage')">
+                        <label for="option5">Garage</label>
+                      </div>
+      
+                      <div class="inputGroup">
+                          <input id="option6" name="main_flooring" type="checkbox" (change)="Special($event.target.checked, 'Pool')">
+                          <label for="option6">In-ground pool</label>
+                        </div>
+      
+                      <div class="inputGroup">
+                          <input id="option7" name="repainted_exterior" type="checkbox" (change)="Special($event.target.checked, 'Huttub')">
+                          <label for="option7">Hut tub/spa</label>
+                        </div>
+      
+                    <div class="inputGroup">
+                        <input id="option8" name="None" type="checkbox" (change)="Special($event.target.checked, 'Basement')">
+                        <label for="option8">Basement</label>
+                      </div>
+
+                      <div class="inputGroup">
+                          <input id="option9" name="None" type="checkbox" (change)="Special($event.target.checked, 'Gatehouse')">
+                          <label for="option9">Gate House</label>
+                        </div>
+
+                       
+
+                        <div class="inputGroup">
+                            <input id="option10" name="None" type="checkbox" (change)="Special($event.target.checked, 'Other')">
+                            <label for="option10">Other/Dont know</label>
+                          </div>
+                 </div>
+                </div>
+
+                <div class="tab">
+                    <h1>Do any of these apply to you</h1>
+                 <div class="box">
+                    <div class="inputGroup">
+                        <input id="option11" name="hard_wood" type="checkbox" (change)="AppliesToYou($event.target.checked, 'Estate Agent')">
+                        <label for="option11">I'm a real estate agent</label>
+                      </div>
+      
+                      <div class="inputGroup">
+                          <input id="option12" name="repainted_exterior" type="checkbox" (change)="AppliesToYou($event.target.checked, 'Agreement with agent')">
+                          <label for="option12">I have signed an agreement with an agent to sell this home</label>
+                        </div>
+      
+                    <div class="inputGroup">
+                        <input id="option13" name="None" type="checkbox" (change)="AppliesToYou($event.target.checked, 'incumbent tenant')">
+                        <label for="option13">I currently have a rental tenant in this home</label>
+                      </div>
+
+                        <div class="inputGroup">
+                            <input id="option14" name="None" type="checkbox" (change)="AppliesToYou($event.target.checked, 'None')">
+                            <label for="option14">None of these</label>
+                          </div>
+                 </div>
+                </div>
+
+                <div class="tab">
+                    <h1>Which of these Documents does your home have?</h1>
+                 <div class="box">
+                    <div class="inputGroup">
+                        <input id="option15" name="hard_wood" type="checkbox" (change)="Documents($event.target.checked, 'Survey Plan')">
+                        <label for="option15">Survey Plan</label>
+                      </div>
+      
+                      <div class="inputGroup">
+                          <input id="option16" name="main_flooring" type="checkbox" (change)="Documents($event.target.checked, 'Excision')">
+                          <label for="option16">Excision</label>
+                        </div>
+      
+                      <div class="inputGroup">
+                          <input id="option17" name="repainted_exterior" type="checkbox" (change)="Documents($event.target.checked, 'Gazette')">
+                          <label for="option17">Gazette</label>
+                        </div>
+      
+                    <div class="inputGroup">
+                        <input id="option18" name="None" type="checkbox" (change)="Documents($event.target.checked, 'Certificate of Occupancy')">
+                        <label for="option18">Certificate of Occupancy</label>
+                      </div>
+
+                      <div class="inputGroup">
+                          <input id="option19" name="None" type="checkbox" (change)="Documents($event.target.checked, 'Deed of Assignment')">
+                          <label for="option19">Deed of Assignment</label>
+                        </div>
+
+                        <div class="inputGroup">
+                            <input id="option20" name="None" type="checkbox" (change)="Documents($event.target.checked, 'Governors Consent')">
+                            <label for="option20">Governor's Consent</label>
+                          </div>
+
+                      <div class="inputGroup">
+                          <input id="option21" name="None" type="checkbox" (change)="Documents($event.target.checked, 'Reciept')">
+                          <label for="option21">Reciept</label>
+                        </div>
+                 </div>
+                </div>
+
+                <div class="tab">
+                    <h1>When will you be ready to sell your home</h1>
+                 <div class="box">
+                    <select class="form-control" ngModel name="sell" required id="k">
+                        <option value="" selected disabled >__select</option>
+                        <option value="ASAP">As soon as possible</option>
+                        <option value="3months">Within 3 months</option>
+                        <option value="4-6Months">4-6 months</option>
+                        <option value="6+">6+</option>
+                        <option value="NOT SURE">Am not sure</option>
+                      </select>
+                 </div>
+                </div>
+
+                <div class="tab">
+                    <h1>Are you planning to buy a home</h1>
+                 <div class="box">
+                    <select class="form-control" ngModel name="Buyahome" required id="k">
+                        <option value="" selected disabled >__select</option>
+                        <option value="YES">Yes</option>
+                        <option value="NO">No</option>
+                        <option value="NOT SURE">Not sure</option>
+                      </select>
+                 </div>
+                </div>
+                
+                <div style="overflow:auto;">
+                  <div style="float:right;">
+                    <button type="button" id="prevBtn" (click)="nextPrev(-1)">Previous</button>
+                    <button type="button" id="nextBtn" (click)="nextPrev(1)">Next</button>
+                    <button type="submit" id="subForm" [disabled]="!of.valid" style="display: none;">submit</button>
+                  </div>
+                </div>
+                
+              
+                <!-- Circles which indicates the steps of the form: -->
+                <div style="text-align:center;margin-top:40px;">
+                  <span class="step"></span>
+                  <span class="step"></span>
+                  <span class="step"></span>
+                  <span class="step"></span>
+                  <span class="step"></span>
+                  <span class="step"></span>
+                  <span class="step"></span>
+                  <span class="step"></span>
+                  <span class="step"></span>
+                  <span class="step"></span>
+                  <span class="step"></span>
+                </div>
+                
+            </form>
+            </div>
+          </div>
+        </div>
+  </div>
+  
+</div>
+

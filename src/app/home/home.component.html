@@ -1,0 +1,290 @@
+<div class="hold" style="overflow: hidden; background: #f9f9fb;">
+    <section class="hero-section set-bg"  style="background-image: url(&quot;../../assets/images/bg.jpg&quot;);">
+      <div class="container" style="margin: 96px auto;">
+          <div class="row hidden-ma">
+            <div class="col-md-12 text-center">
+              <h1 class="c-white strong-400">Find your new property</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <div class="form">
+                <form (ngSubmit)="search(ad)" #ad="ngForm">
+                  <div class="row">
+                     <div class="col-md-12 col-sm-12">
+                       <div class="form-group">
+                         <ul class="radio-group">
+                           <li>
+                              <a  class="" id=""> 
+                                <div class="inputGroup">
+                                    <input type="radio" id="option-one"  ngModel="sale" value="1" name="sale">
+                            <label for="option-one">Buy</label>
+                                  </div>
+                                 </a>
+                           </li>
+                           <li id="li-cid-for-rent" class="mid active">
+                              
+                                <div class="inputGroup">
+                                    <input type="radio" id="option-two" ngModel="sale" value="2" name="sale">
+                                    <label for="option-two">Rent</label>
+                                  </div>
+                              
+                            </li>
+                         </ul>
+                         <div >
+                         </div>
+                         <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 ">
+                              <div class="form-group">
+                                <div class="easy-autocomplete">
+                                    <input id="propertyLocation" type="text" class="form-control propertyLocation" ngModel name="search" autocomplete="off" placeholder="Enter a state, city or area">
+                                    <div class="search_button">
+                                      <button class="search_icon" type="submit" [disabled]="!ad.valid">
+                                        <i class="fa fa-search"></i>
+                                      </button>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 ">
+                              <div class="row">
+                                <div class="col-sm-3 col-xs-6 col-6">
+                                  <div class="form-group">
+                                    <label for="">Type</label>
+                                    <select name="tid" id="tid" class="form-control">
+                                      <option value="0">All Types</option>
+                                      <option value="1">Flat</option>
+                                      <option value="2">House</option>
+                                      <option value="5">Land</option>
+                                      <option value="3">Commercial Property</option>
+                                      <option value="6">Event Centre / Venue</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6 col-6 ">
+                                    <div class="form-group">
+                                        <label for="">Type</label>
+                                        <select name="tid" id="tid" class="form-control">
+                                          <option value="0">All Types</option>
+                                          <option value="1">Flat</option>
+                                          <option value="2">House</option>
+                                          <option value="5">Land</option>
+                                          <option value="3">Commercial Property</option>
+                                          <option value="6">Event Centre / Venue</option>
+                                        </select>
+                                      </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6 col-6 ">
+                                    <div class="form-group">
+                                        <label for="">Type</label>
+                                        <select name="tid" id="tid" class="form-control">
+                                          <option value="0">All Types</option>
+                                          <option value="1">Flat</option>
+                                          <option value="2">House</option>
+                                          <option value="5">Land</option>
+                                          <option value="3">Commercial Property</option>
+                                          <option value="6">Event Centre / Venue</option>
+                                        </select>
+                                      </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6 col-6 ">
+                                    <div class="form-group">
+                                        <label for="">Type</label>
+                                        <select name="tid" id="tid" class="form-control">
+                                          <option value="0">All Types</option>
+                                          <option value="1">Flat</option>
+                                          <option value="2">House</option>
+                                          <option value="5">Land</option>
+                                          <option value="3">Commercial Property</option>
+                                          <option value="6">Event Centre / Venue</option>
+                                        </select>
+                                      </div>
+                                </div>
+                              </div>
+                
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                              <input type="submit" value="submit" class="btn btn-primary form-control">
+                            </div>
+                          </div> -->
+
+
+
+                       </div>
+                     </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+         
+      </div>
+    </section>
+    
+     <section class="slide" style="margin-top: 10px;">
+        <p class="HomeContent__StyledParagraph-sc-10ww3i-1 cQYAME Text-sc-1vuq29o-0 dBvtnv">Recent Listings</p>
+        <div class="HomeContent__StyledLine-sc-10ww3i-0 jqYOHk"></div>
+       <div class="container" style="max-width: 1570px;">
+          <div class="top-content">
+              <div class="container-fluid">
+                  <div id="carousel-example" class="carousel slide" data-ride="carousel">
+                      <div class="carousel-inner row w-100 mx-auto" role="listbox">
+                          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active" >
+                                  <div class="pix-carousel">
+                                    <button data-test-id="CardSaveButton" class="saveHome hoverPulse pan  typeReversed" style="position: absolute; background: transperent; top: 10px; right: 12px; z-index: 2001000; font-size: 2em;">
+                                      <span class="stackIcons">
+                                        <i class="fa fa-heart"></i>
+                                        <i class="iconHeartEmpty typeReversed iconOnly"></i>
+                                      </span>
+                                    </button>
+                                    <a href="" class="titleLink">
+                                         <div class="overlay">
+                                           <div class="imagephoto" style="background-image: url(../../assets/lodges/98477100_1555893564.jpg)"></div>
+                                         </div> 
+                                         <div class="info">
+                                            <div class="h5 man pan typeEmphasize noWrap typeTruncate">$7,878</div>
+                                            <ul class="listInline typeTruncate mvn" style="min-height: 22px;"><li><i class="fa fa-bed"></i><!-- react-text: 1891 -->4bd<!-- /react-text --></li><li><i class="fa fa-bath"></i><!-- react-text: 1894 -->2.5<!-- /react-text --><!-- react-text: 1895 -->ba<!-- /react-text --></li><li><!-- react-text: 1897 -->2,240<!-- /react-text --><!-- react-text: 1898 --> <!-- /react-text --><!-- react-text: 1899 -->sqft<!-- /react-text --></li></ul>
+                                            <div class="noWrap typeTruncate typeLowlight">85 Sweetbrook Rd</div>
+                                            <div class="noWrap typeTruncate typeLowlight"><!-- react-text: 1902 -->Eltingville, <!-- /react-text --><!-- react-text: 1903 -->Staten Island<!-- /react-text --><!-- react-text: 1904 -->, <!-- /react-text --><!-- react-text: 1905 -->NY<!-- /react-text --></div>
+                                             <div class="vue">
+                                               <p>View</p>
+                                             </div>
+                                          </div>
+                                    </a>
+                                  </div>
+                          </div>
+                          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let lists of list">
+                            <div class="pix-carousel">
+                              <button data-test-id="CardSaveButton" class="saveHome hoverPulse pan  typeReversed" style="position: absolute; background: transperent; top: 10px; right: 12px; z-index: 2001000; font-size: 2em;">
+                                <span class="stackIcons">
+                                  <i class="fa fa-heart"></i>
+                                  <i class="iconHeartEmpty typeReversed iconOnly"></i>
+                                </span>
+                              </button>
+                              <a href="" class="titleLink">
+                                   <div class="overlay">
+                                     <div class="imagephoto" [style.background-image]="'url(' + lists.pix + ')'"></div>
+                                   </div> 
+                                   <div class="info">
+                                      <div class="h5 man pan typeEmphasize noWrap typeTruncate">${{lists.cost}}</div>
+                                      <ul class="listInline typeTruncate mvn" style="min-height: 22px;"><li><i class="fa fa-bed"></i>{{lists.bedroom}}bd</li><li><i class="fa fa-bath"></i>{{lists.bathroom}}ba</li><li>{{lists.TotalArea}}sqft</li></ul>
+                                      <div class="noWrap typeTruncate typeLowlight">{{lists.address}}</div>
+                                      <div class="noWrap typeTruncate typeLowlight">{{lists.state}},{{lists.Locality}},NG</div>
+                                       <div class="vue">
+                                         <p>View</p>
+                                       </div>
+                                    </div>
+                              </a>
+                            </div>
+                    </div>
+                          
+                      </div>
+                      <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                      </a>
+                  </div>
+              </div>
+          </div>
+       </div>
+      
+     </section>
+
+    <section class="services">
+      <div class="container" style="text-align: center; max-width: 1570px;">
+          <p class="HomeContent__StyledParagraph-sc-10ww3i-1 cQYAME Text-sc-1vuq29o-0 dBvtnv">We have the most listings and constant updates.<br> So you’ll never miss out.</p>
+          <div class="HomeContent__StyledLine-sc-10ww3i-0 jqYOHk"></div>
+          <div class="row">
+            <div class="col-md-3 trim">
+              <div class="card">
+                <div class="card__image-container">
+                  <img class="card__image" src="../../assets/images/buy.png" style="height: 253px;" alt="">
+               </div>
+                 
+                 <svg class="card__svg" viewBox="0 0 800 500">
+           
+                   <path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="transparent" fill="#fff"/>
+                   <path class="card__line" d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="pink" stroke-width="3" fill="transparent"/>
+                 </svg>
+               
+                <div class="card__content">
+                  <h4 class="card__title">BUY</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta dolor praesentium at quod autem omnis, amet eaque unde perspiciatis adipisci possimus quam facere illo et quisquam quia earum nesciunt porro.</p>
+               </div>
+               <a  class="button cta-n" routerLink="/logdes" >View options</a>
+             </div></div>
+            <div class="col-md-3 trim">
+                <div class="card">
+                    <div class="card__image-container">
+                      <img class="card__image" src="../../assets/images/sale.png" style="height: 253px;" alt="">
+                   </div>
+                     
+                     <svg class="card__svg" viewBox="0 0 800 500">
+               
+                       <path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="transparent" fill="#fff"/>
+                       <path class="card__line" d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="pink" stroke-width="3" fill="transparent"/>
+                     </svg>
+                   
+                    <div class="card__content">
+                      <h4 class="card__title">SALE</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta dolor praesentium at quod autem omnis, amet eaque unde perspiciatis adipisci possimus quam facere illo et quisquam quia earum nesciunt porro.</p>
+                   </div>
+                   <a  class="button cta-n" routerLink="/Offers" >View options</a>
+                 </div>
+            </div>
+            <div class="col-md-3 trim">
+                <div class="card">
+                    <div class="card__image-container">
+                      <img class="card__image" src="../../assets/images/rent.png"  alt="">
+                   </div>
+                     
+                     <svg class="card__svg" viewBox="0 0 800 500">
+               
+                       <path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="transparent" fill="#fff"/>
+                       <path class="card__line" d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="pink" stroke-width="3" fill="transparent"/>
+                     </svg>
+                   
+                    <div class="card__content">
+                      <h4 class="card__title">RENT</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta dolor praesentium at quod autem omnis, amet eaque unde perspiciatis adipisci possimus quam facere illo et quisquam quia earum nesciunt porro.</p>
+                   </div>
+                   <a  class="button cta-n" routerLink="/logdes" >View options</a>
+                 </div>
+            </div>
+            <div class="col-md-3 trim">
+                <div class="card">
+                    <div class="card__image-container">
+                      <img class="card__image" src="../../assets/images/roommate.png" alt="">
+                   </div>
+                     
+                     <svg class="card__svg" viewBox="0 0 800 500">
+               
+                       <path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="transparent" fill="#fff"/>
+                       <path class="card__line" d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="pink" stroke-width="3" fill="transparent"/>
+                     </svg>
+                   
+                    <div class="card__content">
+                      <h4 class="card__title">ROOM/FLAT MATES</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta dolor praesentium at quod autem omnis, amet eaque unde perspiciatis adipisci possimus quam facere illo et quisquam quia earum nesciunt porro.</p>
+                   </div>
+                   <a  class="button cta-n" routerLink="/roommates" >View options</a>
+                 </div>
+            </div>
+          </div>
+      </div>
+    </section>
+    
+</div>
+
+
+
+<router-outlet></router-outlet>
+

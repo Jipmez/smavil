@@ -1,0 +1,367 @@
+<div class="container-fluid">
+  <div class="dash-container">
+      <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+          <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+        </div>
+        <div class="row">
+            <div class="col-xl-3 col-md-6 mb-4">
+                <a routerLink="favour">
+                    <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Favorite property</div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                            </div>
+                            <div class="col-auto">
+                              <i class="fa fa-heart fa-2x text-gray-300"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>   
+                  </a>
+                
+              </div>
+              <div class="col-xl-3 col-md-6 mb-4" *ngIf="permit == 3 || permit == 4">
+                <a href="">
+                    <div class="card border-left-success shadow h-100 py-2">
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Subscribe</div>
+                            </div>
+                            <div class="col-auto">
+                              <i class="fa fa-credit-card fa-2x text-gray-300 text-success"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </a>
+              </div>
+                <div class="col-xl-3 col-md-6 mb-4" *ngIf="permit == 3 || permit == 4">
+                  <a href="" data-toggle="modal" data-target="#myModal">
+                      <div class="card border-left-success shadow h-100 py-2">
+                          <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                              <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Add Property</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">Upload your property</div>
+                              </div>
+                              <div class="col-auto">
+                                <i class="fa fa-plus fa-2x text-gray-300"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                  </a>
+                  </div>
+                  <div class="col-xl-3 col-md-6 mb-4" *ngIf="permit == 3 || permit == 4">
+                    <a routerLink="properties">
+                        <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card-body">
+                              <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                  <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total Property</div>
+                                  <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                </div>
+                                <div class="col-auto">
+                                  <i class="fa fa-align-center fa-2x text-gray-300"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </a>
+                    </div>
+        </div>
+
+        <div class="row pro_all">
+          <div class="col-md-6" >
+            <div class="row">
+                <div class="col-md-6" *ngIf="permit == 3 || permit == 4">
+                <div class="col-md-12">
+                  <div class="card shadow">
+                    <div class="card-body swt">
+                      <div class="stat-widget">
+                          <div class="stat-icon dib "><i class="fa fa-info text-success border-success"></i></div>
+                          <div class="stat-content dib">
+                              <div class="stat-text">Total Feature</div>
+                              <div class="stat-digit">1,012</div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body swt">
+                          <div class="stat-widget">
+                              <div class="stat-icon dib "><i class="fa fa-bolt text-success border-success"></i></div>
+                              <div class="stat-content dib">
+                                  <div class="stat-text">Total Boosts</div>
+                                  <div class="stat-digit">1,012</div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="card shadow">
+                        <div class="card-body swt">
+                          <div class="stat-widget">
+                              <div class="stat-icon dib "><i class="fa fa-money text-success border-success"></i></div>
+                              <div class="stat-content dib">
+                                  <div class="stat-text">Total Profit</div>
+                                  <div class="stat-digit">1,012</div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+              </div>
+                <div class="col-md-6" >
+                 <div class="card shadow">
+                   <div class="twt-card blue-bg">
+                      <div class="corner-ribon black-ribon">
+                          <i class="fa fa-user"></i>
+                      </div>
+                      <div class="fa fa-user wtt-mark"></div>
+                      <div class="media">
+                          <a href="../../assets/lodges/53814700_1555903252.jpg">
+                              <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="../../assets/lodges/53814700_1555903252.jpg">
+                          </a>
+                          <div class="media-body">
+                              <h2 class="text-white display-6">Jim Doe</h2>
+                              <p class="text-light">Real estate Agent</p>
+                          </div>
+
+                      </div>
+                   </div>
+                   <div class="twt-category">
+                      <ul>
+                          <li class="active">
+                              <h5>750</h5>
+                              {{profile['boosts']}}
+                          </li>
+                          <li>
+                              <h5>865</h5>
+                              Following
+                          </li>
+                          <li>
+                              <h5>3645</h5>
+                              Followers
+                          </li>
+                      </ul>
+                   </div>
+                   <footer class="twt-footer">
+                      <a href="https://colorlib.com/polygon/sufee/index.html#"><i class="fa fa-map-marker"></i></a>
+                      New Castle, UK
+                      <span class="pull-right">
+                          32
+                      </span>
+                  </footer>
+                 </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+              <div class="card">
+                  <div class="card-header">
+                      <!-- Title -->
+                      <h5 class="h3 mb-0">Recent Matches</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush list my--3">
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <!-- Avatar -->
+                                  <a href="#" class="avatar rounded-circle">
+                                    <img alt="Image placeholder" src="/img/theme/team-1.jpg">
+                                  </a>
+                                </div>
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">John Michael</a>
+                                  </h4>
+                                  <span class="text-success">●</span>
+                                  <small>Online</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Add</button>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <!-- Avatar -->
+                                  <a href="#" class="avatar rounded-circle">
+                                    <img alt="Image placeholder" src="/img/theme/team-2.jpg">
+                                  </a>
+                                </div>
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">Alex Smith</a>
+                                  </h4>
+                                  <span class="text-warning">●</span>
+                                  <small>In a meeting</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Add</button>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <!-- Avatar -->
+                                  <a href="#" class="avatar rounded-circle">
+                                    <img alt="Image placeholder" src="/img/theme/team-3.jpg">
+                                  </a>
+                                </div>
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">Samantha Ivy</a>
+                                  </h4>
+                                  <span class="text-danger">●</span>
+                                  <small>Offline</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Add</button>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <!-- Avatar -->
+                                  <a href="#" class="avatar rounded-circle">
+                                    <img alt="Image placeholder" src="/img/theme/team-4.jpg">
+                                  </a>
+                                </div>
+                                <div class="col ml--2">
+                                  <h4 class="mb-0">
+                                    <a href="#!">John Michael</a>
+                                  </h4>
+                                  <span class="text-success">●</span>
+                                  <small>Online</small>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-sm btn-primary">Add</button>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                    </div>
+              </div>
+          </div>
+        </div>
+       
+     
+</div>
+
+
+<div class="modal" id="myModal" *ngIf="permit == 3 || permit == 4">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <div class="Modal-header-text">Edit Property</div>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form (ngSubmit)="prop(ad)"  #ad='ngForm'>
+          <div class="addproperty">
+              <div class="SpacerRow">
+                <div class="Autocomplete AddPropertyModal-col AddPropertyModal-autocomplete-col">
+                  <div class="Autocomplete-InputContainer">
+                    <div>
+                      <label class="Label">Property address</label>
+                      <div class="Input-container">
+                        <input class="form-control" ngModel name="address" type="text" placeholder="Property address" required value="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="SpacerRow">
+                  <div class="Autocomplete AddPropertyModal-col AddPropertyModal-autocomplete-col">
+                    <div class="Autocomplete-InputContainer">
+                      <div>
+                        <label class="Label">Property address</label>
+                        <div class="Input-container">
+                            <select name="" ngModel name="category" required class="form-control" id="">
+                                <option value="" selected disabled>-- Rent/Sale -- </option>
+                                <option value="1">Rent</option>
+                                <option value="2">Sale</option>
+                              </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="SpacerRow">
+                    <div class="Autocomplete AddPropertyModal-col AddPropertyModal-autocomplete-col">
+                      <div class="Autocomplete-InputContainer">
+                        <div>
+                          <label class="Label">Property address</label>
+                          <div class="Input-container">
+                            <select name="type" ngModel required class="form-control" id="">
+                              <option value=""> -- Property Type -- </option>
+                              <option value="1">House</option>
+                              <option value="2">Condo / Apartment</option>
+                              <option value="3">Land</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="SpacerRow">
+                      <div class="Autocomplete AddPropertyModal-col AddPropertyModal-autocomplete-col">
+                        <div class="Autocomplete-InputContainer">
+                          <div>
+                            <label class="Label">Property address</label>
+                            <div class="Input-container">
+                              <input type="checkbox" name="" id="">
+                              jfbcvyyb
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="SpacerRow">
+                        <div class="Autocomplete AddPropertyModal-col AddPropertyModal-autocomplete-col">
+                          <div class="Autocomplete-InputContainer">
+                            <div>
+                             
+                              <div class="Input-container">
+                                <input type="submit" value="add property" [disabled]="!ad.valid" class="btn btn-primary form-control">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+          </div>
+
+        </form>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" id="te" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>

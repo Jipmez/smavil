@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="col-md-12">
+    <div class="users">
+      <div class="row">
+        <div class="user-wrap col-md-4" *ngFor="let lists of list">
+            <div class="user">
+              <a href="" class="user-link">
+                <div class="user-image-wrap">
+                  <div class="user-image">
+                    <img alt="Searching for roommates in Central Austin" src="https://s3.us-west-2.amazonaws.com/diggz-pron/assets/92675/small/72CB4E7E-D272-4345-8ADF-13DF281FB10A.webp?1564139076" data-original="https://s3.us-west-2.amazonaws.com/diggz-pron/assets/92675/small/72CB4E7E-D272-4345-8ADF-13DF281FB10A.webp?1564139076" style="display: block;">
+                  </div>
+                  <div class="user-actions">
+                    <button class="button tiny" data-uncompleted-modal="true" name="button" type="submit">
+                      <i class="fa fa-thumbs-down"></i>
+                    </button>    
+                    <a class="button tiny open-send-message-modal js-open-send-message-modal" routerLink="../profile_view/{{lists.Reg_id}}">
+                      <span class="icon-chat-2"></span>
+                     <span>Profile</span>
+                    </a>
+                    <button class="button tiny right-position" data-uncompleted-modal="true" name="button" type="submit">
+                      <i class="fa fa-thumbs-up"></i>
+                   </button>
+                  </div>
+                </div>
+              </a>
+              <span class="user-title-wrap">
+                <a class="user-title" href="/users/us_519d3d" target="_blank">{{lists.Name}}</a>
+        
+                  <img alt="Home" class="fb-verification-icon" height="16" src="/assets/home-icon-32-1f85af999632bd0e42ea9ec261e42115.png" title="Room for rent Available" width="16">
+        
+              </span>
+              <span class="meta"><b>${{lists.Budget}}</b> - {{lists.Age}}  - Central Austin</span>
+              <span class="meta">&nbsp;</span>
+            </div>
+          </div>
+          </div>
+    </div>
+  </div>
+</div>

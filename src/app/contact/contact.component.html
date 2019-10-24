@@ -1,0 +1,118 @@
+<header class="header">
+  <div class="logo">Logo</div>
+  <div class="nav-wrapper">
+      <nav class="user-nav" id="user-nav">
+          <a class="submit-a-request"  (click)="redirectTo('/contact/desk/smartvil')">Submit a request</a>
+        </nav>
+      <span class="icon-menu" tabindex="0" role="button" aria-controls="user-nav" aria-expanded="false" aria-label="Toggle navigation menu"></span>
+      <a class="login" data-auth-action="signin" role="button" href="">Sign in</a>
+  </div>
+</header>
+<div class="main">
+    <div class="container-divider"></div>
+    <div class="container">
+      <div class="nav sub-nav">
+          <ol class="breadcrumbs">
+              <li title="Zillow Help Center">
+                  <a (click)="redirectTo('/contact/desk/smartvil')">Smartvil Help Center</a>
+              </li>
+              <li title="Submit a request">
+                  Submit a request
+              </li>
+          </ol>
+      </div>
+        <h1>
+          Submit a request
+        </h1>
+      <div class="form">
+        <form (ngSubmit)='desk(ds)'  #ds='ngForm' class="request-form">
+          <div class="form-field">
+              <label for="request_issue_type_select">Please tell us who you are</label>
+              <select   name="request_id" class="form-control" id="" (change)="open($event.target.value)" required>
+                <option value="" disabled >-</option>
+                <option value="9440"  [attr.selected]="this.id == 9440 ? true : null">Consumer</option>
+                <option value="3420" [attr.selected]="this.id == 3420 ? true : null">Real Estate Professional</option>
+                <option value="6380"[attr.selected]="this.id == 6380 ? true : null">Property Manager</option>
+                <option value="4"></option>
+              </select>
+          </div>
+          <div class="">
+              <div class="form-field requierd email"  *ngIf="this.new == 'new'" >
+                  <label for="request_anonymous_requester_email">Your email address</label>
+                  <input type="text" class="form-control" required ngModel name="email" id="request_anonymous_requester_email" aria-required="true">
+              </div>
+              <div class="form-field string  requierd  request_subject" *ngIf="this.new == 'new'">
+                  <label id="request_subject_label" for="request_subject">Subject</label>
+                  <input type="text" class="form-control" required  ngModel name="subject" id="request_subject" maxlength="150" size="150" aria-required="true" aria-labelledby="request_subject_label">
+                </div>
+                <div class="form-field text  requierd  request_description" *ngIf="this.new == 'new'">
+                    <label id="request_description_label" for="request_description">Description</label>
+                    <textarea class="form-control" required ngModel name="description" id="request_description"></textarea>
+                    <p id="request_description_hint">Please enter the details of your request. A member of our support staff will respond as soon as possible.</p>
+                  </div>
+                  <div class="form-field " id='consumer' *ngIf="this.new == 'new' && this.id == '9440'">
+                      <label >Issue Type</label>
+                      <select ngModel name="purpose" class="form-control" id="" required>
+                        <option value="" selected disabled>-</option>
+                        <option value="Rental_listing">Rental Listing</option>
+                        <option value="Issues_profile">issues About My Profile</option>
+                        <option value="Issues_home">Issues About My Home</option>
+                        <option value="Scam/Fraud">Scam/Fraud</option>
+                        <option value="Complaint">Complaints</option>
+                        <option value="Suggestion">Suggestions</option>
+                      </select>
+                  </div>
+                  <div class="form-field " id='estateP' *ngIf="this.new == 'new' && this.id == '3420'">
+                      <label id="request_custom_fields_22813790_label" for="request_custom_fields_22813790">What can we help you with today</label>
+                      <select name="purpose" ngModel required class="form-control" id="">
+                          <option value="" selected disabled>-</option>
+                          <option value="Advertsing/Billing">Advertising/Billing</option>
+                          <option value="Listing">Listings</option>
+                          <option value="Sales">Sales</option>
+                          <option value="Issues_profile">Profiles</option>
+                          <option value="Reviews">Reviews</option>
+                          <option value="Compliant">Complaints</option>
+                          <option value="Suggestion">Suggestions</option>
+                      </select>
+                  </div>
+                  <div class="form-field propertyM" id='' *ngIf="this.new == 'new' && this.id == '6380'">
+                      <label >I need help with</label>
+                      <select name="purpose" ngModel required class="form-control" id="">
+                          <option value="" selected disabled>-</option>
+                          <option value="Edit_listing">Edit My Listing</option>
+                          <option value="Edit_listing_address">Edit My listing Address</option>
+                          <option value="Resset_password">Resseting My password</option>
+                          <option value="Issues_profile">Profiles</option>
+                          <option value="Other">Other</option>
+                          <option value="Compliant">Complaints</option>
+                          <option value="Suggestion">Suggestions</option>
+                      </select>
+                  </div>
+                  <div class="form-field propertyM" id='' *ngIf="this.new == 'new' && this.id == '6380'">
+                      <label for="request_anonymous_requester_email" >Your email address</label>
+                      <input type="text" class="form-control" ngModel name="emailNul">
+                      <p>Do you have a preferred contact email other than your email address. </p>
+                  </div>
+                  <div class="form-field propertyM" id='' *ngIf="this.new == 'new' && this.id == '6380'">
+                      <label id="request_custom_fields_28851968_label" for="request_custom_fields_28851968">Listing Address</label>
+                      <input type="text" class="form-control" ngModel name="listing_address">
+                      <p id="">If applicable, what is the address of the listing this is referring to? A link to the listing is also helpful. </p>
+                    </div>
+                    <div class="form-field propertyM"  id='' *ngIf="this.new == 'new' && this.id == '6380'">
+                        <label  for="">Property Type</label>
+                        <select ngModel name="property_type" class="form-control" id="">
+                            <option value="" selected disabled>-</option>
+                            <option value="1">Apartment/lodges</option>
+                            <option value="2">Family House</option>
+                            <option value="3">Condo</option>
+                            <option value="4">Land</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                      <input type="submit" value="Submit" [disabled]="!ds.valid" class="btn btn-primary form-control" *ngIf="this.new == 'new'">
+                    </div>
+          </div>
+        </form>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,331 @@
+
+
+<div class="container-fluid">
+  <div class="container cont">
+    <div class="wrapper" *ngFor ="let lists of list">
+      <div class="photo-container">
+          <div class="rp-pic set-bg">
+            <img [src]="lists.pix" alt="">
+            <img *ngIf="lists.pix == ''" src="../../assets/images/service-bg.jpg" alt="">
+              <div class="sale-notic" >FOR SALE</div>
+              <div class="rent-notic" *ngIf = 'lists.category == "Rent"'>FOR Rent</div> 
+            </div>
+        </div>
+  
+        <div class="tabs" data-tab="true">
+     
+      
+  <div class="tab-list">
+      <ul class="row nav nav-pills">
+        <li class="col-md-4 col-4 nav-item">
+          <a class="nav-link active" data-toggle="pill" href="#home">Home</a>
+        </li>
+        <li class="col-md-4 col-4 nav-item">
+            <a class="nav-link" data-toggle="pill" href="#menu1">Menu 1</a>
+          </li>
+          <li class="col-md-4 col-4 nav-item">
+            <a class="nav-link" data-toggle="pill" href="#menu2">Menu 2</a>
+          </li>
+      </ul>
+  </div>
+  
+      <div class="tab-content">
+          <div id="home" class="tab-pane active">
+              <form (ngSubmit)= "AddP(ad)"   #ad ='ngForm'>
+                  <div id="home" class="container-fluid tab-pane active"><br>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="wp-block default user-form no-margin">
+                
+                          <div class="form-header">
+                            <h2>Details and Description</h2>
+                          </div>
+                            <div class="form-body">
+                                <fieldset>
+                                  <div class="row">
+                                       <div class="col-md-6 col-sm-6 col-xs-12">
+                                          <div class="form-check-inline">
+                                                <label class="form-check-label">
+                                                  <input type="radio" class="form-check-input" ngModel name="optradio" value='1' required >publish
+                                                </label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label">
+                                                <input type="radio" class="form-check-input" ngModel name="optradio" value='2'  required >Unpublish
+                                                </label>
+                                            </div>  
+                                        </div>
+                                        <div class="col-sm-6  col-md-6 col-xs-12"> 
+                                          <input type="button" value="feature" (click)="feature(lists.propertyID)">
+                                          <input type="button" value="boost" (click)="boost(lists.propertyID)">
+                                          <button>oeo</button>
+                                        </div>
+                                  </div>
+                                </fieldset>
+                
+                                    <fieldset>
+                                      <div class="row">
+                                          <div class="col-md-12">
+                                              <div class="row">
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                  <div class="form-group">
+                                                    <label for="usr">Title</label>
+                                                    <input type="text" class="form-control" ngModel name='title' [placeholder]="lists.title" required id="usr">
+                                                  </div>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                  <div class="form-group">
+                                                    <label for="sel1">Market Status</label>
+                                                    <select class="form-control" ngModel name="marketS" id="sel1" required>
+                                                        <option selected value='' disabled> -- Market Staus --</option>
+                                                        <option value="Available">Available</option>
+                                                          <option value="Leased">Leased</option>
+                                                          <option value="Sold">Sold</option>
+                                                    </select>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                    </fieldset>
+                
+                                    <fieldset>
+                                      <div class="row">
+                                        <div class="col-md-12 col-sm-6 col-xs-12">
+                                          <div class="form-group">
+                                            <label for="sel1">Category</label>
+                                            <select class="form-control" ngModel name="category" id="sel1" required>
+                                              <option selected value='' disabled> -- For Sale / Rent --</option>
+                                              <option value="1">Sale</option>
+                                              <option value="2">Rent</option>
+                                            </select>
+                                          </div>
+                                        </div>
+                                         
+                                      </div>
+                                    </fieldset>
+                
+                                    <fieldset>
+                                      <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                          <div class="form-group">
+                                            <label for="sel1">State:</label>
+                                            <select class="form-control" ngModel name="state" id="sel1" required (change)="getLocal($event.target.value)">
+                                                <option  selected value="" disabled > -- state --</option>
+                                                <option *ngFor ="let states of state"  [ngValue]='states.state_id' >{{states.name}}</option>
+                                            </select> 
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                          <div class="form-group">
+                                            <label for="sel1">Locality:</label>
+                                              <select class="form-control" ngModel name="Locality" id="sel1" required>
+                                              <option selected value="" disabled> -- Locality --</option>
+                                              <option *ngFor ="let locals of local" [ngValue]="locals.local_name">{{locals.local_name}} </option>
+                                            </select>  
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </fieldset>
+                 
+                                    <fieldset>
+                                      <div class="row">
+                                        <div class="col-md-12 col-sm-6 col-xs-12">
+                                          <div class="form-group">
+                                            <label for="usr">Street/Road:</label>
+                                            <input type="text" [value]="lists.street" class="form-control" ngModel name="Street" id="usr" required>
+                                          </div>
+                                        </div>
+
+                                       
+                                      </div>
+                                    </fieldset>
+                
+                                    <fieldset>
+                                          <div class="row">
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                              <div class="form-group">
+                                                <label for="sel1">Price:</label>
+                                                <input type="text" [value]="lists.cost" class="form-control" ngModel name="price"  required>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-4 col-xs-12" id="mtr" *ngIf="lists.Type != 3">
+                                              <div class="form-group">
+                                                <label for="sel1">Bedroom:</label>
+                                                <input type="number" [value]="lists.bedroom" ngModel name="Bedroom"  required id="" class="form-control">
+                                              </div>
+                                            </div>
+                                          </div>
+                                    </fieldset>
+
+                                    <fieldset *ngIf="lists.Type != 3">
+                                      <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12" >
+                                          <div class="form-group">
+                                            <label for="sel1">Toilets:</label>
+                                            <input type="number" class="form-control" ngModel name="Toilets" [value]="lists.street" required>
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-4 col-xs-12" id="mtr">
+                                          <div class="form-group">
+                                            <label for="sel1">Bathroom:</label>
+                                            <input type="number" ngModel name="Bathrooms" [value]="lists.bathroom" required id="" class="form-control">
+                                          </div>
+                                        </div>
+                                      </div>
+                                </fieldset>
+
+                                <fieldset>
+                                  <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-12" *ngIf="lists.Type != 3">
+                                      <div class="form-group">
+                                        <label for="sel1">Parking:</label>
+                                        <input type="number" ngModel name="Parking" id="" [value]="lists.Parking" required class="form-control">
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-4 col-xs-12" id="mtr">
+                                      <div class="form-group">
+                                        <label for="sel1">Total Area:</label>
+                                        <input type="number" ngModel name="TotalArea" required id="" [value] = "lists.TotalArea" class="form-control">
+                                      </div>
+                                    </div>
+                                  </div>
+                            </fieldset>
+
+                            <fieldset *ngIf="lists.Type != 3">
+                              <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                  <div class="form-group">
+                                    <label for="sel1">Room dimension:</label>
+                                    <input type="number" ngModel name="romsize"  required id="" [value]= "lists.rmsize" class="form-control">
+                                  </div>
+                                </div>
+                                <div class="col-md-6 col-sm-4 col-xs-12" id="mtr">
+                                  <div class="form-group">
+                                    <label for="sel1">Total Area:</label>
+                                    <input type="number" ngModel name="TotalArea" required id="" [value] = "lists.TotalArea" class="form-control">
+                                  </div>
+                                </div>
+                              </div>
+                        </fieldset>
+
+                    <fieldset *ngIf="lists.Type != 3">
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div class="form-group">
+                            <label for="sel1">Amenities</label>
+                            <div class="HR PostingPath-amenities-HR"></div>
+                            <label class="checkbox">
+                              <input type="checkbox" value="1" ngModel name="furnished" id="furnished"> 
+                              <i></i> A/C
+                            </label> 
+                            <label class="checkbox">
+                              <input type="checkbox" value="1" ngModel name="furnished" id="furnished"> 
+                              <i></i> A/C
+                            </label> 
+                            <label class="checkbox">
+                              <input type="checkbox" value="1" ngModel name="furnished" id="furnished"> 
+                              <i></i> A/C
+                            </label> 
+                            <div class="checkbox">
+                              <input type="checkbox" value="1" ngModel name="furnished" id="furnished"> 
+                              <i></i> A/C
+                            </div> 
+                          </div>
+                        </div>
+                        <div class="col-md-6 col-sm-4 col-xs-12" id="mtr">
+                          <div class="form-group">
+                            <label for="sel1">Total Area:</label>
+                            <input type="number" ngModel name="TotalArea" required id="" [value] = "lists.TotalArea" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                </fieldset>
+                
+                                    
+                                    <fieldset>
+                                      <div class="row">
+                                          <div class="col-md-12">
+                                              <div class="wp-block default user-form no-margin">
+                                      <div class="form-header">
+                                          <h4>Add property photo <small>(not more than 5 pictures)</small></h4>
+                                       </div>
+                                        <form>
+                                      <div class="col-md-12 well">
+                                         
+                                          <hr style="border-top:1px dotted #ccc;"/>
+                                          <div class="row">
+                                              <div class="col-md-2">
+                                              <div class="form-inline">
+                                                  <input type="file" class="form-control" id="mediaFile" #mediaFile multiple  (change)="handlePic($event)" required >
+                                                 
+                                                  </div>
+                                              </div>
+                                              </div>
+                                  
+                                          <br />
+                                          <div class="alert alert-info">My Gallery</div>
+                              
+                                          <div class="row">
+                                            
+                                          <div class="col-sm-3" *ngFor='let url of urls'>
+                                            <img [src]="url" alt="" height="200">
+                                          </div>
+                                            
+                                          </div>
+                                          <button type="submit"  (click)="sub()">Add picture</button>
+                                          
+                                      </div>
+                                      </form>
+                                      </div>
+                                      </div>
+                                      </div>
+                                    </fieldset>
+
+                                    <fieldset>
+                                      <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                          <div class="form-group">
+                                            <label class="label">YouTube Video Link</label> 
+                                              <input type="url" ngModel name="video" id="video" placeholder="e.g. https://www.youtube.com/watch?v=xxxxxxxx" class="form-control" value=""> 
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-4 col-xs-12" id="mtr">
+                                          <div class="form-group">
+                                            <label class="label">Description</label> 
+                                            <editor rows="4" apiKey="test" ngModel name="discription" class="form-control" required  [init]="{plugins: 'link'}"></editor>
+                                         <!--   <textarea rows="4" ngModel name="discription" id="text" class="form-control" required placeholder=""></textarea> -->
+                                          </div>
+                                        </div>
+                                      </div>
+                                </fieldset>
+                                   
+                                <button type="submit"  >mcriji</button>
+                                  </div>
+                         </div>                        
+                       </div>
+                     </div>
+                   </div>
+                 </form>
+           
+          </div>
+  
+  
+  
+  
+          <div id="menu1" class="container tab-pane fade"><br>
+            <h3>Menu 1</h3>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <div id="menu2" class="container tab-pane fade"><br>
+            <h3>Menu 2</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+          </div>
+        </div>
+  
+        </div>
+      </div>
+    </div>
+  
+</div>
+

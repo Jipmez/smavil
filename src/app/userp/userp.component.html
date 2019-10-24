@@ -1,0 +1,399 @@
+<!-- <div class="container-fluid">
+  <div class="container cont">
+    <div class="wrapper">
+      <div class="photo-container">
+          <div class="rp-pic set-bg">
+          
+            </div>
+        </div>
+  
+        <div class="tabs" data-tab="true">
+      <div class="tab-list">
+          <ul class="nav nav-pills">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="pill" href="#home">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#menu1">Edit Profile</a>
+              </li>
+            </ul>
+      </div>
+  
+      <div class="tab-content">
+          <div id="home" class="container tab-pane active"><br>
+            <h3>Profile</h3>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <div id="menu1" class="tab-pane fade">
+              <form (ngSubmit)= "AddP(ad)"   #ad ='ngForm'>
+                  <div id="home" class="container-fluid tab-pane active"><br>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="wp-block default user-form no-margin">
+                
+                          <div class="form-header">
+                            <h2>Edit your profile</h2>
+                          </div>
+                            <div class="form-body">
+                                    <fieldset>
+                                      <div class="row">
+                                          <div class="col-md-12">
+                                              <div class="row">
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                  <div class="form-group">
+                                                    <label for="usr">Name</label>
+                                                    <input type="text" class="form-control" ngModel name='name' id="usr">
+                                                  </div>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                  <div class="form-group">
+                                                    <label for="sel1">Company Name</label>
+                                                    <input type="text" class="form-control" ngModel name='Cname'  id="usr">
+                                                  </div>
+                                                </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                    </fieldset>
+                
+                                    <fieldset>
+                                      <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                          <div class="form-group">
+                                            <label for="sel1">State</label>
+                                            <select class="form-control" ngModel name="state" id="sel1" >
+                                              <option selected value='' disabled> -- For Sale / Rent --</option>
+                                              <option value="1">Sale</option>
+                                              <option value="2">Rent</option>
+                                            </select>
+                                          </div>
+                                        </div>
+                                          <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                              <label for="sel1">Locality</label>
+                                              <select class="form-control" ngModel name="locality" id="sel1" >
+                                                  <option selected value="" disabled > -- Type -- </option>
+                                                  <option value="1">Sale</option>
+                                                  <option value="2">Rent</option>
+                                              </select>
+                                            </div>
+                                          </div> 
+                                      </div>
+                                    </fieldset>
+                
+                                    <fieldset>
+                                      <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                          <div class="form-group">
+                                            <label for="sel1">Phone:</label>
+                                            <input type="number" ngModel name="phone" class="form-control" id="">
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                          <div class="form-group">
+                                            <label for="sel1">Whatsapp:</label>
+                                            <input type="number" ngModel name="whatsapp" class="form-control" id="">
+                                          </div>
+                                        </div> 
+                                      </div>
+                                    </fieldset>
+                 
+                                    <fieldset>
+                                      <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+                                            <label for="usr">Street/Road:</label>
+                                            <input type="text" class="form-control" ngModel name="Street"  id="usr">
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </fieldset>
+                           
+                       <fieldset>
+                                      <div class="row">
+                                          <div class="col-md-12">
+                                              <div class="wp-block default user-form no-margin">
+                                      <div class="form-header">
+                                          <h4>Add property photo <small>(not more than 5 pictures)</small></h4>
+                                       </div>
+                                        <form>
+                                      <div class="col-md-12 well">
+                                         
+                                          <hr style="border-top:1px dotted #ccc;"/>
+                                          <div class="row">
+                                              <div class="col-md-2">
+                                              <div class="form-inline">
+                                                  <input type="file" class="form-control" id="mediaFile" #mediaFile   (change)="handlePic($event.target.files)" required >
+                                                 
+                                                  </div>
+                                              </div>
+                                              </div>
+                                  
+                                          <br />
+                                          <div class="alert alert-info">My Gallery</div>
+                              
+                                          <div class="row">
+                                            
+                                          <div class="col-sm-3">
+                                            <img [src]="imageUrl" alt="" height="200">
+                                          </div>
+                                            
+                                          </div>
+                                          <button type="submit"  (click)="sub()">Add picture</button>
+                                      </div>
+                                      </form>
+                                      </div>
+                                      </div>
+                                      </div>
+                                </fieldset>
+
+                                  <fieldset>
+                                      <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+                                            <label class="label">Website Link</label> 
+                                              <input type="url" ngModel name="website" id="video" placeholder="e.g. https://www.myrealty.com" class="form-control" value=""> 
+                                          </div>
+                                        </div>
+                                        
+                                      </div>
+                                </fieldset>
+                                   
+                                <button type="submit" [disabled] ='!ad.valid' >mcriji</button>
+                                  </div>
+                         </div>                        
+                       </div>
+                     </div>
+                   </div>
+                 </form>
+           
+          </div>
+  
+  
+          <div id="menu2" class="container tab-pane fade"><br>
+            <h3>Menu 2</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+          </div>
+        </div>
+  
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+ -->
+
+ <div class="container-fluid">
+   <div class="container">
+     <div class="row me">
+       <div class="col-md-12 col-sm-12 col-xs-12">
+         <div class="x_panel">
+           <div class="x_title">
+              <h2>
+                  User Profile <small>Profile</small>
+                </h2>
+                <div class="clearfix"></div>
+           </div>
+           <div class="x_content">
+              <div class="row">
+                 <div class="col-md-3 col-sm-3 col-xs-12 card">
+                     <div class="profile_img">
+                       <div id="crop-avatar">
+                           <img [src]="imageUrl" class="img-responsive" width="232px" height="232px" alt="">
+                       </div>
+                    </div>
+                    <h3>Samuel Doe</h3>
+                    <ul class="list-unstyled user_data">
+                       <li>
+                         <i class="fa fa-map-marker user-profile-icon"></i>
+                          San Francisco, California, USA
+                       </li>
+                       <li>
+                         <i class="fa fa-briefcase user-profile-icon"></i>
+                          Software Engineer
+                       </li>
+                       <li class="m-top-xs">
+                         <i class="fa fa-external-link user-profile-icon"></i>
+                           <a href="http://www.kimlabs.com/profile/" target="_blank">www.kimlabs.com</a>
+                       </li>
+                     </ul>
+                     <a class="btn btn-success"><i class="fa fa-edit m-right-xs"></i>Edit Profile</a>
+                     <br>
+                     <ul class="list-unstyled user_data">
+                       <li>
+                         <p>Web Applications</p>
+                          <div class="progress progress_sm">
+                         <div class="progress-bar bg-success" role="progressbar" data-transitiongoal="50" aria-valuenow="49" style="width: 50%;"></div>
+                         </div>
+                       </li>
+                       <li>
+                         <p>Website Design</p>
+                         <div class="progress progress_sm">
+                         <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="70" aria-valuenow="69" style="width: 70%;"></div>
+                         </div>
+                      </li>
+                       <li>
+                         <p>Automation &amp; Testing</p>
+                         <div class="progress progress_sm">
+                         <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="30" aria-valuenow="29" style="width: 30%;"></div>
+                         </div>
+                       </li>
+                        <li>
+                         <p>UI / UX</p>
+                         <div class="progress progress_sm">
+                         <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50" aria-valuenow="49" style="width: 50%;"></div>
+                         </div>
+                       </li>
+                   </ul>
+                 </div>
+                 <div class="col-md-9 col-sm-9 col-xs-12 card">
+                    <form (ngSubmit)= "AddP(ad)"   #ad ='ngForm'>
+                        <div id="home" class="container-fluid">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="wp-block default user-form no-margin">
+                                <div class="form-header">
+                                  <h2>Edit your profile</h2>
+                                </div>
+                                  <div class="form-body">
+                                          <fieldset>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                      <div class="col-md-6 col-sm-6 col-xs-12">
+                                                        <div class="form-group">
+                                                          <label for="usr">Name</label>
+                                                          <input type="text" class="form-control" ngModel name='name' id="usr">
+                                                        </div>
+                                                      </div>
+                                                      <div class="col-md-6 col-sm-6 col-xs-12">
+                                                        <div class="form-group">
+                                                          <label for="sel1">Company Name</label>
+                                                          <input type="text" class="form-control" ngModel name='Cname'  id="usr">
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                          </fieldset>
+                      
+                                          <fieldset>
+                                            <div class="row">
+                                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                  <label for="sel1">State</label>
+                                                  <select class="form-control" ngModel name="state" id="sel1" >
+                                                    <option selected value='' disabled> -- For Sale / Rent --</option>
+                                                    <option value="1">Sale</option>
+                                                    <option value="2">Rent</option>
+                                                  </select>
+                                                </div>
+                                              </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                  <div class="form-group">
+                                                    <label for="sel1">Locality</label>
+                                                    <select class="form-control" ngModel name="locality" id="sel1" >
+                                                        <option selected value="" disabled > -- Type -- </option>
+                                                        <option value="1">Sale</option>
+                                                        <option value="2">Rent</option>
+                                                    </select>
+                                                  </div>
+                                                </div> 
+                                            </div>
+                                          </fieldset>
+                      
+                                          <fieldset>
+                                            <div class="row">
+                                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                  <label for="sel1">Phone:</label>
+                                                  <input type="number" ngModel name="phone" class="form-control" id="">
+                                                </div>
+                                              </div>
+                                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                  <label for="sel1">Whatsapp:</label>
+                                                  <input type="number" ngModel name="whatsapp" class="form-control" id="">
+                                                </div>
+                                              </div> 
+                                            </div>
+                                          </fieldset>
+                       
+                                          <fieldset>
+                                            <div class="row">
+                                              <div class="col-md-12 col-sm-12 col-xs-12">
+                                                <div class="form-group">
+                                                  <label for="usr">Street/Road:</label>
+                                                  <input type="text" class="form-control" ngModel name="Street"  id="usr">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </fieldset>
+                                 
+                             <fieldset>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="wp-block default user-form no-margin">
+                                            <div class="form-header">
+                                                <h4>Add property photo <small>(not more than 5 pictures)</small></h4>
+                                             </div>
+                                              <form>
+                                            <div class="col-md-12 well">
+                                               
+                                                <hr style="border-top:1px dotted #ccc;"/>
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                    <div class="form-inline">
+                                                        <input type="file" class="form-control" id="mediaFile" #mediaFile   (change)="handlePic($event.target.files)" required >
+                                                       
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                        
+                                                <br />
+                                                <div class="alert alert-info">My Gallery</div>
+                                    
+                                                <div class="row">
+                                                  
+                                                <div class="col-sm-3">
+                                                  <img [src]="imageUrl" alt="" height="200">
+                                                </div>
+                                                  
+                                                </div>
+                                                <button type="submit"  (click)="sub()">Add picture</button>
+                                            </div>
+                                            </form>
+                                            </div>
+                                            </div>
+                                            </div>
+                                      </fieldset>
+      
+                                        <fieldset>
+                                            <div class="row">
+                                              <div class="col-md-12 col-sm-12 col-xs-12">
+                                                <div class="form-group">
+                                                  <label class="label">Website Link</label> 
+                                                    <input type="url" ngModel name="website" id="video" placeholder="e.g. https://www.myrealty.com" class="form-control" value=""> 
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+                                      </fieldset>
+                                         
+                                      <button type="submit" [disabled] ='!ad.valid' >mcriji</button>
+                                        </div>
+                               </div>                        
+                             </div>
+                           </div>
+                         </div>
+                       </form>
+                 </div>
+              </div>
+              
+            </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>

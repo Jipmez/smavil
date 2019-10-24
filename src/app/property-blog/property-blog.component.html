@@ -1,0 +1,105 @@
+<div id="preloder">
+    <div class="loader"></div>
+  </div>
+  <div class="wrapper">
+      <section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg" style="background-image: url('../../assets/images/page-top-bg.jpg')">
+        <div class="container text-white">
+          <h2>Logde Listings</h2>
+        </div>
+      </section>
+
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="index.php">Home</a>
+          </li>
+          <li class="breadcrumb-item active">Blog</li>
+        </ol>
+
+        <section class="main-content">
+          <div class="container-fluid">
+              <h3 class="tittle">Blog Posts</h3>
+              <div class="row inner-section">
+                <div class="col-md-9">
+                  <div class="row">
+                    <div class="col-md-4" *ngFor="let blogs of blog">
+                          <div class="blog-card spring-fever">
+                              <div class="title-content">
+                                <h3>{{blogs.title}}</h3>
+                                <hr />
+                                <div class="intro">Yllamco laboris nisi ut aliquip ex ea commodo.</div>
+                              </div><!-- /.title-content -->
+                              <div class="card-info">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim. 
+                              </div><!-- /.card-info -->
+                              <div class="utility-info">
+                                <ul class="utility-list">
+                                  <li class="comments">{{blogs.tags}}</li>
+                                  <li class="date">{{blogs.date}}</li>
+                                  <li class="author">{{blogs.author}}</li>
+                                </ul>
+                              </div>
+                            </div><!-- /.blog-card -->
+                            
+                            
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="right-blog-info text-left">
+                      <div class="tech-btm widget_social">
+                          <h4>Stay Connected</h4>
+                          <ul>
+            
+                            <li>
+                              <a class="twitter" href="http://www.twitter.com">
+                                <i class="fa fa-twitter"></i>
+                                <span class="count"></span> Twitter</a>
+                              </li>
+                              <li>
+                                <a class="facebook" href="http://www.facebook.com">
+                                  <i class="fa fa-facebook-f"></i>
+                                  <span class="count"></span> Facebook</a>
+                                </li>
+                                <li>
+                                  <a class="dribble" href="http://www.dribble.com">
+                                    <i class="fa fa-dribbble"></i>
+            
+                                    <span class="count"></span> Dribble</a>
+                                  </li>
+                                  <li>
+                                    <a class="pin" href="http://www.pinterest.com">
+                                      <i class="fa fa-pinterest"></i>
+                                      <span class="count"></span> Pinterest</a>
+                                    </li>
+            
+                                  </ul>
+                                </div>
+                          <div class="tech-btm">
+                              <h4>Older Posts</h4>
+                              <div class="blog-grids row mb-3" *ngFor="let olds of old">
+                                <div class="col-md-5 col-5 blog-grid-left">
+                                  <a href="single.php?id=2">
+                                    <img src="../../assets/lodges/84762700_1555893876.jpg" class="img-fluid" alt="fantastic cms">
+                                  </a>
+                                </div>
+                                  <div class="col-md-7 col-7 blog-grid-right">
+                                  <h5>
+                                  <a href="single.php?id=2">{{olds.title}}</a>
+                                  </h5>
+                                  <div class="sub-meta">
+                                  <span>
+                                  <i class="fa fa-clock-o"></i>{{olds.date}}</span>
+                                  </div>
+                                  </div>
+                            
+                                </div>
+                          </div>      
+                  </div>
+                </div>
+              </div>
+          </div>
+        </section>
+  </div>
+  
+  

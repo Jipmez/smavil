@@ -1,0 +1,49 @@
+<div class="container-fluid">
+    <div class="panel panel-default panel-sidebar-1">
+      <div class="panel-heading">
+        <h2>Subscription History</h2>
+      </div>
+      <div class="table-responsive">
+        <table class="table f12 sub-history">
+          <tbody>
+            <tr>
+              <th>Subscription Period</th>
+              <th>Payment Date</th>
+              <th>Payment Method</th>
+              <th>Plan</th>
+              <th>Max. Listings</th>
+              <th>Max. Featured</th>
+              <th>Max. Boosts</th>
+              <th>Price</th>
+              <th>Paid</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+            <tr class="" *ngFor="let Subs of Sub">
+              <td>{{Subs.subscription_period}}</td>
+              <td>{{Subs.payment_date}}</td>
+              <td *ngIf="Subs.payment_method =='1'">Online (Paystack)</td>
+              <td *ngIf="Subs.payment_method =='2'">Online (Bitcoin)</td>
+              <td *ngIf="Subs.payment_method =='3'">Bank payment</td>
+              <td *ngIf="Subs.plan =='1'"><strong>Standard</strong></td>
+              <td *ngIf="Subs.plan =='2'"><strong>Medium</strong></td>
+              <td *ngIf="Subs.plan =='3'"><strong>Premuim</strong></td>
+              <td>{{Subs.max_listing}}</td>
+              <td>{{Subs.max_feature}}</td>
+              <td>{{Subs.max_boost}}</td>
+              <td>₦{{Subs.amount}}</td>
+              <td class="text-success">₦{{Subs.amount}}</td>
+              <td *ngIf="Subs.status == '0' else paid "><span class="text-danger">Payment Failed</span></td>
+              <ng-template #paid>
+                <td class="text-success">Payment Successful</td>
+              </ng-template>
+              
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <a href="https://api.whatsapp.com/send?phone={{phone}}" target="_blank">jio</a>
+</div>

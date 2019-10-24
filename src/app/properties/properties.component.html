@@ -1,0 +1,173 @@
+<div class="container-fluid">
+  <div class="wrapper">
+      <div  class="btn-group btn-group-lg visible-md visible-lg all_records shadow" style="margin-bottom: 20px; margin-right: 10px;">
+        <a  class="btn btn-success" data-target="#myModal" data-toggle="modal">
+          <i  class="fa fa-plus-circle"></i>Add New</a>
+        </div>
+
+        <div  class="btn-group btn-group-lg visible-md visible-lg all_records shadow" style="margin-bottom: 20px; margin-right: 10px;">
+            <a  class="btn btn-primary" 
+            angular4-paystack
+            [key]="'pk_test_1c8ffc3fc5b6558d3a5a34fb3af6e3ed854fb57c'"
+            [email]="email"
+            [amount]="amount"
+            [ref]="generateReference()"
+            [currency]="'NGN'"
+            [class]="'btn btn-primary'"
+            (close)="paymentCancel()"
+            (callback)="me($event)">
+
+              <i  class="fa fa-bolt"></i>Buy Boosts(100)  N500 </a>
+            </div>
+
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-3" *ngFor ="let lists of list; let i = index" (click)="select(lists)">
+        <!-- feature -->
+        <div class="rp-item smcard shadow">
+          <div class="rp-pic set-bg">
+            <img [src]="lists.pix" alt="">
+            <img *ngIf="lists.pix == ''" src="../../assets/images/service-bg.jpg" alt="">
+            <div class="sale-notic"  *ngIf = 'lists.category == "1"'>FOR SALE</div>
+            <div class="rent-notic" *ngIf = 'lists.category == "2"'>FOR Rent</div>
+            <div class="save-wrap"><a href="" class="btn-save-listing">
+              <span class="icon"><i class="fa fa-heart-o fa-2x" style="color: white;"></i></span>
+            </a></div>
+          </div>
+          <div class="rp-info">
+            <div class="textbody">
+              <strong>{{lists.address}}</strong>
+            </div>
+            <div class="text-smaall">
+              <div class="property-info">
+                <span><i class="fa fa-bed"></i> beds: {{lists.bedroom}} 
+                    <span class="PropertyCard-field-divider">·</span>
+                </span>
+                <span><i class="fa fa-bath"></i> baths: {{lists.bathroom}} 
+                    <span class="PropertyCard-field-divider">·</span>
+                </span>
+                <span> <i class="fa fa-eye"></i> views: {{lists.Views}}
+                  <span class="PropertyCard-field-divider">·</span>
+                </span>
+                <span> <i class="fa fa-bolt"></i> boosts: {{lists.boosted}}
+                  <span class="PropertyCard-field-divider">·</span>
+                </span>
+              </div>
+            </div>
+            <div class="property-links">
+              <a href="" class="btn btn-link">Listing</a>
+              <a href="" class="btn btn-link">Contacts</a>
+              <a href="" disabled class="btn btn-link">Application</a>
+              <a href=""  class="btn btn-link">Payment</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="modal" id="myModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <div class="Modal-header-text">Add Property</div>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form (ngSubmit)="prop(ad)"  #ad='ngForm'>
+          <div class="addproperty">
+              <div class="SpacerRow">
+                <div class="Autocomplete AddPropertyModal-col AddPropertyModal-autocomplete-col">
+                  <div class="Autocomplete-InputContainer">
+                    <div>
+                      <label class="Label">Property address</label>
+                      <div class="Input-container">
+                        <input class="form-control" ngModel name="address" type="text" placeholder="Property address" required value="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="SpacerRow">
+                  <div class="Autocomplete AddPropertyModal-col AddPropertyModal-autocomplete-col">
+                    <div class="Autocomplete-InputContainer">
+                      <div>
+                        <label class="Label">Property Category</label>
+                        <div class="Input-container">
+                            <select name="" ngModel name="category" required class="form-control" id="">
+                                <option value="" selected disabled>-- Rent/Sale -- </option>
+                                <option value="1">Rent</option>
+                                <option value="2">Sale</option>
+                              </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="SpacerRow">
+                    <div class="Autocomplete AddPropertyModal-col AddPropertyModal-autocomplete-col">
+                      <div class="Autocomplete-InputContainer">
+                        <div>
+                          <label class="Label">Property Type</label>
+                          <div class="Input-container">
+                            <select name="type" ngModel required class="form-control" id="">
+                              <option value=""> -- Property Type -- </option>
+                              <option value="1">House</option>
+                              <option value="2">Condo / Apartment</option>
+                              <option value="3">Land</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="SpacerRow">
+                      <div class="Autocomplete AddPropertyModal-col AddPropertyModal-autocomplete-col">
+                        <div class="Autocomplete-InputContainer">
+                          <div>
+                            <label class="Label">Property address</label>
+                            <div class="Input-container">
+                              <input type="checkbox" name="" id="">
+                              jfbcvyyb
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="SpacerRow">
+                        <div class="Autocomplete AddPropertyModal-col AddPropertyModal-autocomplete-col">
+                          <div class="Autocomplete-InputContainer">
+                            <div>
+                             
+                              <div class="Input-container">
+                                <input type="submit" value="add property" [disabled]="!ad.valid" class="btn btn-primary form-control">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+          </div>
+
+        </form>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" id="te" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+

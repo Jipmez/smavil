@@ -1,0 +1,30 @@
+
+.confirm-main{
+    margin-top: 40px;
+    color: #000000;
+
+   .confirm-deposit{
+
+
+        th{
+              background-color: #1f86f7;
+              border: 0 !important;
+        }
+
+        td{
+            border: none;
+            padding: .75rem;
+        }
+    }
+
+    .s-btn{
+        text-align: center;
+        
+        input{
+        font-weight: 700;
+        padding-left: 40px;
+        padding-right: 40px;
+
+        }
+    }
+}

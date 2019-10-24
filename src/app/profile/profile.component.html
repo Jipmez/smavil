@@ -1,0 +1,322 @@
+<section>
+  <div class="container" *ngFor="let profiles of profile">
+      <div class="box box-transperent profile-info set-margin">
+          <div class="row">
+            <div class="col col-md-3 col-12">
+              <div class="profile-photo">
+                <div class="chosen-image">
+                  <img [src]="profiles.ProPix" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="col col-md-5 col-12">
+              <div class="favorite-widget">
+                <a href=""><i class="fa fa-star"></i></a>
+              </div>
+              <h1 class="member-name">{{profiles.Name}}</h1>
+              <br>
+              <ul class="overview default nofirst" id="overview">
+
+                  <li *ngIf="profiles.Purpose == '1'">Needs a room</li>
+                  <li *ngIf="profiles.Purpose == '2'">Has a room</li>
+      
+                <li id="haver-needer">
+                    <span id="monthly-rent">${{profiles.Budget}}</span>
+      
+                </li>
+      
+      
+                <li id="available-date">
+                    <span id="monthly-rent"> Available Sep 18, 2019</span>
+                 
+                </li>
+              </ul>
+            </div>
+            <div class="col col-md-4 col-12">
+                <div id="last-active" class="last-online online-now dashed-rounded-border">
+                    Online Now
+                </div>
+                <div class="box messaging">
+                    <a class="button start-conversation with_popup"><i class="fa fa-mail-reply"></i>Message Me</a>
+                  </div>
+            </div>
+          </div>
+        </div>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="index.php">Home</a>
+            </li>
+            <li class="breadcrumb-item active">{{profiles.Name}}</li>
+          </ol>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="lifestyles">
+          <div class="lifestyle-group">
+              <h5>Cleanliness</h5>
+              <div class="meter">
+                <div class="clearfix">
+                  <div class="complete" [style.width]="clean +'%'"></div>
+                  <span class="circle" style="float: left"></span>
+                </div>
+              </div>
+              <div class="clearfix lifestyle-labels">
+                <div class="pull-left">
+                  <small>Clean</small>
+                </div>
+                <div class="pull-right">
+                  <small>Messy</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="lifestyle-group">
+                <h5>Work Schedule</h5>
+                <div class="meter">
+                  <div class="clearfix">
+                    <div class="complete" [style.width]="work +'%'"></div>
+                    <span class="circle" style="float: left"></span>
+                  </div>
+                </div>
+                <div class="clearfix lifestyle-labels">
+                  <div class="pull-left">
+                    <small>Work</small>
+                  </div>
+                  <div class="pull-right">
+                    <small>Home</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="lifestyle-group">
+                  <h5>Sleep Schedule</h5>
+                  <div class="meter">
+                    <div class="clearfix">
+                      <div class="complete" [style.width]="bed +'%'"></div>
+                      <span class="circle" style="float: left"></span>
+                    </div>
+                  </div>
+                  <div class="clearfix lifestyle-labels">
+                    <div class="pull-left">
+                      <small>Early</small>
+                    </div>
+                    <div class="pull-right">
+                      <small>No Sleep</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="lifestyle-group">
+                    <h5>Tobacco</h5>
+                    <div class="meter">
+                      <div class="clearfix">
+                        <div class="complete" [style.width]="smoke +'%'"></div>
+                        <span class="circle" style="float: left"></span>
+                      </div>
+                    </div>
+                    <div class="clearfix lifestyle-labels">
+                      <div class="pull-left">
+                        <small>NON SMOKER</small>
+                      </div>
+                      <div class="pull-right">
+                        <small>SMOKE REGULARLY</small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="lifestyle-group">
+                      <h5>Drinking</h5>
+                      <div class="meter">
+                        <div class="clearfix">
+                          <div class="complete" [style.width]="drinks +'%'"></div>
+                          <span class="circle" style="float: left"></span>
+                        </div>
+                      </div>
+                      <div class="clearfix lifestyle-labels">
+                        <div class="pull-left">
+                          <small>NEVER</small>
+                        </div>
+                        <div class="pull-right">
+                          <small>DRINKS REGULARLY</small>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="lifestyle-group">
+                        <h5>Drug Use</h5>
+                        <div class="meter">
+                          <div class="clearfix">
+                            <div class="complete" [style.width]="drugs +'%'"></div>
+                            <span class="circle" style="float: left"></span>
+                          </div>
+                        </div>
+                        <div class="clearfix lifestyle-labels">
+                          <div class="pull-left">
+                            <small>NEVER</small>
+                          </div>
+                          <div class="pull-right">
+                            <small>REGULARLY</small>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="lifestyle-group">
+                          <h5>Interaction</h5>
+                          <div class="meter">
+                            <div class="clearfix">
+                              <div class="complete" [style.width]="private +'%'"></div>
+                              <span class="circle" style="float: left"></span>
+                            </div>
+                          </div>
+                          <div class="clearfix lifestyle-labels">
+                            <div class="pull-left">
+                              <small>BEST FRIENDS</small>
+                            </div>
+                            <div class="pull-right">
+                              <small>JUST SPLITTING THE RENT</small>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="lifestyle-group">
+                            <h5>Guests</h5>
+                            <div class="meter">
+                              <div class="clearfix">
+                                <div class="complete" [style.width]="social +'%'"></div>
+                                <span class="circle" style="float: left"></span>
+                              </div>
+                            </div>
+                            <div class="clearfix lifestyle-labels">
+                              <div class="pull-left">
+                                <small>NEVER</small>
+                              </div>
+                              <div class="pull-right">
+                                <small>ALL THE TIME</small>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lifestyle-group">
+                              <h5>Eating Habits</h5>
+                              <div class="meter">
+                                <div class="clearfix">
+                                  <div class="complete"  [style.width]="cook +'%'"></div>
+                                  
+                                  <span class="circle" style="float: left"></span>
+                                </div>
+                              </div>
+                              <div class="clearfix lifestyle-labels">
+                                <div class="pull-left">
+                                  <small>EAT OUT</small>
+                                </div>
+                                <div class="pull-right">
+                                  <small>IRON CHEF</small>
+                                </div>
+                              </div>
+                            </div>
+                            </div>
+      </div>
+      <div class="col-md-8">
+          <div class="profile-2 panel">
+              <span class="panel-label">About Me</span>
+              <div id="profile" >
+                  <p class="bio"></p><p>{{profiles.About}}</p><p></p>
+                  <table class="">
+                    <tbody>
+                        <tr>
+              <td>Maximum monthly budget</td>
+              <td class="value">{{profiles.Budget}}</td>
+            </tr>
+            <tr>
+              <td>Move in Date</td>
+              <td class="value">{{profiles.Movin}}</td>
+            </tr>
+            <tr>
+              <td>Lease Duration</td>
+              <td class="value">{{profiles.Lease}}</td>
+            </tr>
+            <tr>
+              <td>Age</td>
+              <td class="value">{{profiles.Age}}</td>
+            </tr>
+          
+                      
+          
+                        <tr>
+                          <td>Occupation</td>
+                          <td class="value">{{profiles.Career}}</td>
+                        </tr>
+                        <tr>
+                          <td>Pets</td>
+                          <td class="value">{{profiles.Pets}}</td>
+                        </tr>
+                        <tr>
+                          <td>Hometown</td>
+                          <td class="value">{{profiles.HomeTown}}, NG</td>
+                        </tr>
+                        <tr>
+                          <td>Education</td>
+                          <td class="value">{{profiles.Education}}</td>
+                        </tr>
+                        <tr>
+                          <td>Relationship Status</td>
+                          <td class="value">{{profiles.Relationship}}</td>
+                        </tr>
+                    </tbody>
+                  </table>
+              </div>
+            </div>
+            <div *ngIf="profiles.Purpose=='2'">
+                <div class="rp-item smcard"  *ngFor="let pros of pro">
+                    <div class="rp-pic set-bg">
+                      
+                      <img [src]="pros.pix" alt="">
+                    
+                      <div class="rent-notic" >FOR Rent</div>
+                      <div class="save-wrap">
+                          <a class="btn-save-listing" (click)="like(lists)">
+                          <span class="icon"><i class="fa fa-heart-o fa-2x" style="color: white;" (click)="like(lists)"></i></span>
+                         </a>
+                    </div>
+                    </div>
+                    <div class="rp-info" (click)="select(lists)">
+                      <table>
+                        <tbody>
+                            <tr>
+                              <td>Rent:</td>
+                              <td class="value">N{{pros.rent}}</td>
+                            </tr>
+                            <tr>
+                              <td>Type:</td>
+                              <td class="value">{{pros.apt_type}}</td>
+                            </tr>
+                            <tr>
+                              <td>Furniture:</td>
+                              <td class="value">{{pros.furnished}}</td>
+                            </tr>
+                            <tr>
+                              <td>Bedrooms:</td>
+                              <td class="value">{{pros.bedroom}}</td>
+                            </tr>
+                            <tr>
+                              <td>Baths:</td>
+                              <td class="value">{{pros.bathroom}}</td>
+                            </tr>
+                            <tr>
+                              <td>Pets:</td>
+                              <td class="value">{{pros.pets}}</td>
+                            </tr>
+                        </tbody>
+                      </table>
+                      <div class="clearfix amenities" >
+                        <div class="pull-left" style="margin-bottom:5px;" *ngFor="let amens of amen">
+                          <i class="fa fa-check-square"></i> {{amens}}
+                        </div>
+                    </div>
+                    </div>
+                  </div>
+            </div>
+           
+      </div>
+    </div>
+  </div>
+</section>

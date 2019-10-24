@@ -1,0 +1,48 @@
+<div class="container-fluid  confirm-main">
+  <div class="confirm-deposit card">
+    <div class="table-responsive">
+      <table class="table  table-striped table-hover table-bordered">
+        <thead>
+          <th>CONFIRM </th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Package</td>
+            <td><strong>{{id}} days</strong></td>
+            
+          </tr>
+         
+         
+         
+          <tr>
+            <td>Duration</td>
+            <td>{{duration}}</td>
+          </tr>
+         
+          <tr>
+            <td>Amount</td>
+            <td>₦{{price}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="s-btn">
+        <button  class="btn btn-danger" style="float: left;"
+        angular4-paystack
+        [key]="'pk_test_1c8ffc3fc5b6558d3a5a34fb3af6e3ed854fb57c'"
+        [email]="email"
+        [amount]="price"
+        [ref]="ref"
+        [currency]="'NGN'"
+        [class]="'btn btn-primary'"
+        (close)="paymentCancel()"
+        (callback)="me($event)"
+      >Pay with Paystack</button>
+
+        <input type="submit" class="btn" style="background:#1f86f7; float:right;color:white;" (click)="process()" value="process">
+      </div>
+    </div>
+  </div>
+</div>
+
+

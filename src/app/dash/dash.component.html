@@ -1,0 +1,854 @@
+<div id="preloder">
+    <div class="loader"></div>
+  </div>
+    
+  <div class="first" *ngIf="dash==1">
+      <div class="tab-content form-wrap bg">
+          <div class="tab-pane container active" id="home">
+              <p class="step-tag">
+                  Step 1
+                </p>
+                <p class="required-tag">
+                    * Required fields
+                  </p>
+              <form (ngSubmit)="Pinfo(ad)"  #ad='ngForm'>
+    
+                
+    
+                  <fieldset>
+                    <div class="row">
+                      <div class="col-md-12">
+                          <label for="meta_purpose">I’m looking for *</label>
+                          <select id="meta_purpose" ngModel name="purpose" class="form-control" required="required">
+                            <option  disabled selected value="">Select One</option>
+                            <option value="1">A roommate with or without an existing room</option>
+                            <option value="2">Someone to fill up an existing room</option></select>
+                      </div>
+                     
+                    </div>
+                  </fieldset>
+    
+                  <fieldset>
+                      <div class="row">
+                        <div class="col-md-6">
+                            <label for="meta_purpose">Age *</label>
+                           <input type="number" ngModel name="age" id="" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="meta_purpose">Gender *</label>
+                            <select id="meta_purpose" ngModel name="gender" class="form-control" required="required">
+                              <option disabled value="">Select One</option>
+                              <option selected value="Male">Male</option>
+                              <option value="Female">Female</option></select>
+                        </div>
+                      </div>
+                 </fieldset>
+    
+                    <fieldset>
+                        <div class="row">
+                          <div class="col-md-6">
+                              <label for="meta_purpose">Pets *</label>
+                              <select id="meta_pets" ngModel required class="form-control" name="pets">
+                                <option selected disabled value="">Select One</option>
+                                <option value="Dog">I Have a Dog</option>
+                                <option value="Cat">I Have a Cat</option>
+                                <option value="No Pets">No Pets</option>
+                                <option value="Pet Friendly">Pet Friendly</option></select>
+                          </div>
+                          <div class="col-md-6">
+                              <label for="meta_purpose">Maximum bugdet *</label>
+                              <input type="number" min="1" ngModel name="budget" id="" class="form-control" required>
+                          </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <div class="row">
+                          <div class="col-md-6">
+                              <label for="meta_purpose">Move in Date *</label>
+                              <select id="meta_purpose" ngModel name="movein" class="form-control" required="required">
+                                <option value="" selected disabled>Select One</option>
+                               
+                                <option *ngFor="let moveins of movein" [value]="moveins.date">{{moveins.date}}</option>
+                              </select>
+                          </div>
+                          <div class="col-md-6">
+                              <label for="meta_purpose">Lease Duration *</label>
+                              <select id="meta_lease_duration" ngModel class="form-control" name="lease_duration">
+                                <option value="" selected disabled>Select One</option>
+                                <option value="Month-to-Month">Month-to-Month</option>
+                                <option value="6 Months">6 Months</option>
+                                <option  value="1 Year">1 Year</option>
+                              </select>
+                          </div>
+                        </div>
+                      </fieldset>
+    
+                    <fieldset>
+                        <div class="row">
+                          <div class="col-md-6">
+                              <label for="meta_purpose">Education *</label>
+                              <!-- <input type="text" ngModel name="education" id="" class="form-control" required> -->
+                              <select  ngModel name="education" class="form-control" required>
+                                  <option value="Abubakar Tafawa Balewa University">Abubakar Tafawa Balewa University</option>
+                                  <option value=" Ahmadu Bello university"> Ahmadu Bello university</option>
+                                  <option value="  Bayero University">  Bayero University</option>
+                                  <option value="Federal University of Petroleum Resources, Effurun">Federal University of Petroleum Resources, Effurun</option>
+                                  <option value=" Federal University of Technology, Akure"> Federal University of Technology, Akure</option>
+                                  <option value="Federal University of Technology, Minna.">Federal University of Technology, Minna.</option>
+                                  <option value="Federal University of Technoloy, Owerri">Federal University of Technoloy, Owerri</option>
+                                  <option value=" Federal University, Dutse"> Federal University, Dutse</option>
+                                  <option value=" Federal University, Dutsin-Ma"> Federal University, Dutsin-Ma</option>
+                                  <option value=" Federal University, Kashere"> Federal University, Kashere</option>
+                                  <option value=" Federal University, Lafia"> Federal University, Lafia</option>
+                                  <option value="  Federal University, Lokoja">  Federal University, Lokoja</option>
+                                  <option value=" Federal University, Ndufu-Alike"> Federal University, Ndufu-Alike</option>
+                                  <option value=" Federal University, Otuoke"> Federal University, Otuoke</option>
+                                  <option value="  Federal University, Oye-Ekiti">  Federal University, Oye-Ekiti</option>
+                                  <option value="  Federal University, Wukari">  Federal University, Wukari</option>
+                                  <option value=" Michael Okpara University of Agriculture, Umudike"> Michael Okpara University of Agriculture, Umudike</option>
+                                  <option value=" Modibbo Adama University of Technology, Yola"> Modibbo Adama University of Technology, Yola</option>
+                                  <option value="  National Open University of Nigeria, Lagos.">  National Open University of Nigeria, Lagos.</option>
+                                  <option value=" Nnamdi Azikiwe University, Awka"> Nnamdi Azikiwe University, Awka</option>
+                                  <option value=" Obafemi Awolowo University,Ile-Ife"> Obafemi Awolowo University,Ile-Ife</option>
+                                  <option value="University of Abuja, Gwagwalada">University of Abuja, Gwagwalada</option>
+                                  <option value="University of Agriculture, Abeokuta">University of Agriculture, Abeokuta</option>
+                                  <option value="University of Agriculture, Makurdi.">University of Agriculture, Makurdi.</option>
+                                  <option value="University of Benin">University of Benin</option>
+                                  <option value=" University of Calabar"> University of Calabar</option>
+                                  <option value=" University of Ibadan"> University of Ibadan</option>
+                                  <option value="University of Ilorin">University of Ilorin</option>
+                                  <option value="University of Jos">University of Jos</option>
+                                  <option value="University of Lagos">University of Lagos</option>
+                                  <option value="University of Maiduguri">University of Maiduguri</option>
+                                  <option value="University of Nigeria, Nsukka">University of Nigeria, Nsukka</option>
+                                  <option value=" University of Port-Harcourt"> University of Port-Harcourt</option>
+                                  <option value=" University of Uyo"> University of Uyo</option>
+                                  <option value=" Usuman Danfodiyo University"> Usuman Danfodiyo University</option>
+                                  <option value=" Abia State University, Uturu."> Abia State University, Uturu.</option>
+                                  <option value=" Adamawa State University Mubi"> Adamawa State University Mubi</option>
+                                  <option value=" Adekunle Ajasin University, Akungba."> Adekunle Ajasin University, Akungba.</option>
+                                  <option value=" Akwa Ibom State University of Technology, Uyo"> Akwa Ibom State University of Technology, Uyo</option>
+                                  <option value="  Ambrose Alli University, Ekpoma">  Ambrose Alli University, Ekpoma</option>
+                                  <option value=" Anambra State University of Science &amp; Technology,"> Anambra State University of Science &amp; Technology,</option>
+                                  <option value=" Bauchi State University, Gadau"> Bauchi State University, Gadau</option>
+                                  <option value="  Benue State University, Makurdi.">  Benue State University, Makurdi.</option>
+                                  <option value=" Bukar Abba Ibrahim University, Damaturu"> Bukar Abba Ibrahim University, Damaturu</option>
+                                  <option value=" Cross River State University of Science &amp;Technolo"> Cross River State University of Science &amp;Technolo</option>
+                                  <option value="  Delta State University Abraka">  Delta State University Abraka</option>
+                                  <option value="   Ebonyi State University, Abakalik">   Ebonyi State University, Abakalik</option>
+                                  <option value="  Ekiti State University">  Ekiti State University</option>
+                                  <option value=" Enugu State University of Science and Technology,"> Enugu State University of Science and Technology,</option>
+                                  <option value=" Gombe State Univeristy, Gombe"> Gombe State Univeristy, Gombe</option>
+                                  <option value="  Ibrahim Badamasi Babangida University, Lapai">  Ibrahim Badamasi Babangida University, Lapai</option>
+                                  <option value="  Ignatius Ajuru University of Education, Rumuoume">  Ignatius Ajuru University of Education, Rumuoume</option>
+                                  <option value="  Imo State University, Owerri">  Imo State University, Owerri</option>
+                                  <option value="  Kaduna State University, Kaduna">  Kaduna State University, Kaduna</option>
+                                  <option value="  Kano University of Science &amp; Technology, Wudil">  Kano University of Science &amp; Technology, Wudil</option>
+                                  <option value="  Kebbi State University, Kebbi">  Kebbi State University, Kebbi</option>
+                                  <option value="  Kogi State University, Anyigba">  Kogi State University, Anyigba</option>
+                                  <option value="  Kwara State University, Ilorin">  Kwara State University, Ilorin</option>
+                                  <option value="  Ladoke Akintola University of Technology, Ogbomo">  Ladoke Akintola University of Technology, Ogbomo</option>
+                                  <option value="  Lagos State University Ojo, Lagos.">  Lagos State University Ojo, Lagos.</option>
+                                  <option value="  Nasarawa State University, Keffi.">  Nasarawa State University, Keffi.</option>
+                                  <option value="   Niger Delta Unversity, Yenagoa">   Niger Delta Unversity, Yenagoa</option>
+                                  <option value="    Olabisi Onabanjo University Ago-Iwoye">    Olabisi Onabanjo University Ago-Iwoye</option>
+                                  <option value="    Ondo State University of Science &amp; Technology,">    Ondo State University of Science &amp; Technology,</option>
+                                  <option value="     Osun State University, Oshogbo">     Osun State University, Oshogbo</option>
+                                  <option value="     Plateau State University, Bokkos">     Plateau State University, Bokkos</option>
+                                  <option value="  Rivers State University of Science &amp; Technology">  Rivers State University of Science &amp; Technology</option>
+                                  <option value="  Tai Solarin Univ. of Education, Ijebu-Ode">  Tai Solarin Univ. of Education, Ijebu-Ode</option>
+                                  <option value="  Taraba State University, Jalingo">  Taraba State University, Jalingo</option>
+                                  <option value="  Umaru Musa Yarâ€™Adua University, Katsina">  Umaru Musa Yarâ€™Adua University, Katsina</option>
+                                  <option value="  Achievers University, Owo">  Achievers University, Owo</option>
+                                  <option value="  Afe Babalola University, Ado-Ekiti">  Afe Babalola University, Ado-Ekiti</option>
+                                  <option value="  African University of Science &amp; Technology, Abuj">  African University of Science &amp; Technology, Abuj</option>
+                                  <option value="  Ajayi Crowther University, Ibadan">  Ajayi Crowther University, Ibadan</option>
+                                  <option value="   Al-Hikmah University, Ilorin">   Al-Hikmah University, Ilorin</option>
+                                  <option value="    American University of Nigeria, Yola">    American University of Nigeria, Yola</option>
+                                  <option value="   Babcock University,Ilishan-Remo">   Babcock University,Ilishan-Remo</option>
+                                  <option value="   Baze University">   Baze University</option>
+                                  <option value=" Bells University of Technology, Otta"> Bells University of Technology, Otta</option>
+                                  <option value="  Benson Idahosa University">  Benson Idahosa University</option>
+                                  <option value="  Bingham University, New Karu">  Bingham University, New Karu</option>
+                                  <option value="  Bowen University, Iwo">  Bowen University, Iwo</option>
+                                  <option value="  Caleb University, Lagos">  Caleb University, Lagos</option>
+                                  <option value="  Caritas University, Enugu">  Caritas University, Enugu</option>
+                                  <option value="  CETEP City University, Lagos">  CETEP City University, Lagos</option>
+                                  <option value="   Covenant University Ota">   Covenant University Ota</option>
+                                  <option value="  Crawford University Igbesa">  Crawford University Igbesa</option>
+                                  <option value="  Crescent University">  Crescent University</option>
+                                  <option value=" Elizade University, Ilara-Mokin"> Elizade University, Ilara-Mokin</option>
+                                  <option value=" Evangel University, Akaeze"> Evangel University, Akaeze</option>
+                                  <option value=" Fountain Unveristy,Oshogbo"> Fountain Unveristy,Oshogbo</option>
+                                  <option value=" Godfrey Okoye University, Ugwuomu-Nike "> Godfrey Okoye University, Ugwuomu-Nike </option>
+                                  <option value=" Gregory University, Uturu "> Gregory University, Uturu </option>
+                                  <option value="  Igbinedion University Okada">  Igbinedion University Okada</option>
+                                  <option value="    Joseph Ayo Babalola University, Ikeji-Arakeji">    Joseph Ayo Babalola University, Ikeji-Arakeji</option>
+                                  <option value="    Katsina University, Katsina">    Katsina University, Katsina</option>
+                                  <option value="   Landmark University,Omu-Aran.">   Landmark University,Omu-Aran.</option>
+                                  <option value="   Lead City University, Ibadan">   Lead City University, Ibadan</option>
+                                  <option value=" Madonna University, Okija"> Madonna University, Okija</option>
+                                  <option value=" Mcpherson University, Seriki Sotayo, Ajebo"> Mcpherson University, Seriki Sotayo, Ajebo</option>
+                                  <option value="  Nigerian-Turkish Nile University">  Nigerian-Turkish Nile University</option>
+                                  <option value="  Novena University, Ogume">  Novena University, Ogume</option>
+                                  <option value="   Obong University, Obong Ntak">   Obong University, Obong Ntak</option>
+                                  <option value="  Oduduwa University, Ipetumodu ">  Oduduwa University, Ipetumodu </option>
+                                  <option value=" Pan-African University, Lagos"> Pan-African University, Lagos</option>
+                                  <option value="  Paul University, Awka ">  Paul University, Awka </option>
+                                  <option value=" Salem University,Lokoja "> Salem University,Lokoja </option>
+                                  <option value="  Samuel Adegboyega University,Ogwa.">  Samuel Adegboyega University,Ogwa.</option>
+                                  <option value="  Southwestern University, Oku Owa">  Southwestern University, Oku Owa</option>
+                                  <option value="  Tansian University,Umunya">  Tansian University,Umunya</option>
+                                  <option value="   University of Mkar, Mkar">   University of Mkar, Mkar</option>
+                                  <option value=" Veritas University"> Veritas University</option>
+                                  <option value=" Wellspring University, Evbuobanosa"> Wellspring University, Evbuobanosa</option>
+                                  <option value="Wesley Univ. of Science &amp; Tech.,Ondo">Wesley Univ. of Science &amp; Tech.,Ondo</option>
+                                  <option value="Western Delta University, Oghara">Western Delta University, Oghara</option>
+                                  <option value="Wukari Jubilee University">Wukari Jubilee University</option>
+                                  <option value="Auchi Polytechnic">Auchi Polytechnic</option>
+                                  <option value="Federal Polytechnic, Ado-Ekiti">Federal Polytechnic, Ado-Ekiti</option>
+                                  <option value="Federal Polytechnic, Bauchi">Federal Polytechnic, Bauchi</option>
+                                  <option value="Federal Polytechnic, Bida">Federal Polytechnic, Bida</option>
+                                  <option value="Federal Polytechnic, Damaturu">Federal Polytechnic, Damaturu</option>
+                                  <option value="Federal Polytechnic, Ede">Federal Polytechnic, Ede</option>
+                                  <option value="Federal Polytechnic, Ida">Federal Polytechnic, Ida</option>
+                                  <option value="Fed. Polytechnic,ILaro">Fed. Polytechnic,ILaro</option>
+                                  <option value="Federal Polytechnic,Mubi">Federal Polytechnic,Mubi</option>
+                                  <option value="Federal Polytechnic, Namoda">Federal Polytechnic, Namoda</option>
+                                  <option value="Federal Polytechnic, Nassarawa">Federal Polytechnic, Nassarawa</option>
+                                  <option value="Federal Polytechnic, Nekede">Federal Polytechnic, Nekede</option>
+                                  <option value="Federal Polytechnic, Offa">Federal Polytechnic, Offa</option>
+                                  <option value="Federal Polytechnic, Oko">Federal Polytechnic, Oko</option>
+                                  <option value="Federal School of Dental Technology and Therapy, E">Federal School of Dental Technology and Therapy, E</option>
+                                  <option value=" Kaduna Polytechnic, Kaduna "> Kaduna Polytechnic, Kaduna </option>
+                                  <option value=" Hussaini Adamu Federal Polytechnic"> Hussaini Adamu Federal Polytechnic</option>
+                                  <option value=" Waziri Umaru Fed. Polytechnic Birnin Kebbi"> Waziri Umaru Fed. Polytechnic Birnin Kebbi</option>
+                                  <option value=" Yaba College of Tech"> Yaba College of Tech</option>
+                                  <option value=" Abraham Adesanya Polytechnic "> Abraham Adesanya Polytechnic </option>
+                                  <option value=" Abia State Polytechnic "> Abia State Polytechnic </option>
+                                  <option value=" Adamawa State Polytechnic "> Adamawa State Polytechnic </option>
+                                  <option value=" Abdul-Gusau Polytechnic"> Abdul-Gusau Polytechnic</option>
+                                  <option value=" Akwa-Ibom State Polytechnic, Ikot-Osurua"> Akwa-Ibom State Polytechnic, Ikot-Osurua</option>
+                                  <option value=" Abubakar Tatari Ali Polytechnic "> Abubakar Tatari Ali Polytechnic </option>
+                                  <option value=" Akwa Ibom State College of Arts and Science Nung,"> Akwa Ibom State College of Arts and Science Nung,</option>
+                                  <option value=" Benue State Poly, Ugbokolo "> Benue State Poly, Ugbokolo </option>
+                                  <option value=" College of Administrative and Business Studies, P"> College of Administrative and Business Studies, P</option>
+                                  <option value=" Enugu Polytechnic "> Enugu Polytechnic </option>
+                                  <option value=" Gateway Polytechnic, Igbesa  "> Gateway Polytechnic, Igbesa  </option>
+                                  <option value=" Rufus Giwa Polytechnic "> Rufus Giwa Polytechnic </option>
+                                  <option value=" The Polytechnic, Ibadan"> The Polytechnic, Ibadan</option>
+                                  <option value=" Institute of Management and Tech, Enugu"> Institute of Management and Tech, Enugu</option>
+                                  <option value=" Imo State Polytechnic, Umuagwo"> Imo State Polytechnic, Umuagwo</option>
+                                  <option value=" Jigawa State Polytechnic, Dutse"> Jigawa State Polytechnic, Dutse</option>
+                                  <option value=" Kano State Polytechnic"> Kano State Polytechnic</option>
+                                  <option value=" Kogi State Polytechnic, Lokoja"> Kogi State Polytechnic, Lokoja</option>
+                                  <option value="Kwara State Polytechnic, Ilorin">Kwara State Polytechnic, Ilorin</option>
+                                  <option value="Lagos State Poly, Ikorodu">Lagos State Poly, Ikorodu</option>
+                                  <option value="Moshood Abiola Poly">Moshood Abiola Poly</option>
+                                  <option value="Nasarawa State Polytechnic">Nasarawa State Polytechnic</option>
+                                  <option value="Nuhu Bamalli Polytechnic">Nuhu Bamalli Polytechnic</option>
+                                  <option value="Delta State Polytechnic, Ogwashi-Uku">Delta State Polytechnic, Ogwashi-Uku</option>
+                                  <option value="Delta State Polytechnic, Otefe">Delta State Polytechnic, Otefe</option>
+                                  <option value="Osun State Poly, Iree">Osun State Poly, Iree</option>
+                                  <option value="Osun State College of Tech, Esa-Oke ">Osun State College of Tech, Esa-Oke </option>
+                                  <option value="Delta State Polytechnic, Ozoro ">Delta State Polytechnic, Ozoro </option>
+                                  <option value="Plateau State Polytechnic, Barkin-Ladi">Plateau State Polytechnic, Barkin-Ladi</option>
+                                  <option value="Polytechnic of Sokoto, Central Administration Offi">Polytechnic of Sokoto, Central Administration Offi</option>
+                                  <option value="Adamawa State Poly">Adamawa State Poly</option>
+                                  <option value="Ramat Polytechnic">Ramat Polytechnic</option>
+                                  <option value="Rivers State College of Arts and Science">Rivers State College of Arts and Science</option>
+                                  <option value="Rivers State Poly">Rivers State Poly</option>
+                                  <option value=" Gateway Polytechnic Saapade"> Gateway Polytechnic Saapade</option>
+                                  <option value=" Edo State Institute of Technology and Management,"> Edo State Institute of Technology and Management,</option>
+                                  <option value=" Niger State Poly, Zungeru "> Niger State Poly, Zungeru </option>
+                                  </select>
+                          </div>
+                          <div class="col-md-6">
+                              <label for="meta_purpose">Career *</label>
+                              <input type="text" ngModel name="career" id="" class="form-control" required>
+                          </div>
+                        </div>
+                      </fieldset>
+    
+                      <fieldset>
+                          <div class="row">
+                            <div class="col-md-6">
+                                <label for="meta_purpose">HomeTown *</label>
+                                <input type="text" name="hometown" class="form-control" ngModel required id="">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="meta_purpose">Relationship status *</label>
+                                <select id="meta_purpose" ngModel name="relation" class="form-control" required>
+                                  <option selected disabled value="">Select One</option>
+                                  <option value="single">Single</option>
+                                  <option value="dating">Dating</option>
+                                  <option value="married">Married</option>
+                                </select>
+                            </div>
+                          </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <label for="meta_purpose">Choose place you would like to live *</label>
+                            <div class="row">
+                              <div class="col-md-4">
+                                  <label for="meta_purpose">State</label>
+                                  <select class="form-control" ngModel name="Pstate" id="sel1" required (change)="getLocal($event.target.value)">
+                                      <option  selected value="" disabled > -- state --</option>
+                                      <option *ngFor ="let states of state"  [ngValue]='states.state_id' >{{states.name}}</option>
+                                  </select> 
+                              </div>
+                              <div class="col-md-4">
+                                  <label for="meta_purpose">Locality *</label>
+                                  <select class="form-control" ngModel name="Plocal" id="sel1" required>
+                                      <option selected value="" disabled> -- Locality --</option>
+                                      <option *ngFor ="let locals of local" [ngValue]="locals.local_name">{{locals.local_name}} </option>
+                                    </select>
+                              </div>
+                              <div class="col-md-4">
+                                  <label for="meta_purpose">Town/City *</label>
+                                  <input type="text" name="Ptown" class="form-control" required ngModel  id="">
+                              </div>
+                            </div>
+                          </fieldset>
+    
+                        <fieldset>
+                          <div class="row">
+                            <div class="col-md-12">
+                              <fieldset>
+                                  <label for="meta_about">Add a little bit about yourself</label>
+                                  <textarea id="meta_about" class="form-control" ngModel name="about" required></textarea>
+                              </fieldset>
+                            </div>
+                          </div>
+                        </fieldset>
+    
+                        <fieldset>
+                            <div class="row">
+                              <div class="col-md-12">
+                                <input class="button radius cta" [disabled]="!ad.valid" type="submit"  value="Save Personal Information">
+                              </div>
+                            </div>
+                          </fieldset>
+    
+                          <fieldset>
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <input class="button radius cta"  id="me" data-toggle="tab" name="commit" style="display: none;" type="button" href="#menu1"  value="Save Personal Information">
+                                </div>
+                              </div>
+                            </fieldset>
+                         
+                </form>
+        
+           
+          </div>
+    
+          <div class="tab-pane container fade" id="menu1">
+              <p class="step-tag">
+                  Step 2
+                </p>
+                <p class="required-tag">
+                    * Required fields
+                  </p>
+        <form (ngSubmit)="atrInf(at)" #at='ngForm'>
+                  <div class="row">
+                      <div class="col-md-12">
+                        <fieldset>
+                          <label for="How_would_you_describe_yourself_in_terms_of_cleanliness_">How would you describe yourself in terms of cleanliness? *</label>
+                          <select id="meta_cleanliness" ngModel name="cleanliness"  class="form-control" required>
+                            <option value="" selected disabled>Select One</option>
+                            <option value="1">My place is always spotless. I can't stand a mess.</option>
+                            <option value="2">I’m clean but not obsessive</option>
+                            <option value="3">My room might be messy, but I keep the shared space clean</option>
+                            <option value="4">I don’t mind living in a little mess</option>
+                            <option value="5">Not going to lie, I’m messy</option></select>
+                        </fieldset>
+                      </div>
+                    </div>
+    
+                    <div class="row">
+                      <div class="col-md-12">
+                        <fieldset>
+                          <label for="How_would_you_describe_your_work_hours_">How would you describe your work hours? *</label>
+                          <select id="meta_working_hours" ngModel name="working_hours" class="form-control" required>
+                            <option value="" disabled selected>Select One</option>
+                          <option value="1">Intense. I practically live at work</option>
+                          <option value="2">Typical 9 to 5 job</option>
+                          <option value="3">I work part time or in school</option>
+                          <option value="4">Night shifts</option>
+                          <option value="5">I don’t work. Home all day</option></select>
+                        </fieldset>
+                      </div>
+                    </div>
+    
+                    <div class="row">
+                      <div class="col-md-12">
+                        <fieldset>
+                          <label for="How_would_you_describe_your_sleeping_hours_">How would you describe your sleeping hours? *</label>
+                          <select id="meta_bed_time" ngModel name="bed_time"  class="form-control" required>
+                              <option value="" disabled selected>Select One</option>
+                            <option value="1">Early to bed, early to rise</option>
+                            <option value="2">Asleep after late night TV</option>
+                            <option value="3">Night owl</option>
+                            <option value="4">Up all night, sleep all day</option>
+                            <option value="5">I never sleep</option></select>
+                        </fieldset>
+                      </div>
+                    </div>
+    
+                    <div class="row">
+                      <div class="col-md-12">
+                        <fieldset>
+                          <label for="How_would_you_describe_your_relationship_with_tobacco_">How would you describe your relationship with tobacco? *</label>
+                          <select id="meta_smokes" ngModel name="smokes" class="form-control" required>
+                             <option value="" disabled selected>Select One</option>
+                            <option value="1">I don't smoke</option>
+                            <option value="2">I smoke rarely on special occasions</option>
+                            <option value="3">I smoke socially in public</option>
+                            <option value="4">I smoke regularly, but never inside</option>
+                            <option value="5">I smoke regularly inside</option></select>
+                        </fieldset>
+                      </div>
+                    </div>
+    
+                    <div class="row">
+                      <div class="col-md-12">
+                        <fieldset>
+                          <label for="How_would_you_describe_your_relationship_with_alcohol_">How would you describe your relationship with alcohol? *</label>
+                          <select id="meta_drinks" ngModel name="drinks"  class="form-control" required>
+                              <option value="" disabled selected>Select One</option>
+                              <option selected="selected" value="1">I never drink</option>
+                              <option value="2">Two to three drinks a week</option>
+                              <option value="3">I like a glass of wine at night</option>
+                              <option value="4">I’m a social drinker</option>
+                              <option value="5">I might have a drinking problem</option></select>
+                        </fieldset>
+                      </div>
+                    </div>
+    
+                    <div class="row">
+                      <div class="col-md-12">
+                        <fieldset>
+                          <label for="How_would_you_describe_your_relationship_with_drugs_">How would you describe your relationship with drugs? *</label>
+                          <select id="meta_drugs" ngModel name="drugs"  class="form-control" required>
+                              <option value="" disabled selected>Select One</option>
+                              <option value="1">I don't do drugs</option>
+                              <option value="2">I’ll try some when its around, but won’t buy it</option>
+                              <option value="3">I’ll smoke an occasional joint</option>
+                              <option value="4">I am pretty much a pothead but that’s it</option>
+                              <option value="5">I do more than just weed on a regular basis</option></select>
+                        </fieldset>
+                      </div>
+                    </div>
+    
+    
+                    <div class="row">
+                      <div class="col-md-12">
+                        <fieldset>
+                          <label for="How_would_you_describe_your_interaction_with_a_roommate_">How would you describe your interaction with a roommate? *</label>
+                          <select id="meta_privacy" ngModel name="privacy"  class="form-control" required>
+                              <option value="" disabled selected>Select One</option>
+                            <option value="1">We'll be best friends</option>
+                            <option value="2">I’ll socialize every now and then</option>
+                            <option value="3">Friends at home, but outside we’re strangers</option>
+                            <option value="4">I won’t ignore you, but I do my own thing</option>
+                            <option value="5">You’ll never see me, we’re only splitting the rent</option></select>
+                        </fieldset>
+                      </div>
+                    </div>
+    
+                    <div class="row">
+                      <div class="col-md-12">
+                        <fieldset>
+                          <label for="How_often_do_you_entertain_friends_">How often do you entertain friends? *</label>
+                          <select id="meta_social" ngModel name="social"  class="form-control" required>
+                            <option value="" disabled selected>Select One</option>
+                            <option value="1">My home is my temple, I don’t have guests over</option>
+                            <option value="2">A few friends, but only on the weekends</option>
+                            <option value="3">Some friends will be over on any given night</option>
+                            <option value="4">I like having friends over and throwing social events</option>
+                            <option value="5">Party central 24-7</option></select>
+                        </fieldset>
+                      </div>
+                    </div>
+    
+                    <div class="row">
+                     <div class="col-md-12">
+                      <fieldset>
+                        <label for="How_would_you_describe_your_cooking_habits_">How would you describe your cooking habits? *</label>
+                        <select id="meta_cooking" ngModel name="cooking"  class="form-control" required>
+                            <option value="" disabled selected>Select One</option>
+                            <option value="1">Order in or eat out. I don't even buy groceries</option>
+                            <option value="2">I mostly eat out, but sometimes eat at home</option>
+                            <option value="3">I cook often but just the basics</option>
+                            <option value="4">I love to cook on most days</option>
+                            <option value="5">I’m the next Iron Chef, I cook every meal</option></select>
+                      </fieldset>
+                     </div>
+                    </div>
+    
+                    <div class="row">
+                      <div class="col-md-12">
+                        <input class="button radius cta"  [disabled]='!at.valid' name="commit" type="submit" value="Save Personal Information">
+                      </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-md-12">
+                          <input class="button radius cta" data-toggle="tab" id="adPix" name="commit" style="display: none;" type="submit" href="#menu4" value="Save Personal Information">
+                        </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="col-md-12">
+                            <input class="button radius cta" data-toggle="tab" id="adPro" name="commit" style="display: none;" type="submit" href="#AddP" value="Save Personal Information">
+                          </div>
+                        </div>
+    
+                  </form>
+          </div>
+    
+          <div class="tab-pane container fade" id="AddP">
+            
+              <p class="step-tag">
+                  Step 3
+                 
+                </p>
+                <p class="required-tag">
+                    * Required fields
+                  </p>
+                  <p class="step-3-scenario-switcher">
+                      Please fill in information of the room that you are offering for rent below.
+                      <br>If you are not offering a room but are looking for one or a roommate, please
+                      <a href="/register/step-1?purpose=0">Click here</a>
+                  </p>
+                  <form (ngSubmit)="AdPro(pr)" #pr="ngForm">
+                  <fieldset>
+                    <div class="row">
+                      <div class="col-md-3">
+                          <label for="apt_meta_rent">Rent Per Month *</label>
+                          <input id="apt_meta_rent" min="1" name="rent"  ngModel class="form-control" required type="number" value="0.00">
+                          <small>Please enter numbers only</small>
+                      </div>
+                      <div class="col-md-3">
+                          <label for="apt_meta_apt_type">Apartment type *</label>
+                          <select id="apt_meta_apt_type" name="apt_type" ngModel required class="form-control"><option value="">Select one</option>
+                            <option value="Luxury">Luxury</option>
+                            <option value="Walk Up">Walk Up</option>
+                            <option value="Townhouse">Townhouse</option>
+                            <option value="Home">Home</option>
+                            <option value="Loft">Loft</option>
+                            <option value="High Rise">High Rise</option>
+                            <option value="Elevator">Elevator</option>
+                            <option value="Hotel">Hotel</option></select>
+                      </div>
+                      <div class="col-md-6">
+                          <label for="apt_meta_apt_type">Location</label>
+                          <input type="text" name="location" ngModel required class="form-control">
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  <fieldset>
+                      <div class="row">
+                        <div class="col-md-6">
+                            <label for="apt_meta_rent">Movin Date *</label>
+                           <select name="movin" ngModel id="" class="form-control">
+                              <option value="" selected disabled>Select One</option>
+                               
+                            <option *ngFor="let moveins of movein" [value]="moveins.date">{{moveins.date}}</option>
+                           </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="apt_meta_apt_type">Lease Duration</label>
+                            <select id="meta_lease_duration" ngModel class="form-control" name="lease_duration">
+                                <option value="" selected disabled>Select One</option>
+                                <option value="Month-to-Month">Month-to-Month</option>
+                                <option value="6 Months">6 Months</option>
+                                <option  value="1 Year">1 Year</option>
+                              </select>
+                        </div>
+                       
+                      </div>
+                  </fieldset>
+
+                  <fieldset>
+                      <div class="row">
+                        <div class="col-md-6">
+                            <label for="apt_meta_rent">Total Bedroom *</label>
+                            <input id="apt_meta_rent" min="1" ngModel name="total_bed" placeholder="1" class="form-control" required="required" type="number" >
+                            <small>Please enter numbers only</small>
+                        </div>
+                       
+                        <div class="col-md-6">
+                            <label for="apt_meta_apt_type">Total Bedroom</label>
+                            <input id="apt_meta_rent" min="1" ngModel  name="total_bath" placeholder="1" class="form-control" required="required" type="number" >
+                        </div>
+                      </div>
+                  </fieldset>
+
+                  <fieldset>
+                      <div class="row">
+                        <div class="col-md-6">
+                            <label for="apt_meta_rent">Pets *</label>
+                            <select name="pets" ngModel required class="form-control" id="">
+                              <option value="Dog">I have a dog</option>
+                              <option value="Cat">I have a cat</option>
+                              <option value="pet_friendly">Pet Friendly</option>
+                              <option value="no_pets">No pets</option>
+                            </select>
+                        </div>
+                       
+                        <div class="col-md-6">
+                            <label for="apt_meta_apt_type">Furnished *</label>
+                            <select name="furnished" ngModel required  class="form-control" id="">
+                              <option value="furnished">Fully furnished</option>
+                              <option value="not_furnished">Not Furnished</option>
+                              <option value="shared">Shared Space</option>
+                            </select>
+                        </div>
+                      </div>
+                  </fieldset>
+
+                  <fieldset>
+                    <div class="row">
+                      <div class="col">
+                          <label for="apt_meta_amenities">Amenities</label>
+                          <hr class="soft">
+                          <div class="row">
+                              <div class="inline-check col-md-4">
+                                  <label>
+                                    <input id="apt_meta_amenities_" name="apt_meta[amenities][]" type="checkbox" value="AC" (change)="onChangeCategory($event.target.checked, 'AC')">
+                                    AC
+                                  </label>
+                                </div>
+                                <div class="inline-check col-md-4">
+                                    <label>
+                                      <input id="apt_meta_amenities_" name="apt_meta[amenities][]" type="checkbox" value="AC" (change)="onChangeCategory($event.target.checked, 'Eletricity')">
+                                      Eletricity
+                                    </label>
+                                  </div>
+                                  <div class="inline-check col-md-4">
+                                      <label>
+                                        <input id="apt_meta_amenities_" name="apt_meta[amenities][]" type="checkbox" value="AC" (change)="onChangeCategory($event.target.checked, 'Water')">
+                                        Water
+                                      </label>
+                                    </div>
+                                <div class="inline-check col-md-4">
+                                    <label>
+                                      <input id="apt_meta_amenities_" name="apt_meta[amenities][]" type="checkbox" value="AC" (change)="onChangeCategory($event.target.checked, 'GYM')">
+                                      GYM
+                                    </label>
+                                  </div>
+                                  <div class="inline-check col-md-4">
+                                      <label>
+                                        <input id="apt_meta_amenities_" name="apt_meta[amenities][]" type="checkbox" value="AC" (change)="onChangeCategory($event.target.checked, 'WIFI')">
+                                        WIFI
+                                      </label>
+                                    </div>
+                                    <div class="inline-check col-md-4">
+                                        <label>
+                                          <input id="apt_meta_amenities_" name="apt_meta[amenities][]" type="checkbox" value="AC" (change)="onChangeCategory($event.target.checked, 'GENERATOR')">
+                                        GENERATOR
+                                        </label>
+                                      </div>
+                          </div>
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  <fieldset>
+                    <div class="row">
+                        <label for="apt_meta_apt_type">Description *</label>
+                      <textarea name="description" ngModel id="" required cols="30" placeholder="Help the user imagine your room better" rows="10"></textarea>
+                    </div>
+                  </fieldset>
+
+                 
+
+              <div class="row">
+                  <div class="col-md-12">
+                    <input class="button radius cta"  [disabled]='!pr.valid' name="commit" type="submit" value="Save & Add room">
+                  </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                      <input class="button radius cta" data-toggle="tab" id="adRP" name="commit" type="submit" style="display: none;"href="#Rpix" value="Save Personal Information">
+                    </div>
+                  </div>
+
+
+               </form>
+          </div>
+    
+          <div class="tab-pane container fade" id="Rpix">
+            
+              <p class="step-tag">
+                  Step 4
+                </p>
+                <p class="required-tag">
+                    * Required fields
+                  </p>
+                  <form action="">
+            <div class="row">
+                <label>Browse...</label>
+              <div class="col-md-12">
+                <fieldset>
+                  <div class="left-floated">
+                      <input type="file" class="form-control" id="mediaFile" #mediaFile  (change)="FileInput($event.target.files)" required>
+                  </div>
+                  <img [src]="pro" style="width:250px; height:250px; border-radius:50%" class="img-res">
+                </fieldset>
+                <fieldset>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <input class="button radius cta" name="submit" type="submit" (click)="Upload()" value="Upload">
+                    </div>
+                  </div>
+                </fieldset>
+
+                <div class="row">
+                    <div class="col-md-12">
+                      <input class="button radius cta" data-toggle="tab" id="adpro" name="commit" type="submit" style="display: none;" href="#menu4" value="Save Personal Information">
+                    </div>
+                  </div>
+
+              </div>
+            </div>
+          </form>
+          </div>
+
+          <div class="tab-pane container fade" id="menu4">
+            
+              <p class="step-tag">
+                  Step 5
+                  <button (click)="dashboard()">skip</button>
+                </p>
+                <p class="required-tag">
+                    * Required fields
+                  </p>
+                  <form action="">
+            <div class="row">
+                <label>Browse...</label>
+              <div class="col-md-12">
+                <fieldset>
+                  <div class="left-floated">
+                      <input type="file" class="form-control" id="mediaFile" #mediaFile  (change)="handleFileInput($event.target.files)" required >
+                  </div>
+                  <img [src]="pix" *ngIf="pix != ''" style="width:250px; height:250px; border-radius:50%" class="img-res">
+                </fieldset>
+                <fieldset>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <input class="button radius cta" name="submit" type="submit" (click)="ImageUp()" value="Upload">
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>
+ 
+    </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="container-fluid dashboard-main" style="padding:0 !important" *ngIf="dash==2">
+    <div class="wrapper">
+      <div class="sidenav">
+          <div class="media sidebar-padding">
+
+            <div class="row">
+              <div class="col-md-6 col-6">
+                  <div class="media-left media-middle">
+                      <img [src]="pix" alt="person" style="width: 60px; height:60px; border: 3px solid white" class="img-circle">
+                    </div>
+              </div>
+              <div class="col-md-6 col-6">
+                <ul>
+                    <li><a class="togl" (click)="toggleme()"><i class="fa fa-pied-piper"></i></a></li>
+                </ul>
+               <!--  <div class="list">
+                  <ul>
+                    <li><a href="#" class="h4 margin-none">Andrew Brain</a></li>
+                    <li>
+                      <div class="notify">
+                          <ul class="list-unstyled list-inline margin-none">
+                              <li class=""><a href="account.html"><i class="fa fa-user"></i></a></li>
+                              <li><a routerLink="messages"><i class=" fa fa-envelope"></i><span class="label label-danger">{{unread}}</span></a></li>
+                              <li><a href="#"><i class="fa fa-cog"></i></a></li>
+                              <li><a href="login.html"><i class="fa fa-sign-out-alt"></i></a></li>
+                              <li><a class="togl" (click)="toggleme()"><i class="fa fa-pied-piper"></i></a></li>
+                            </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div> -->
+              </div>
+            </div>
+
+            </div> 
+         
+        
+       <div class="sidenav-content">
+          <ul class="navul">
+            <li class="nav-item active" id="hide"><a routerLink='dcontent'><i class="fa fa-dashboard"></i>  <p>Home</p> </a></li>
+            <li class="nav-item" id="hide"><a routerLink='profile'><i class="fa fa-dashboard"></i><p>Profile</p></a></li>
+            <li class="nav-item" id="hide"><a routerLink='roomies'><i class="fa fa-dashboard"></i><p>Find a Roomate</p></a></li>
+            <li class="nav-item" id="hide"><a routerLink='browse'><i class="fa fa-dashboard"></i><p>Browse</p></a></li>
+            <li class="nav-item" id="hide"><a routerLink='matches' target="_blank"><i class="fa fa-dashboard"></i><p>Matches</p></a></li>
+            <li class="nav-item" id="hide"><a routerLink='vip' target="_blank"><i class="fa fa-dashboard"></i><p>Become a Vip</p></a></li>
+          </ul>
+     </div>
+        
+      </div> 
+  
+      <div class="container-fluid main-content">
+          <nav class="navbar navbar-expand-lg our-nav navbar-light fixed-top  gray">
+              <i id="tog" (click)="toggleme()" class="fa fa-bars" style="float:left;font-size:30px;color:#12326b;"></i> 
+        
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <div class="dropdown" style="margin-left: 50px;">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                      Dropdown button
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Link 1</a>
+                      <a class="dropdown-item" href="#">Link 2</a>
+                      <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                  </div>
+            </div>
+          </nav> 
+        <router-outlet></router-outlet>
+      </div>
+  
+    </div>
+  </div>
+  

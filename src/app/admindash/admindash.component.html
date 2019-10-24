@@ -1,0 +1,58 @@
+<div id="preloder">
+    <div class="loader"></div>
+  </div>
+  
+  
+  <div class="container-fluid dashboard-main" style="padding:0 !important">
+    
+       
+      
+    
+    <div class="wrapper">
+      <div class="sidenav">
+          <div class="media sidebar-padding">
+              <div class="media-left media-middle">
+                <img src="../../assets/images/user_1.jpg" alt="person" style="width: 60px" class="img-circle">
+              </div>
+              <div class="media-body media-middle">
+                <a href="#" class="h4 margin-none">Andrew Brain</a>
+                <ul class="list-unstyled list-inline margin-none">
+                  <li><a href="account.html"><i class="fa fa-user"></i></a></li>
+                  <li><a href="email.html"><i class=" fa fa-envelope"></i></a></li>
+                  <li><a href="#"><i class="fa fa-cog"></i></a></li>
+                  <li><a href="login.html"><i class="fa fa-sign-out-alt"></i></a></li>
+                  <li><span class="togl" style="font-size:10px;color:white;">X</span></li>
+                </ul>
+              </div>
+            </div> 
+         
+        
+              <div class="sidenav-content">
+          <ul class="navul">
+            <li class="active" id="hide"><a routerLink='dcontent'><i class="fa fa-dashboard"></i>Home</a></li>
+            <li class="active" id="hide"><a routerLink='blog_view'><i class="fa fa-rss-square"></i>Deposit List</a></li>
+            <li class="active" id="hide"><a routerLink='packages'><i class="fa fa-dashboard"></i>Subscription</a></li>
+            <li class="active" id="hide"><a routerLink='plans'><i class="fa fa-dashboard"></i>Packages</a></li>
+           
+          </ul>
+          </div>
+        
+      </div> 
+  
+      <div class="container-fluid main-content">
+          <nav class="navbar navbar-expand-lg our-nav navbar-light fixed-top  gray">
+              <i id="tog"  class="fa fa-bars" style="float:left;font-size:30px;color:#12326b;"></i> 
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li>logout</li>
+                <li>profile</li>
+              </ul>
+            </div>
+          </nav> 
+        <router-outlet></router-outlet>
+      </div>
+  
+    </div>
+  </div>
+  

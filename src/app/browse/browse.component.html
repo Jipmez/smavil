@@ -1,0 +1,244 @@
+<div class="wrapper">
+  <div class="sm-banner ">
+    <div class="overlay"></div>
+    <h1>Find your next roommate</h1>
+    <p>Like the ones you’d live with, dislike the ones you wouldn’t.</p>
+  </div>
+  <section>
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 filters">
+        <form (ngSubmit)="filter(ad)" #ad='ngForm'>
+          <div class="group small-button-group" id="gender-fields">
+            <div class="container-fluid">
+            <div class="row">
+              <div class="col-3">
+                <h4>Gender</h4>
+              </div>
+              <div class="col-9">
+                <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                      <div class="form-group" style="width:200px;">
+                          <select class="custom-select" ngModel name="gender" style="width:200px;" >
+                              <option value=" ">Select gender:</option>
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
+                              
+                          </select>
+                        </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="group small-button-group" id="gender-fields">
+              <div class="container-fluid">
+              <div class="row">
+                <div class="col-3">
+                  <h4>I'm Looking For</h4>
+                </div>
+                <div class="col-9 me">
+                  <div class="row">
+                      <div class="col-sm-12 col-md-12 ">
+                          <div class="form-group" style="width:200px;">
+                              <select class="custom-select" ngModel name="purpose" style="width:200px;" >
+                                <option value=" ">Looking For:</option>
+                                <option value="1">A Roomate</option>
+                               <option value="2">A Room</option>
+                              </select>
+                            </div>
+                      </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="group small-button-group" id="gender-fields">
+                <div class="container-fluid">
+                <div class="row">
+                  <div class="col-3">
+                    <h4>Connections</h4>
+                  </div>
+                  <div class="col-9 me">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 ">
+                            <div class="row primary_checkboxes">
+                                <div class="checkbox">
+                                  <label>
+                                    <input ngModel name="mutual_connections"  type="checkbox" >
+                                    Show Only Users from my hometown, country or school
+                                  </label>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="group small-button-group" id="gender-fields">
+                  <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-3">
+                      <h4>Age</h4>
+                    </div>
+                    <div class="col-9 me">
+                      <div class="row">
+                          <div class="col-sm-12 col-md-12 ">
+                            <div class="row">
+                            <div class="col-5 this">
+                              <input type="number" class="form-control" id="price-exposed-min"  value="" ngModel name="age_min" placeholder="Min">
+                            </div>
+                              <span class="text-input-range-dash">–</span>
+                              <div class="col-5 this">
+                                 <input type="number" class="form-control" id="price-exposed-min"  value="" ngModel name="age_max" placeholder="Max">
+                            </div>
+                            </div>
+                            </div>
+                          </div>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="group small-button-group" id="gender-fields">
+                    <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-3">
+                        <h4>Budget</h4>
+                      </div>
+                      <div class="col-9 me">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 ">
+                              <div class="row">
+                              <div class="col-5">
+                                <input type="tel" class="form-control" id="price-exposed-min" value="" ngModel name="Min_budget" placeholder="Min" >
+                              </div>
+                                <span class="text-input-range-dash">–</span>
+                                <div class="col-5">
+                                   <input type="tel" class="form-control" id="price-exposed-min"  value="" ngModel name="Max_budget" placeholder="Min">
+                              </div>
+                              </div>
+                              </div>
+                            </div>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="group small-button-group" id="gender-fields">
+                      <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <h4>State</h4>
+                        </div>
+                        <div class="col-md-9">
+                          <div class="row">
+                            <div class="col-sm-12 col-md-12 ">
+                                <div class="form-group" ngModel name="State" style="width:200px;" required>
+                                    <select class="custom-select"  style="width:200px;">
+                                      <option value="0">Select gender:</option>
+                                      <option value="Male">Male</option>
+                                      <option value="Female">Female</option>
+                                      
+                                    </select>
+                                  </div>
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+                    </div> -->
+                    <div class="group small-button-group" id="gender-fields">
+                        <div class="container-fluid">
+                        <div class="row">
+                          <div class="col-3">
+                            <h4>Pets</h4>
+                          </div>
+                          <div class="col-9">
+                            <div class="row">
+                              <div class="col-sm-12 col-md-12 ">
+                                <div class="row">
+                                <div class="col-4">
+                                    <div class="checkbox">
+                                        <label><input ngModel name="no_pets" type="checkbox" value="no_pets"> No pets</label>
+                                      </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="checkbox">
+                                        <label><input ngModel name="Cats" type="checkbox" value="cats"> Cats</label>
+                                      </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="checkbox">
+                                        <label><input ngModel name="Dogs" type="checkbox" value="dogs"> Dogs</label>
+                                      </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="checkbox">
+                                        <label><input ngModel name="pet_friendly" type="checkbox" value="Pet Friendly"> Pet Friendly</label>
+                                      </div>
+                                </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="group">
+                          <div class="row">
+                            <div class="col-md-9 medium-offset-3">
+                              <button id="apply-filters" [disabled]="!ad.valid" class="button radius small cta apply"><i class="fa fa-search"></i> Apply Filters</button>
+                             <!--  <a href="/browse?reset_filters=true" style="font-weight:600; font-size:13px; color:#999"><i class="fa fa-refresh"></i> Reset Filters</a> -->
+                            </div>
+                          </div>
+                        </div>
+        </form>
+      </div>
+      <div class="col-md-8">
+        <div class="users">
+          <div class="row">
+            <div class="user-wrap col-md-6 col-6" *ngFor="let lists of list">
+                <div class="user">
+                  <a href="" class="user-link">
+                    <div class="user-image-wrap">
+                      <div class="user-image">
+                        <img alt="Searching for roommates in Central Austin" src="https://s3.us-west-2.amazonaws.com/diggz-pron/assets/92675/small/72CB4E7E-D272-4345-8ADF-13DF281FB10A.webp?1564139076" data-original="https://s3.us-west-2.amazonaws.com/diggz-pron/assets/92675/small/72CB4E7E-D272-4345-8ADF-13DF281FB10A.webp?1564139076" style="display: block;">
+                      </div>
+                      <div class="user-actions">
+                        <button class="button tiny" data-uncompleted-modal="true" name="button" type="submit">
+                          <i class="fa fa-thumbs-down"></i>
+                        </button>    
+                        <a class="button tiny open-send-message-modal js-open-send-message-modal" routerLink="../profile_view/{{lists.Reg_id}}">
+                          <span class="icon-chat-2"></span>
+                         <span>Profile</span>
+                        </a>
+                        <button class="button tiny right-position" data-uncompleted-modal="true" name="button" type="submit">
+                          <i class="fa fa-thumbs-up"></i>
+                       </button>
+                      </div>
+                    </div>
+                  </a>
+                  <span class="user-title-wrap">
+                    <a class="user-title" href="/users/us_519d3d" target="_blank">{{lists.Name}}</a>
+            
+                      <img alt="Home" class="fb-verification-icon" height="16" src="/assets/home-icon-32-1f85af999632bd0e42ea9ec261e42115.png" title="Room for rent Available" width="16">
+            
+                  </span>
+                  <span class="meta"><b>${{lists.Budget}}</b> - {{lists.Age}}  - Central Austin</span>
+                  <span class="meta">&nbsp;</span>
+                </div>
+              </div>
+              </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="true"></div>
+    </section>
+</div>
+
+
+ 
+ 

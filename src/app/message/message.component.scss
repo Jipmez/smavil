@@ -1,0 +1,182 @@
+$mobile : 640px;
+$tablet : 800px;
+$desktop : 1024px;
+
+@mixin responsify($breakpont) {
+  @media (max-width: $breakpont){
+    @content;
+  }
+}
+
+.wrapper{
+    display: flex;
+}
+.main-content{
+    background:wheat;
+    min-height: 100vh;
+    margin-left:380px;
+    transition: 0.5s;
+    width: 100%;
+    z-index: 1 !important;
+    padding: 0 !important;
+    float: left;
+    @include responsify($mobile){
+        margin-left: 78px;
+    }
+}
+.sidenav {
+    position: fixed;
+    width: 380px;
+    height: 100vh;
+    background: #e0e0e0;
+    float: left;
+    top: 50;
+    left: 50;
+    z-index: 1.1 !important;
+    transition: 0.5s;
+    overflow: auto;
+    color: #aaabae;
+    border-right: 2px   rgba(0, 0, 0, 0.7);
+    @include responsify($mobile){
+        width: 78px;
+    }
+
+    a{
+        color : black;
+    }
+
+    .heading {
+        padding: 10px 16px 10px 15px;
+        margin: 0;
+        height: 60px;
+        width: 100%;
+        background-color: #eee;
+        z-index: 1000;
+        .heading-avatar {
+            padding: 0;
+            cursor: pointer;
+            .heading-avatar-icon img {
+                border-radius: 50%;
+                height: 40px;
+                width: 40px;
+            }
+        }
+        .heading-dot {
+            padding: 0;
+            margin-left: 10px;
+            @include responsify($mobile){
+                display : none;
+            }
+            i {
+                text-align: right;
+                padding: 5px;
+                color: #93918f;
+                cursor: pointer;
+            }
+        }
+        .heading-compose {
+            padding: 0;
+            @include responsify($mobile){
+               display: none;
+            }
+            i {
+                text-align: center;
+                padding: 5px;
+                color: #93918f;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .searchBox {
+        padding: 0 !important;
+        margin: 0 !important;
+        height: 60px;
+        width: 100%;
+        @include responsify($mobile){
+           display : none;
+        }
+        .searchBox-inner {
+            height: 100%;
+            width: 100%;
+            padding: 10px !important;
+            background-color: #fbfbfb;
+            .has-feedback {
+                position: relative;
+                .form-control-feedback {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    z-index: 2;
+                    display: block;
+                    width: 34px;
+                    height: 34px;
+                    line-height: 34px;
+                    text-align: center;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+    .sideBar {
+        padding: 0 !important;
+        margin: 0 !important;
+        background-color: #fff;
+        overflow: hidden;
+        border: 1px solid #f7f7f7;
+       
+        .sideBar-body {
+            position: relative;
+            padding: 10px !important;
+            border-bottom: 1px solid #f7f7f7;
+            height: 92px;
+            margin: 0 !important;
+            @include responsify($mobile){
+               overflow: hidden;
+            }
+            cursor: pointer;
+            .sideBar-avatar {
+                text-align: center;
+                padding: 0 !important;
+                .avatar-icon img {
+                    border-radius: 50%;
+                    height: 49px;
+                    width: 49px;
+                }
+            }
+            .sideBar-main {
+                padding: 0 !important;
+                .sideBar-name {
+                    padding: 10px !important;
+                    .name-meta {
+                        font-size: 100%;
+                        padding: 1% !important;
+                        text-align: left;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        color: #000;
+                    }
+                }
+                .sideBar-time {
+                    padding: 10px !important;
+                    .time-meta {
+                        text-align: right;
+                        font-size: 12px;
+                        padding: 1% !important;
+                        color: rgba(0, 0, 0, .4);
+                        vertical-align: baseline;
+                        @include responsify($mobile){
+                            text-align: left;
+                            position: relative;
+                            top: -7px;
+                            left: -30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+   
+}
+
+

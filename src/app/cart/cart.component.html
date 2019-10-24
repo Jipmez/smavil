@@ -1,0 +1,115 @@
+<div class="container-fluid">
+  <div class="container clearfix">
+    <div class="grid">
+      <div class="content-holder">
+        <div class="commerce">
+            <table class="table_responsive table" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th class="product-remove">&nbsp;</th>
+                    <th class="product-thumbnail">&nbsp;</th>
+                    <th class="product-name">Product</th>
+                    <th class="product-price">Price</th>
+                    <th class="product-quantity">Quantity</th>
+                    <th class="product-subtotal">Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                            <tr class="woocommerce-cart-form__cart-item cart_item qodef-product-type-package">
+            
+                        <td class="product-remove">
+                          <a href="https://eiddo.select-themes.com/cart/?remove_item=d81f9c1be2e08964bf9f24b15f0e4900&amp;_wpnonce=61186874df" class="remove" aria-label="Remove this item" data-product_id="345" data-product_sku="">×</a>						</td>
+            
+                        <td class="product-thumbnail"><a href="https://eiddo.select-themes.com/package/standard/"><img src="//eiddo.select-themes.com/wp-content/plugins/woocommerce/assets/images/placeholder.png" alt="Placeholder" width="100" class="woocommerce-placeholder wp-post-image" height="100"></a></td>
+            
+                        <td class="product-name" data-title="Product"><a href="https://eiddo.select-themes.com/package/standard/">Standard</a></td>
+            
+                        <td class="product-price" data-title="Price">
+                          <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">N</span>{{am}}</span>						</td>
+            
+                        <td class="product-quantity" data-title="Quantity">1 <input type="hidden" name="cart[d81f9c1be2e08964bf9f24b15f0e4900][qty]" value="1"></td>
+            
+                        <td class="product-subtotal" data-title="Total">
+                          <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">N</span>{{am}}</span>						</td>
+                      </tr>
+                      
+                  
+                  <tr>
+                    <td colspan="6" class="actions">
+            
+                      <button type="submit" class="button" name="update_cart" value="Update cart" disabled="">Update cart</button>
+            
+                      
+                      <input type="hidden" id="_wpnonce" name="_wpnonce" value="61186874df"><input type="hidden" name="_wp_http_referer" value="/cart/">				</td>
+                  </tr>
+            
+                      </tbody>
+              </table>
+
+
+              <div class="cart-collaterals">
+                <div class="cart_totals ">
+              
+                
+                <h2>Cart totals</h2>
+              
+                <table cellspacing="0" class="shop_table table_responsive table">
+              
+                  <tbody><tr class="cart-subtotal">
+                    <th>Subtotal</th>
+                    <td data-title="Subtotal"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>91</span></td>
+                  </tr>
+              
+                  
+                  
+                  
+                  
+                  
+                  <tr class="order-total">
+                    <th>Total</th>
+                    <td data-title="Total"><strong><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>91</span></strong> </td>
+                  </tr>
+              
+                  
+                </tbody></table>
+              
+                <div class="wc-proceed-to-checkout">
+                  
+              <!-- <button class="checkout-button button alt wc-forward"
+              angular-rave
+              [raveOptions]="paymentOptions"
+              (callback)="me($event)">
+                Proceed to checkout</button>> -->
+
+                <button *ngIf="plan == '1' && status =='0'"
+    angular4-paystack
+    [key]="'pk_test_1c8ffc3fc5b6558d3a5a34fb3af6e3ed854fb57c'"
+    [email]="email"
+    [amount]="amount"
+    [ref]="ref"
+    [currency]="'NGN'"
+    [class]="'btn btn-primary'"
+    (close)="paymentCancel()"
+    (callback)="me($event)"
+  >Pay with Paystack</button>
+
+  <button (click)="payCoin()" *ngIf="plan == '2' && status =='0'">Pay</button>
+  <div *ngIf="plan == '2'">
+    <h6>Pay Exactly: {{amountTopay}}</h6>
+          <p>To</p>
+    <h6>Address: {{addressTopay}}</h6>
+  </div>
+   <div>
+     <h1 *ngIf="status =='1'" class="text-success">Payment Completed</h1>
+   </div>
+    </div>
+              
+                
+              </div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

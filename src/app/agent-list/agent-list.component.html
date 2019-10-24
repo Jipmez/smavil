@@ -1,0 +1,116 @@
+<div class="zsg-content-item"></div>
+<div class="container-fluid">
+  <main class="leader_board">
+    <div class="ldb_container">
+      <h1 class="lbd_title">Find An Agent</h1>
+      <form  (ngSubmit)="find(ad)" #ad="ngForm" class="ldb_form">
+        <section class="ldb_searchtools">
+          <ul class="tool_bar_left">
+            <li class="form_search">
+              <fieldset>
+                <div class="city">
+                    <label class="zsg-toolbar-label zsg-md-hide zsg-sm-hide">Location</label>
+                    <input type="text" ngModel name="city" id="">
+                </div>
+                <div class="name">
+                    <label class="zsg-toolbar-label zsg-md-hide zsg-sm-hide">Name</label>
+                    <input type="text" ngModel name="name" id="">
+                    
+                </div>
+              </fieldset>
+            </li>
+            <button type="submit" aria-label="Submit" class="zsg-search-button"><i class="fa fa-search"></i></button>
+          </ul>
+        </section>
+      </form>
+      <div class="leader_board_agents">
+        <div class="lbd_results">
+          <div id="noresult" >
+              <div class="noresult">
+                  <div class="inner">
+                    <div class="no_result_inner">
+                        <p class="zsg-notification-text-confirmation text-success">Find agents in your area.</p>
+                        <p>To get started, enter your location or search for a specific agent by name.</p>
+                        <img class="zsg-content-item ldb-no-results-image zsg-lg-hide" src="https://www.zillowstatic.com/static-leaderboards/LATEST/static-leaderboards/images/no-results-sm.jpg" alt="Find agents in your area.">
+                    </div>
+                  </div>
+                </div>
+          </div>
+          
+
+       <div  *ngIf="agent">
+          <div class="seperator" *ngFor="let agents of agent">
+              <div class="row">
+                  <div class="col-md-4">
+                    <div class="lbd_outer">
+                      <div class="lbd_outer_inner">
+                        <div class="contact_inner">
+                          <div class="graphic">
+                            <div class="graphic_inner">
+                              <div class="image">
+                                <div class="image_circle">
+                                    <img src="https://photos.zillowstatic.com/h_g/IS5mwdrnafpkw01000000000.jpg" alt="Adrienne Gill's profile photo">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="summary">
+                              <p class="ldb-contact-name ldb-font-bold"><a href="/profile/AdrienneGill/">{{agents.name}}</a></p>
+                              <p class="ldb-phone-number">{{agents.phonenumber}}</p>
+                              <p id="yui_3_18_1_1_1567858808567_1225">
+                                  <a href="/profile/AdrienneGill/#reviews" id="yui_3_18_1_1_1567858808567_1224">
+                                      <span class="zsg-rating zsg-rating_000" title="0/5.0" id="yui_3_18_1_1_1567858808567_1223">
+                                        <star-rating value="{{agents.rating}}" checkedcolor="gold" uncheckedcolor="gray" size="20px"   readonly="true" ></star-rating>
+                                      </span>
+                                  </a>
+                              </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="lbd_middle_map">
+                      <div class="middle_inner">
+                        <div class="map_inner">
+                          <div class="map_image">
+                            <div class="image_trapeziod">
+                                <p>Reviews {{agents.review_count}}</p>
+                                <p>{{agents.listing_count}} Listings</p>
+                            </div>
+                            <p class="ldb-business-name" data-test-id="ldb-business-name">
+                                {{agents.companyName}}yfyyyyyyyyyyyy
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="review">
+                      <div class="review_inner">
+                          <p><a class="zsg-link_primary zsg-fineprint" href="/profile/Amber-Gill/#reviews">Review {{agents.review_date}}:</a></p>
+                          <p>
+                             {{agents.review_content}}
+                          </p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+        </div>
+       </div>
+          
+          
+        </div>
+      </div>
+      <div class="lay_out_top">
+        <div class="geo_content">
+          <div class="content_item">jheihgihih</div>
+          <div class="content_item">hghh</div>
+          <div class="content_item">uergu</div>
+          <div class="content_item">ierhi</div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

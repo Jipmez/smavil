@@ -1,0 +1,243 @@
+<ng-progress [color]="'#12326b'"></ng-progress>
+<div id="preloder">
+  <div class="loader"></div>
+</div>  
+
+
+<!-- <section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg" style="background-image: url('../../assets/images/page-top-bg.jpg')">
+  <div class="container text-white">
+    <h2>Logde Listings</h2>
+  </div>
+</section>
+<!--  Page top end -->
+
+<!-- Breadcrumb 
+<div class="site-breadcrumb">
+  <div class="container">
+    <a href=""><i class="fa fa-home"></i>Home</a>
+    <span><i class="fa fa-angle-right"></i>Logdes</span>
+  </div>
+  
+</div> -->
+
+
+<section class="page-section categories-page">
+  <div class="container-fluid me">
+    <div class="row">
+   <div class="col-md-6 filter-wrapper">
+     <div class="filter-box">
+      <section class="filter">
+          <div class="wp-block default product-list-quick-filters sort-panel light-gray">
+            <div class="row">
+              <div class="col-xs-12">
+                 <strong>Quick Filters</strong>
+                 <strong class="filterLinkTitle">Types&nbsp;&nbsp;</strong>
+                 <ul class="filterLink">
+                   <li><button itemprop="relatedLink" (click)="ga(1);"><i  class="fa fa-search">Apartments/Condo</i></button><span>|</span></li>
+                   <li><button itemprop="relatedLink" (click)="ga(2);"><i  class="fa fa-search">Family House</i></button><span>|</span></li>
+                   <li><button itemprop="relatedLink" (click)="ga(3);"><i  class="fa fa-search">flats</i></button><span>|</span></li>
+                   <li><button itemprop="relatedLink" (click)="ga(4);"><i  class="fa fa-search">Lands</i></button></li>
+                  </ul>
+                  <strong class="filterLinkTitle">Furnishing&nbsp;&nbsp;</strong>
+                  
+                </div>
+                <div class="col-xs-12 voffset-5 hidden-lg hidden-md">
+                  <i class="red-text fas fa-filter"></i>
+                  <a href="#demo" data-toggle="collapse" class="red-text underline">
+                    <strong>More filter options</strong>
+                  </a>
+                  <br>
+                  <span class="more-filter-desc">e.g. location, price, date added</span>
+                </div>
+              </div>
+            </div>
+
+      
+
+       </section>
+      <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-12" *ngFor ="let lists of list | paginate: { itemsPerPage: 10, currentPage: p }">
+            <!-- feature -->
+            <div class="rp-item smcard"   [ngStyle]="{'box-shadow': lists.Featured == 1 ? '0 0 22px royalblue' : '0 0 22px #e5e5e5'}"  >
+              <div class="rp-pic set-bg">
+                
+                <img [src]="lists.pix" alt="">
+              
+                <div class="sale-notic"  *ngIf = 'lists.category == "1"'>FOR SALE</div>
+                <div class="rent-notic" *ngIf = 'lists.category == "2"'>FOR Rent</div>
+                <div class="boosted" *ngIf="lists.boosted > '0'">boosted ({{lists.boosted}}x)</div>
+                <div class="save-wrap">
+                    <a class="btn-save-listing" (click)="like(lists)">
+                    <span class="icon"><i class="fa fa-heart-o fa-2x" style="color: white;" (click)="like(lists)"></i></span>
+                   </a>
+              </div>
+              </div>
+              <div class="rp-info" (click)="select(lists)" [ngStyle]="{'background': lists.Featured == 1 ? 'rgba(6,103,208, 0.121)' : '#fafafa'}">
+                <h5>{{lists.address}}</h5>
+                <p><i class="fa fa-map-marker"></i>{{lists.state}}, CA {{lists.propertyID}}</p>
+              </div>
+            </div>
+           
+          </div>
+          
+       </div>
+       <pagination-controls (pageChange)="p = $event"
+                      maxSize="9"
+                      directionLinks="true"
+                      autoHide="true"
+                      responsive="true"
+                      previousLabel="Previous"
+                      nextLabel="Next"
+                      screenReaderPaginationLabel="Pagination"
+                      screenReaderPageLabel="page"
+                      screenReaderCurrentLabel="You're on page"></pagination-controls>
+   </div>
+</div>
+
+<div class="col-md-6 filter-box">
+    <div class="panel-heading" data-toggle="collapse" data-target="#demo">
+      <h2>
+        <i class="fa fa-filter"></i>
+        &nbsp; Advanced Filter Options
+      </h2>
+    </div>
+ <div class="panel-body collapse" id="demo">
+    <form (ngSubmit)="filter(ad)" #ad='ngForm'>
+  <div class="section">
+    <div class="form-group">
+      <div class="row">
+    <div class="col-md-9 col-9">
+        <label>Category</label>
+        <select  id="" ngModel name="category" class="form-control">
+        <option selected value="" disabled> -- For Sale / Rent --</option>
+         <option value="1">Sale</option>
+         <option value="2">Rent</option>
+      </select>
+    </div>
+    <div class="col-md-3 col-3">
+        <label>Status</label>
+        <select  id="" ngModel name="status" class="form-control">
+            <option selected value='' disabled> -- Market Staus --</option>
+              <option value="Available">Available</option>
+              <option value="Leased">Leased</option>
+              <option value="Sold">Sold</option>
+        </select>
+    </div>
+    </div>
+    </div>
+  </div>
+  <div class="section">
+      <div class="form-group">
+          <div class="row">
+          <div class="col-md-6 col-6">
+              <label>Market</label>
+              <select  id="" ngModel name="Market" class="form-control">
+                      <option selected value="" disabled> >> </option>
+                      <option value="1">House</option>
+                      <option value="2">Flats</option>
+                      <option value="3">Land</option>
+                </select>
+          </div>
+          <div class="col-md-6 col-6">
+              <label>Add to site</label>
+              <select  id="" ngModel name="time" class="form-control">
+                    <option selected value="" disabled>Anytime</option>
+                    <option value="1">Last 24 hours</option>
+                    <option value="3">Last 3 days</option>
+                    <option value="7">Last 7 days</option>
+                    <option value="14">Last 14 days</option>
+                    <option value="30">Last 30 days</option>
+                </select>
+          </div>
+          </div>
+        </div>
+  </div>
+  <div class="section">
+      <div class="form-group">
+          <div class="row">
+          <div class="col-md-6 col-6">
+              <label>State</label>
+              <select  id="" ngModel name="State" class="form-control">
+                  <option  selected value="" disabled></option>
+                  <option value="Anambra">Anambra</option>
+                  <option value="Enugu">enugu</option>
+                  <option value="Imo">imo</option>
+                </select>
+          </div>
+          <div class="col-md-6 col-6">
+              <label>Locality</label>
+              <select ngModel name="locality" id="" class="form-control">
+                  <option  selected value="" disabled></option>
+                  <option value="Okpuno">Okpuno</option>
+                  <option value="ifite">ifite</option>
+                  <option value="Owerri">Owerri</option>
+                </select>
+          </div>
+          </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="form-group">
+            <div class="row">
+            <div class="col-md-6 col-6">
+                <label>Min Price</label>
+                <input type="number"  id="" ngModel name="Min" class="form-control">
+            </div>
+            <div class="col-md-6 col-6">
+                <label>Max Price</label>
+                <input type="number"  id="" ngModel name="Max" class="form-control">
+            </div>
+            </div>
+          </div>
+      </div>
+       <div class="section">
+          <div class="form-group">
+              <div class="row">
+              <div class="col-md-6 col-6">
+                  <label>Bedroom</label>
+                  <select ngModel name="bedrooms" id="bedrooms" class="form-control">
+                    <option selected value="" disabled> Any </option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6+</option>
+                  </select>
+              </div>
+              <div class="col-md-6 col-6">
+                  <label>State</label>
+                  <select name="" id="" class="form-control">
+                      <option value=""></option>
+                    </select>
+              </div>
+              </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="form-group">
+                <div class="row">
+                <div class="col-md-6 col-6">
+                    <label>Keyword</label>
+                    <input type="text"  id="" ngModel name="Key" class="form-control">
+                </div>
+                <div class="col-md-6 col-6">
+                    <label>Property Ref</label>
+                    <input type="text"  id="" ngModel name="Ref" class="form-control">
+                </div>
+                </div>
+              </div>
+          </div>
+          <input type="submit" value="filter" class=" btn btn-primary form-control">
+  </form>
+  </div>
+  meshhih
+ </div>
+    
+  </div>
+   
+  </div>
+  </section>
+
+
+

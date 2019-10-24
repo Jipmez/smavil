@@ -1,0 +1,225 @@
+/* .cont{
+    width: 100%;
+    padding-right: 55px;
+    padding-left: 55px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.submit-property__steps {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    display: inline-block;
+}
+
+.submit-property__steps>li {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0;
+}
+
+.submit-property__steps>li>a {
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-color: lightblue;
+    border-radius: 50%;
+    line-height: 35px;
+    color: #b9b9b9;
+    margin: 0 4px;
+}
+
+.toggle{
+    display: block;
+}
+
+.submit-property__steps>li.active>a {
+    background-color: #03A9F4;
+    color: #fff;
+}
+
+.submit-property__content {
+    margin-top: 40px;
+}
+
+
+.tab-content>.active {
+    display: block;
+}
+
+.wp-block {
+    margin: 0 0 15px;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+    position: relative;
+    cursor: default;
+    border-radius: 2px;
+}
+.no-margin {
+    margin: 0!important;
+}
+input, textarea, input[type=submit]:focus, div {
+    outline: none;
+}
+
+.user-form {
+.form-header {
+    padding: 15px 20px;
+    background: #f4f5f4;
+    border-bottom: 1px solid #eaebec;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    
+
+    h2{
+        margin: 0;
+    padding: 0!important;
+    font-size: 16px;
+    text-transform: none;
+    font-weight: 400;
+    color: #2f3d46;
+    }
+}
+
+.form-body{
+    padding: 15px 20px;
+
+}
+
+
+}
+
+ 
+
+
+
+
+
+
+
+.rp-pic{
+	height: 270px;
+	position: relative;
+	margin-bottom: 0px;
+	position: relative;
+}
+
+.rp-pic img{
+    position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+
+.sale-notic,
+.rent-notic {
+	position: absolute;
+    background-color: #54545a;
+    color: #fff !important;
+    border-radius: 2px;
+    padding: 3px 7px;
+    z-index: 1;
+    top: 0;
+    margin: 16px 0 0 16px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.rent-notic {
+	background: #eca643;
+}
+
+.wrapper{
+    margin-bottom: 32px;
+    margin-top: 15px;
+    max-width: 100%;
+    border: 1px solid #d1d1d5;
+    border-radius: 3px;
+    background-color: #fff;
+}
+ 
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+.span-col-2{grid-column: span 2 / auto;}
+
+.span-row-2{grid-row: span 2 / auto;} */
+
+.me{
+    margin-top: 10px;
+}
+.x_panel{
+    width: 100%;
+    padding: 10px 17px;
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #E6E9ED;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    opacity: 1;
+    transition: all .2s ease;
+    .x_title{
+        border-bottom: 2px solid #E6E9ED;
+        padding: 1px 5px 6px;
+        margin-bottom: 10px;
+            h2 {
+                margin: 5px 0 6px;
+                float: left;
+                font-size: 18px;
+                font-weight: 400;
+                display: block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                small {
+                    margin-left: 10px;
+                    font-weight: 400;
+                    line-height: 1;
+                    color: #777;
+                }
+            }
+        }
+        .x_content {
+            padding: 0 5px 6px;
+            float: left;
+            clear: both;
+            margin-top: 5px;
+            width: 100%;
+           .card{
+               border: none;
+           }
+            .profile_img{
+                .crop-avater{
+                    img{
+                        width: 27px;
+                    }
+                }
+            }
+            h3{
+                margin-top: 10px;
+                 margin-bottom: 10px;
+                 font-size: 24px;
+                 font-family: inherit;
+                font-weight: 500;
+                line-height: 1.1;
+                color: inherit;
+            }
+            .list-unstyled {
+                padding-left: 0;
+                list-style: none;
+                 li {
+                    margin-bottom: 6px;
+                }
+            }
+            h4 {
+                font-size: 16px;
+                font-weight: 500;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        }
+}

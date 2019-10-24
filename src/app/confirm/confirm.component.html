@@ -1,0 +1,50 @@
+<div class="container-fluid  confirm-main">
+  <div class="confirm-deposit card">
+    <div class="table-responsive">
+      <table class="table  table-striped table-hover table-bordered">
+        <thead>
+          <th>CONFIRM DEPOSIT</th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Package</td>
+            <td *ngIf="plan =='1'"><strong>Standard</strong></td>
+            <td *ngIf="plan =='2'"><strong>Medium</strong></td>
+            <td *ngIf="plan =='3'"><strong>Premuim</strong></td>
+          </tr>
+          <tr>
+            <td>Listings</td>
+            <td>{{listing}}</td>
+          </tr>
+          <tr>
+            <td>Featured</td>
+            <td>{{featured}}</td>
+          </tr>
+          <tr>
+            <td>Boosts</td>
+            <td>{{boosts}}</td>
+          </tr>
+          <tr>
+            <td>Duration</td>
+            <td>{{duration}}</td>
+          </tr>
+          <tr>
+              <td>Payment Method</td>
+              <td *ngIf="method =='1'">Online (Paystack)</td>
+              <td *ngIf="method =='2'">Online (Bitcoin)</td>
+              <td *ngIf="method =='3'">Bank payment</td>
+            </tr>
+          <tr>
+            <td>Amount</td>
+            <td>₦{{package}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="s-btn">
+        <input type="button" class="btn btn-danger" tabindex="0" value="cancel">
+        <input type="submit" class="btn" style="background:#1f86f7; color:white;" (click)="process()" value="process">
+      </div>
+    </div>
+  </div>
+</div>

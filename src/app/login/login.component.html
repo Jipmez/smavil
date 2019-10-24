@@ -1,0 +1,26 @@
+<ng-progress [color]="'#12326b'"></ng-progress>
+<div id="preloder">
+  <div class="loader"></div>
+</div>
+<section class="page-section categories-page">
+  <div class="container">
+    <div class="session">
+        <h2 class="header">Sign in to SmartVil</h2>
+      <div class="account-form">
+        <div class="form">
+            <form (ngSubmit)="Login(so)" #so='ngForm'>
+                <div class="input-group">
+                  <input class="input--style-1 form-control" type="text" placeholder="USERNAME"  ngModel name="username">
+                </div>
+                <div class="input-group">
+                  <input class="input--style-1 form-control" type="password" placeholder="PASSWORD"  ngModel name="password">
+                </div>
+                <div class="input-group">
+                    <input type="submit" name="commit" value="Sign In" class="btn btn-primary form-control" style="margin-top: 10px;" id="signin_button" tabindex="4" data-disable-with="Signing in...">
+                </div> 
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

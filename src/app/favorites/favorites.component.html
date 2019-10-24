@@ -1,0 +1,27 @@
+<section class="container-fluid">
+    <div class="row me">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-12" *ngFor ="let lists of list">
+          <!-- feature -->
+          <div class="rp-item smcard" [ngStyle]="{'border-bottom': lists.boosted > 0 ? '3px solid #ffd46b' : '3px solid green' }">
+            <div class="rp-pic set-bg">
+              
+              <img [src]="lists.pix" alt="">
+            
+              <div class="sale-notic"  *ngIf = 'lists.category == "Sale"'>FOR SALE</div>
+              <div class="rent-notic" *ngIf = 'lists.category == "Rent"'>FOR Rent</div>
+              <div class="save-wrap">
+                  <a class="btn-save-listing" (click)="like(lists)">
+                  <span class="icon"><i class="fa fa-heart-o fa-2x" style="color: white;" (click)="like(lists)"></i></span>
+                 </a>
+            </div>
+            </div>
+            <div class="rp-info" routerLink="../../single/{{lists.propertyID}}" target="_blank">
+              <h5>{{lists.address}}</h5>
+              <p><i class="fa fa-map-marker"></i>{{lists.state}}, CA {{lists.propertyID}}</p>
+            </div>
+          </div>
+         <!--  <pagination-controls (pageChange)="p=$event "></pagination-controls> -->
+        </div>
+       
+     </div>
+    </section>

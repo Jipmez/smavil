@@ -1,0 +1,313 @@
+<div class="container-fluid">
+  <div class="wrapper">
+    <div class="row">
+      <div class="col-md-4">
+          <div class="qodef-package-item qodef-item-space">
+              <div class="qodef-package-item-inner">
+                  <div class="qodef-package-title-holder">
+              <h5 class="qodef-package-title">Standard</h5>
+              </div>
+          <div class="qodef-package-content-holder">
+            <div class="qodef-package-price">
+              $58	</div>
+            <div class="qodef-package-price-dash">
+              <span class="qodef-dash"></span>
+            </div>
+            <div class="qodef-package-content">
+              <div class="qodef-package-listings">
+                  <span class="qodef-listings-label">
+                      Listings Included:		    </span>
+                <span class="qodef-listings-value">
+                      2		    </span>
+              </div>
+              <div class="qodef-package-featured">
+                  <span class="qodef-featured-label">
+                      Featured Included:		    </span>
+                <span class="qodef-featured-value">
+                      1		    </span>
+              </div>
+              <div class="qodef-package-duration">
+                  <span class="qodef-duration-label">
+                      Duration (months):		    </span>
+                <span class="qodef-duration-value">
+                      12		    </span>
+              </div>
+            </div>
+            <div class="qodef-package-action">
+              
+                <form (ngSubmit)="pay(dc)" class="qodef-buy-item-form" #dc='ngForm'>
+                <input name="amount" type="text"  ngModel="1500" style="display: none;">
+                <input name="quantity" type="text"  ngModel="1" style="display: none;">
+                <input type="text" name="listing" id="" ngModel="5" style="display: none;">
+                <input type="text" name="featured" id="" ngModel="3" style="display: none;">
+                <input type="text" name="boosts" id="" ngModel="10" style="display: none;">
+                <input type="text" name="plan" id="" ngModel="1" style="display: none;">
+                  <div  class="qodef-btn qodef-btn-medium qodef-btn-simple" data-toggle="modal" data-target="#myModl">       
+                         <span class="qodef-btn-text">Buy Package</span>  
+                  </div>	
+                          <div class="modal" id="myModl">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                            
+                                  <!-- Modal Header -->
+                                  <div class="modal-header">
+                                    <h4 class="modal-title">Modal Heading</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  </div>
+                            
+                                  <!-- Modal body -->
+                                  <div class="modal-body">
+                                  
+                                      
+                                      <select  ngModel class='form-control' name="duration" id="">
+                                        <option  selected  value="">--duratrion--</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                      </select>
+                                      <select ngModel name="method" class="form-control" id="">
+                                          <option selected value="">--Payment Method--</option>
+                                          <option value="1">Online(paystack)<small>Instant Activation</small></option>
+                                          <option value="2">Online(Bitcoin)<small>Instant Activation</small></option>
+                                          <option value="3">Bank Transfer</option>
+                                        </select>
+                                      <input type="submit" class="btn btn-link" value="submit">
+                                   
+                                  </div>
+                            
+                                  <!-- Modal footer -->
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" id="te" data-dismiss="modal">Close</button>
+                                  </div>
+                            
+                                </div>
+                              </div>
+                            </div>
+                        </form>
+                      </div>
+          </div>    </div>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="qodef-package-item qodef-item-space">
+              <div class="qodef-package-item-inner">
+                  <div class="qodef-package-title-holder">
+              <h5 class="qodef-package-title">Standard</h5>
+              </div>
+          <div class="qodef-package-content-holder">
+            <div class="qodef-package-price">
+              $58	</div>
+            <div class="qodef-package-price-dash">
+              <span class="qodef-dash"></span>
+            </div>
+            <div class="qodef-package-content">
+              <div class="qodef-package-listings">
+                  <span class="qodef-listings-label">
+                      Listings Included:		    </span>
+                <span class="qodef-listings-value">
+                      2		    </span>
+              </div>
+              <div class="qodef-package-featured">
+                  <span class="qodef-featured-label">
+                      Featured Included:		    </span>
+                <span class="qodef-featured-value">
+                      1		    </span>
+              </div>
+              <div class="qodef-package-duration">
+                  <span class="qodef-duration-label">
+                      Duration (months):		    </span>
+                <span class="qodef-duration-value">
+                      12		    </span>
+              </div>
+            </div>
+            <div class="qodef-package-action">
+                <form (ngSubmit)="pay(ad)" class="qodef-buy-item-form" #ad='ngForm'>
+                    <input name="amount" type="text"  ngModel="5000" style="display: none;">
+                    <input name="quantity" type="text"  ngModel="1"style="display: none;">
+                    <input type="text" name="listing" id="" ngModel="10" style="display: none;">
+                    <input type="text" name="featured" id="" ngModel="7" style="display: none;">
+                    <input type="text" name="boosts" id="" ngModel="20" style="display: none;">
+                    <input type="text" name="plan" id="" ngModel="2" style="display: none;">
+                          <div  class="qodef-btn qodef-btn-medium qodef-btn-simple" data-toggle="modal" data-target="#myModal">       
+                                 <span class="qodef-btn-text">Buy Package</span>  
+                          </div>	
+  
+                                  <div class="modal" id="myModal">
+                                      <div class="modal-dialog">
+                                        <div class="modal-content">
+                                    
+                                          <!-- Modal Header -->
+                                          <div class="modal-header">
+                                            <h4 class="modal-title">Modal Heading</h4>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                          </div>
+                                    
+                                          <!-- Modal body -->
+                                          <div class="modal-body">
+                                          
+                                              
+                                              <select  ngModel class='form-control' name="duration" id="">
+                                                <option  selected  value="">--duratrion--</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                              </select>
+                                              <select ngModel name="method" class="form-control" id="">
+                                                  <option selected value="">--Payment Method--</option>
+                                                  <option value="1">Online(paystack)<small>Instant Activation</small></option>
+                                                  <option value="2">Online(Bitcoin)<small>Instant Activation</small></option>
+                                                  <option value="3">Bank Transfer</option>
+                                                </select>
+                                              <input type="submit" class="btn btn-link" value="submit">
+                                           
+                                          </div>
+                                    
+                                          <!-- Modal footer -->
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" id="te" data-dismiss="modal">Close</button>
+                                          </div>
+                                    
+                                        </div>
+                                      </div>
+                                    </div>
+                                </form>
+                      </div>
+          </div>    </div>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="qodef-package-item qodef-item-space">
+              <div class="qodef-package-item-inner">
+                  <div class="qodef-package-title-holder">
+              <h5 class="qodef-package-title">Standard</h5>
+              </div>
+          <div class="qodef-package-content-holder">
+            <div class="qodef-package-price">
+              $58	</div>
+            <div class="qodef-package-price-dash">
+              <span class="qodef-dash"></span>
+            </div>
+            <div class="qodef-package-content">
+              <div class="qodef-package-listings">
+                  <span class="qodef-listings-label">
+                      Listings Included:		    </span>
+                <span class="qodef-listings-value">
+                      2		    </span>
+              </div>
+              <div class="qodef-package-featured">
+                  <span class="qodef-featured-label">
+                      Featured Included:		    </span>
+                <span class="qodef-featured-value">
+                      1		    </span>
+              </div>
+              <div class="qodef-package-duration">
+                  <span class="qodef-duration-label">
+                      Duration (months):		    </span>
+                <span class="qodef-duration-value">
+                      12		    </span>
+              </div>
+            </div>
+            <div class="qodef-package-action">
+              <form (ngSubmit)="pay(da)" class="qodef-buy-item-form" #da='ngForm'>
+                  <input name="amount" type="text"  ngModel="10000" style="display: none;">
+                  <input name="quantity" type="text"  ngModel="1" style="display: none;">
+                  <input type="text" name="listing" id="" ngModel="20" style="display: none;">
+                  <input type="text" name="featured" id="" ngModel="14" style="display: none;">
+                  <input type="text" name="boosts" id="" ngModel="35" style="display: none;">
+                  <input type="text" name="plan" id="" ngModel="3" style="display: none;">
+                        <div  class="qodef-btn qodef-btn-medium qodef-btn-simple" data-toggle="modal" data-target="#myModa">       
+                               <span class="qodef-btn-text">Buy Package</span>  
+                        </div>	
+      
+      
+                                <div class="modal" id="myModa">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                  
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                          <h4 class="modal-title">Modal Heading</h4>
+                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                  
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                        
+                                            
+                                            <select  ngModel class='form-control' name="duration" id="">
+                                              <option  selected  value="">--duratrion--</option>
+                                              <option value="1">1</option>
+                                              <option value="2">2</option>
+                                              <option value="3">3</option>
+                                              <option value="4">4</option>
+                                            </select>
+                                            <select ngModel name="method" class="form-control" id="">
+                                                <option selected value="">--Payment Method--</option>
+                                                <option value="1">Online(paystack)<small>Instant Activation</small></option>
+                                                <option value="2">Online(Bitcoin)<small>Instant Activation</small></option>
+                                                <option value="3">Bank Transfer</option>
+                                              </select>
+                                            <input type="submit" class="btn btn-link" value="submit">
+                                         
+                                        </div>
+                                  
+                                        <!-- Modal footer -->
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-danger" id="te" data-dismiss="modal">Close</button>
+                                        </div>
+                                  
+                                      </div>
+                                    </div>
+                                  </div>
+                              </form>
+                      </div>
+          </div>    </div>
+          </div>
+      </div>
+    </div>
+    
+
+  
+
+<!--  <button
+  angular-rave
+  [PBFPubKey]  = "'FLWPUBK-e26b1697f278b06b74792ec05dfa9b33-X'"
+  [customer_email] = "'user@example.com'"
+  [customer_phone] = "'08090909090'"
+  [amount]="50"
+  [custom_title]="'Bill Payment'"
+  [txref]="'USR1295950'"
+  (callback)="me($event)"
+  (close)="cancelledPayment()"
+  
+>PAY NOW</button>
+ -->
+<!-- <angular-rave
+  [PBFPubKey] = "'FLWPUBK-aaf6d580ebfd505443f76a42327b2e94-X'"
+  [customer_email] = "'user@example.com'"
+  [customer_phone] = "'08090909090'"
+  [amount]="50"
+  [custom_title]="'Bill Payment'"
+  [txref]="'USR1295950'"
+  (callback)="confirmPayment($event)"
+  (close)="cancelledPayment()"
+  (close)="paymentInit()"
+></angular-rave> -->
+
+
+
+
+<!-- 
+<button
+  angular-rave
+  [raveOptions]="paymentOptions"
+  (callback)="me($event)"
+>PAY NOW</button> -->
+
+
+<!-- <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fgoal.com&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId" width="450" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media">
+</iframe> -->
+  </div>
+</div>

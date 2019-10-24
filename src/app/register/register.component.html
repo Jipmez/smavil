@@ -1,0 +1,59 @@
+<div id="preloder">
+  <div class="loader"></div>
+</div>
+
+
+<section class="page-section categories-page">
+  <div class="container">
+    <div class="session">
+        <h2 class="header">Create Your Account</h2>
+      <div class="account-form">
+        <div class="form">
+            <form (ngSubmit)="signUp(so)" #so='ngForm'>
+                <div class="input-group">
+                  <input class="input--style-1 form-control" type="text" placeholder="NAME"  ngModel name="name" required>
+                </div>
+                <div class="input-group">
+                    <input class="input--style-1 form-control" type="text" placeholder="LASTNAME"  ngModel name="lastname" required>
+                </div>
+                <div class="input-group">
+                  <input class="input--style-1 form-control" type="text" placeholder="USERNAME"  ngModel name="username" required>
+                </div>
+                <div class="input-group">
+                  <input class="input--style-1 form-control" type="email" placeholder="EMAIL" ngModel name="email" required>
+                </div>
+                <div class="row row-space">
+                  <div class="col-6">
+                    <div class="input-group">
+                      <input class="input--style-1  form-control" type="password" placeholder="PASSWORD" ngModel name="password" required>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="input-group">
+                      <input class="input--style-1 form-control" type="password" placeholder="CONFIRM_PASSWORD" required ngModel name="cpass">
+                    </div>
+                  </div>
+                      
+                     <div class="col-12">
+                       <div class="input-group">
+                          <select ngModel name="usertype" class="input--style-1 form-control" id="" required>
+                              <option selected value="" disabled > --Account Type -- </option>
+                              <option value="1">indivisual[<em>searching for a room/roommate</em>]</option>
+                              <option value="2">indivisual[<em>searching for property</em>]</option>
+                              <option value="3">Estate Agent</option>
+                              <option value="4">Property Developer</option>
+                            </select>
+                       </div>
+                     </div>
+                       
+                    
+                </div>
+                <div class="input-group">
+                    <input type="submit" [disabled]="!so.valid" name="commit" value="Create Account" class="btn btn-primary form-control" style="margin-top: 10px;" id="signin_button" tabindex="4" data-disable-with="Signing in...">
+                </div> 
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

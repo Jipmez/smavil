@@ -1,0 +1,225 @@
+#preloder {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    background: #fff;
+}
+
+
+.loader {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -13px;
+    margin-left: -13px;
+    border-radius: 60px;
+    animation: loader 0.8s linear infinite;
+    -webkit-animation: loader 0.8s linear infinite;
+}
+
+@keyframes loader {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+		border: 4px solid #f44336;
+		border-left-color: transparent;
+	}
+	50% {
+		-webkit-transform: rotate(180deg);
+		transform: rotate(180deg);
+		border: 4px solid #673ab7;
+		border-left-color: transparent;
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+		border: 4px solid #f44336;
+		border-left-color: transparent;
+	}
+}
+
+@-webkit-keyframes loader {
+	0% {
+		-webkit-transform: rotate(0deg);
+		border: 4px solid #f44336;
+		border-left-color: transparent;
+	}
+	50% {
+		-webkit-transform: rotate(180deg);
+		border: 4px solid #673ab7;
+		border-left-color: transparent;
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		border: 4px solid #f44336;
+		border-left-color: transparent;
+	}
+}
+
+
+
+.wrapper{
+
+    .page-top-section {
+        height: 250px;
+        text-align: center;
+        padding-top: 110px;
+    }
+    
+    .page-top-section h2 {
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    
+    .page-top-section.single-blog {
+        padding-top: 170px;
+    }
+    
+    .page-top-section.single-blog h2 {
+        margin-bottom: 15px;
+    }
+    
+    .page-top-section.single-blog a {
+        color: #cccccc;
+        font-size: 16px;
+        margin: 0 5px;
+    }
+    
+    .page-top-section.single-blog a i {
+        color: #30caa0;
+        margin-right: 10px;
+    }
+
+    .breadcrumb{
+
+        li.breadcrumb-item{
+            font-size: 0.9em;
+            letter-spacing: 1px;
+
+            a {
+                color: #333;
+            }
+        }
+        .active {
+            color: #01cd74;
+        }
+    }
+
+    .main-content{
+        padding: 3em 0;
+
+        h3.tittle {
+            text-align: center;
+            font-size: 2.5em;
+            color: #2c363e;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
+            font-weight: 600;
+        }
+
+        .inner-section {
+            margin-top: 3em;
+
+           .single-content {
+    font-size: .9rem;
+    h1 {
+        font-size: 2rem;
+        color: #000;
+    }
+    .post-meta {
+        font-size: .8rem;
+        .bio-pic {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 40px;
+            flex: 0 0 40px;
+       img {
+                max-width: 100%;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+        }
+    }
+    
+    .right-blog-info{
+
+        .tech-btm {
+            margin-bottom: 2em;
+
+            h4 {
+                font-size: 1.2em;
+                color: #333333;
+                font-weight: 700;
+                margin-bottom: 1em;
+            }
+
+            li {
+                display: block;
+                a{
+                     color: #fff;
+                    display: inline-block;
+                    font-size: 13px;
+                    font-weight: 400;
+                    letter-spacing: 0.2px;
+                    line-height: 30px;
+                    margin-bottom: 10px;
+                    padding: 10px 20px;
+                    text-transform: capitalize;
+                    width: 100%;
+
+                    .count {
+                        padding-left: 20px;
+                    }
+
+                    i {
+                        font-size: 18px;
+                        position: relative;
+                        text-align: left;
+                        width: 35px;
+                    }
+                }
+
+                a.twitter {
+                    background: #57baf7;
+                }
+                a.facebook {
+                    background: #3b5998;
+                }
+                a.dribble {
+                    background: #ea4c89;
+                }
+                a.pin {
+                    background: #BD081C;
+                }
+            }
+
+            img {
+                background: #ebecec;
+                padding: .4em;
+            }
+            h5 {
+                font-size: 0.9em;
+                line-height: 1.4em;
+                font-weight: 600;
+                a {
+                    color: #333;
+                }
+            }
+            .sub-meta{
+                
+                span {
+                    font-size: 0.8em;
+                    color: #a9abad;
+                    line-height: 2.5em;
+                }
+            } 
+
+        }
+    }
+}

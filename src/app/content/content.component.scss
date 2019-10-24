@@ -1,0 +1,110 @@
+.card{
+    
+    .card-body {
+        padding: 1.5rem;
+        flex: 1 1 auto;
+        h5{
+            font-size: 13px;
+        }
+
+        .h2, h2 {
+            font-size: 1.25rem;
+        }
+
+        .progress-xs {
+            height: 3px;
+        }
+
+        .btn-neutral {
+            color: royalblue;
+            border-color: #fff;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+        }
+
+         .btn-sm {
+            font-size: .875rem;
+            line-height: 1.5;
+            padding: .25rem .5rem;
+            border-radius: .25rem;
+        }
+    }
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(87deg,#5e72e4 0,#825ee4 100%)!important;
+}
+
+.bg-gradient-info {
+    background: linear-gradient(87deg,#11cdef 0,#1171ef 100%)!important;
+}
+
+.bg-gradient-danger {
+    background: linear-gradient(87deg,#f5365c 0,#f56036 100%)!important;
+}
+.bg-gradient-default {
+    background: linear-gradient(87deg,#172b4d 0,#1a174d 100%)!important;
+}
+
+.twt-card {
+    max-height: 155px;
+    -webkit-border-radius: 4px 4px 0 0;
+    color: #FFFFFF;
+    padding: 40px 10px 10px;
+    position: relative;
+    min-height: 170px;
+}
+
+.blue-bg {
+    background:  linear-gradient(87deg,#11cdef 0,#1171ef 100%)!important;
+    .corner-ribon {
+        text-align: center;
+        width: 71px;
+        height: 71px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 20px;
+    }
+     .wtt-mark {
+        color: rgba(255, 255, 255, 0.15);
+        font-size: 160px;
+        position: absolute;
+        top: 10px;
+        left: 40%;
+    }
+    .media{
+
+    }
+}
+.twt-category {
+    display: inline-block;
+    margin-bottom: 11px;
+    margin-top: 10px;
+    width: 100%;
+    padding: 15px 0;
+    ul, ol {
+        padding-left: 0;
+         li {
+            color: #bdbdbd;
+            font-size: 13px;
+            width: 32%;
+            text-align: center;
+            border-right: 1px solid #e6e6e6;
+            display: inline-block;
+        }
+    }
+}
+.twt-footer {
+    padding: 12px 15px;
+    color: #d2d2d2;
+    a {
+        color: #d2d2d2;
+    }
+}
+
+.me{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+

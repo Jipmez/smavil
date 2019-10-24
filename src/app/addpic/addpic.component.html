@@ -1,0 +1,94 @@
+  <!-- Second Page -->
+     <div id="menu1" class="container-fluid"><br>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      publish:
+                    </div>
+                    <div class="col-sm-9">
+                      <h5 *ngIf="publish == 1">publish</h5>
+                      <h5 *ngIf="publish == 2">unpublish</h5>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      title:
+                    </div>
+                    <div class="col-sm-9">
+                      <h5>{{title}}</h5>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      type/ category:
+                    </div>
+                    <div class="col-sm-9">
+                      <h5>{{status}}</h5> for {{category}}
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      Address:
+                    </div>
+                    <div class="col-sm-9">
+                      <h5>{{category}}</h5>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      Ref
+                    </div>
+                    <div class="col-sm-9">
+                      <h5>{{type}}</h5>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      Price
+                    </div>
+                    <div class="col-sm-9">
+                      <h5>{{price}}</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        <div class="col-md-8">
+                <div class="wp-block default user-form no-margin">
+        <div class="form-header">
+            <h4>Add property photo <small>(not more than 5 pictures)</small></h4>
+         </div>
+          <form>
+        <div class="col-md-12 well">
+           
+            <hr style="border-top:1px dotted #ccc;"/>
+            <div class="row">
+                <div class="col-md-2">
+                <div class="form-inline">
+                    <input type="file" class="form-control" id="mediaFile" #mediaFile multiple  (change)="handlePic($event)" required >
+                   
+                    </div>
+                </div>
+                </div>
+    
+            <br />
+            <div class="alert alert-info">My Gallery</div>
+
+            <div class="row">
+              
+            <div class="col-sm-3" *ngFor='let url of urls'>
+              <img [src]="url" alt="" height="200">
+            </div>
+              
+            </div>
+            <button type="submit"  (click)="sub()">Add picture</button>
+        </div>
+        </form>
+        </div>
+        </div>
+        
+        </div>
+      </div> 
+
+     

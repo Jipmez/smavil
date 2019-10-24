@@ -1,0 +1,134 @@
+<div class="container-fluid blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form">
+            <div class="page-header"><h1><div class="row"><div class="col-sm-8"><a style="text-decoration: none; color: inherit;" href="blogs_view.php"><i class="fa fa-rss-square"></i> Blogs</a></div><div class="col-sm-4">		<div class="input-group" id="quick-search">
+                <input type="text" id="SearchString" name="SearchString" value="" class="form-control" placeholder="Quick Search">
+                <span class="input-group-btn">
+                  <button name="Search_x" value="1" id="Search" type="submit" onclick="document.myform.SelectedID.value = ''; document.myform.NoDV.value=1; return true;" class="btn btn-default" title="Quick Search"><i class="glyphicon glyphicon-search"></i></button>
+                  <button name="ClearQuickSearch" value="1" id="ClearQuickSearch" type="submit" onclick="$j('#SearchString').val(''); document.myform.SelectedID.value = ''; document.myform.NoDV.value=1; return true;" class="btn btn-default" title="Show All"><i class="glyphicon glyphicon-remove-circle"></i></button>
+                </span>
+              </div></div></div></h1></div>
+              <div id="topbuttons">
+                  <div class="btn-group btn-group-lg visible-md visible-lg all_records pull-left">
+                    <a class="btn btn-success"  data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-circle"></i>Add New</a>
+                  </div>
+              </div>
+              
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+          <div class="table-view">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover"><thead><tr><th style="width: 18px;" class="text-center"><input class="hidden-print" type="checkbox" title="Select all records" id="select_all_records"></th>	<th class="blogs-title"><a href="blogs_view.php?SortDirection=asc&amp;SortField=2" onclick="document.myform.SelectedID.value = ''; document.myform.NoDV.value=1; document.myform.SortDirection.value='asc'; document.myform.SortField.value = '2'; document.myform.submit(); return false;" class="TableHeader">Title</a></th>
+                  <th class="blogs-category"><a href="blogs_view.php?SortDirection=asc&amp;SortField=3" onclick="document.myform.SelectedID.value = ''; document.myform.NoDV.value=1; document.myform.SortDirection.value='asc'; document.myform.SortField.value = '3'; document.myform.submit(); return false;" class="TableHeader">Category</a></th>
+                  <th class="blogs-tags"><a href="blogs_view.php?SortDirection=asc&amp;SortField=4" onclick="document.myform.SelectedID.value = ''; document.myform.NoDV.value=1; document.myform.SortDirection.value='asc'; document.myform.SortField.value = '4'; document.myform.submit(); return false;" class="TableHeader">Tags</a></th>
+                  <th class="blogs-content"><a href="blogs_view.php?SortDirection=asc&amp;SortField=5" onclick="document.myform.SelectedID.value = ''; document.myform.NoDV.value=1; document.myform.SortDirection.value='asc'; document.myform.SortField.value = '5'; document.myform.submit(); return false;" class="TableHeader">Content</a></th>
+                  <th class="blogs-photo"><a href="blogs_view.php?SortDirection=asc&amp;SortField=6" onclick="document.myform.SelectedID.value = ''; document.myform.NoDV.value=1; document.myform.SortDirection.value='asc'; document.myform.SortField.value = '6'; document.myform.submit(); return false;" class="TableHeader">Photo</a></th>
+                  <th class="blogs-date"><a href="blogs_view.php?SortDirection=asc&amp;SortField=7" onclick="document.myform.SelectedID.value = ''; document.myform.NoDV.value=1; document.myform.SortDirection.value='asc'; document.myform.SortField.value = '7'; document.myform.submit(); return false;" class="TableHeader">Date</a></th>
+                  <th class="blogs-author"><a href="blogs_view.php?SortDirection=asc&amp;SortField=8" onclick="document.myform.SelectedID.value = ''; document.myform.NoDV.value=1; document.myform.SortDirection.value='asc'; document.myform.SortField.value = '8'; document.myform.submit(); return false;" class="TableHeader">Author</a></th>
+                  <th class="blogs-posted"><a href="blogs_view.php?SortDirection=asc&amp;SortField=9" onclick="document.myform.SelectedID.value = ''; document.myform.NoDV.value=1; document.myform.SortDirection.value='asc'; document.myform.SortField.value = '9'; document.myform.submit(); return false;" class="TableHeader">Status</a></th>
+                
+                  </tr>
+                
+                </thead>
+                
+                <tbody><!-- tv data below -->
+                <tr><td class="text-center"><input class="hidden-print record_selector" type="checkbox" id="record_selector_7" name="record_selector[]" value="7"></td><!-- Edit this file to change the layout of each record in the table view -->
+                <!-- To disable clicking of a field, remove the <a onclick="document.myform.SelectedField.value=this.parentNode.cellIndex; document.myform.SelectedID.value='7'; document.myform.submit(); return false;" href="blogs_view.php?SelectedID=7" style="display: block; padding:0px;"> and </a> formatters around it-->
+                
+                <!-- If you wish to hide the table view header that contains the column titles, -->
+                <!-- add the following to the blogs_init() hook (in hooks/blogs.php file) -->
+                <!--     $options->ShowTableHeader = 0;     -->
+                
+                    <td id="blogs-title-7" class="blogs-title"><a onclick="document.myform.SelectedField.value=this.parentNode.cellIndex; document.myform.SelectedID.value='7'; document.myform.submit(); return false;" href="blogs_view.php?SelectedID=7" style="display: block; padding:0px;">life of a copper</a></td>
+                    <td id="blogs-category-7" class="blogs-category"><a onclick="document.myform.SelectedField.value=this.parentNode.cellIndex; document.myform.SelectedID.value='7'; document.myform.submit(); return false;" href="blogs_view.php?SelectedID=7" style="display: block; padding:0px;">entertainment</a></td>
+                    <td id="blogs-tags-7" class="blogs-tags"><a onclick="document.myform.SelectedField.value=this.parentNode.cellIndex; document.myform.SelectedID.value='7'; document.myform.submit(); return false;" href="blogs_view.php?SelectedID=7" style="display: block; padding:0px;">#md #see #life</a></td>
+                    <td id="blogs-content-7" class="blogs-content"><a onclick="document.myform.SelectedField.value=this.parentNode.cellIndex; document.myform.SelectedID.value='7'; document.myform.submit(); return false;" href="blogs_view.php?SelectedID=7" style="display: block; padding:0px;"><font color="#006600">i was given a chance to life at a new phase with a little time to decide what is good for me to do</font><div>little me of little faith</div></a></td>
+                    <td id="blogs-photo-7" class="blogs-photo"><a href="./images/32945800_1564665775.jpg" data-lightbox="blogs-photo"><img src="thumbnail.php?i=32945800_1564665775.jpg&amp;t=blogs&amp;f=photo&amp;v=tv" class="img-thumbnail"></a></td>
+                    <td id="blogs-date-7" class="blogs-date"><a onclick="document.myform.SelectedField.value=this.parentNode.cellIndex; document.myform.SelectedID.value='7'; document.myform.submit(); return false;" href="blogs_view.php?SelectedID=7" style="display: block; padding:0px;">08/01/2019</a></td>
+                    <td id="blogs-author-7" class="blogs-author"><a onclick="document.myform.SelectedField.value=this.parentNode.cellIndex; document.myform.SelectedID.value='7'; document.myform.submit(); return false;" href="blogs_view.php?SelectedID=7" style="display: block; padding:0px;">clasie</a></td>
+                    <td id="blogs-posted-7" class="blogs-posted"><a onclick="document.myform.SelectedField.value=this.parentNode.cellIndex; document.myform.SelectedID.value='7'; document.myform.submit(); return false;" href="blogs_view.php?SelectedID=7" style="display: block; padding:0px;">publish</a></td>
+                </tr>
+                <!-- tv data above -->
+                </tbody>
+                  <tfoot><tr><td colspan="9">Records 1 to 1 of 1</td></tr></tfoot></table>
+            </div>
+          </div>
+        </div>
+        </div>
+  </div>
+</div>
+
+
+<div class="modal" id="myModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <div class="Modal-header-text">Edit Property</div>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form (ngSubmit)="AddBlog(ad)"  #ad='ngForm'>
+          <div class="addproperty">
+              <div class="SpacerRow">
+                <div class="Autocomplete AddPropertyModal-col AddPropertyModal-autocomplete-col">
+                  <div class="Autocomplete-InputContainer">
+                    <div>
+                      <label class="Label">Title</label>
+                      <div class="Input-container">
+                        <input class="form-control" ngModel name="title" type="text" placeholder="Property address" required value="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="SpacerRow">
+                  <div class="Autocomplete AddPropertyModal-col AddPropertyModal-autocomplete-col">
+                    <div class="Autocomplete-InputContainer">
+                      <div>
+                        <label class="Label">Category</label>
+                        <div class="Input-container">
+                            <select name="" ngModel name="category" required class="form-control" id="">
+                                <option value="" selected disabled>-- Property blog/Roomate blog -- </option>
+                                <option value="1">Property</option>
+                                <option value="2">Rommate</option>
+                              </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>                  
+                <div class="SpacerRow">
+                    <div class="Autocomplete AddPropertyModal-col AddPropertyModal-autocomplete-col">
+                      <div class="Autocomplete-InputContainer">
+                        <div>
+                          
+                          <div class="Input-container">
+                            <input type="submit" value="add property" [disabled]="!ad.valid" class="btn btn-primary form-control">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          </div>
+
+        </form>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" id="te" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>

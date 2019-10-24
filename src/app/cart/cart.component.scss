@@ -1,0 +1,47 @@
+.content-holder{
+    float: left;
+    width: 100%;
+}
+
+.cart-collaterals {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+    margin: 50px 0 50px;
+}
+
+ .cart_totals {
+    margin: 1px 0 20px;
+}
+
+ .cart-collaterals h2 {
+    position: relative;
+    display: block;
+    margin: 0 0 26px;
+}
+
+.wc-proceed-to-checkout a{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    outline: 0;
+    font-size: 11px;
+    line-height: 2em;
+    font-family: Roboto,sans-serif;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    margin: 0;
+    -webkit-transition: color .2s ease-in-out,background-color .2s ease-in-out,border-color .2s ease-in-out;
+    -moz-transition: color .2s ease-in-out,background-color .2s ease-in-out,border-color .2s ease-in-out;
+    transition: color .2s ease-in-out,background-color .2s ease-in-out,border-color .2s ease-in-out;
+    padding: 12px 53px 11px;
+    color: #fff;
+    background-color: #078169;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    cursor: pointer;
+    z-index: 3;
+}
