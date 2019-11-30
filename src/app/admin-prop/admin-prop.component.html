@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <h2>Properties</h2>
+ <div class="prop">
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-3" *ngFor ="let lists of list; let i = index" routerLink="../prop_view/{{lists.propertyID}}">
+      <!-- feature -->
+      <div class="rp-item smcard shadow">
+        <div class="rp-pic set-bg">
+          <img [src]="lists.pix" alt="">
+          <img *ngIf="lists.pix == ''" src="../../assets/images/service-bg.jpg" alt="">
+          <div class="sale-notic"  *ngIf = 'lists.category == "1"'>FOR SALE</div>
+          <div class="rent-notic" *ngIf = 'lists.category == "2"'>FOR Rent</div>
+          <div class="save-wrap"><a href="" class="btn-save-listing">
+            <span class="icon"><i class="fa fa-heart-o fa-2x" style="color: white;"></i></span>
+          </a></div>
+        </div>
+        <div class="rp-info">
+          <div class="textbody">
+            <strong>{{lists.address}}</strong>
+          </div>
+          <div class="text-smaall">
+            <div class="property-info">
+              <span><i class="fa fa-bed"></i> beds: {{lists.bedroom}} 
+                  <span class="PropertyCard-field-divider">·</span>
+              </span>
+              <span><i class="fa fa-bath"></i> baths: {{lists.bathroom}} 
+                  <span class="PropertyCard-field-divider">·</span>
+              </span>
+              <span> <i class="fa fa-eye"></i> views: {{lists.Views}}
+                <span class="PropertyCard-field-divider">·</span>
+              </span>
+              <span> <i class="fa fa-bolt"></i> boosts: {{lists.boosted}}
+                <span class="PropertyCard-field-divider">·</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+</div>

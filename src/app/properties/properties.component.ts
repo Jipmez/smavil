@@ -38,7 +38,9 @@ amount = 100 *100;
     )
   }
 
-
+  paymentCancel(){
+    console.log('me');
+  }
   select(lists){
     console.log('me');
     this.nav.navigate(['dashboard/add',lists.propertyID])

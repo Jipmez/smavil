@@ -36,6 +36,10 @@ email = 'mezueJ@gmail.com';
    this.ref =  this.generateReference()
   }
 
+  paymentCancel()
+{
+  console.log('me')
+}
 
   generateReference(): string {
     let text = '';

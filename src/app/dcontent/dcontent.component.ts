@@ -12,8 +12,9 @@ declare let $;
 export class DcontentComponent implements OnInit {
   cookieValue: string;
   permit: number;
-  profile: any;
-  
+  profile= [];
+  propp = [];
+  sub = [];
   constructor(private server: DataService,private cookieService: CookieService,private nav:Router) { }
 
   ngOnInit() {
@@ -28,15 +29,26 @@ export class DcontentComponent implements OnInit {
         console.log(this.profile);
       }
     )
+
+    this.server.getProp().subscribe(
+      (res)=>{this.propp = res.property}
+    )
+  }
+
+  getSubprop(x){
+   this.server.getSubprop(x).subscribe(
+     res=>{this.sub = res.subtype;}
+   )
   }
 
   prop(x:NgForm){
-  console.log(x);
+  console.log(x.value);
 
   let pay ={
     Address : x.value.address,
     category : x.value.category,
     type : x.value.type,
+    sub_type : x.value.sub,
     id : this.cookieValue,
     key : 'pay'
   }

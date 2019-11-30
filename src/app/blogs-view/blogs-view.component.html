@@ -37,21 +37,23 @@
                 </thead>
                 
                 <tbody><!-- tv data below -->
-                <tr><td class="text-center"><input class="hidden-print record_selector" type="checkbox" id="record_selector_7" name="record_selector[]" value="7"></td><!-- Edit this file to change the layout of each record in the table view -->
+                <tr *ngFor="let blogs of blog">
+                  <td class="text-center"><input class="hidden-print record_selector" type="checkbox" id="record_selector_7" name="record_selector[]" value="7"></td><!-- Edit this file to change the layout of each record in the table view -->
                 <!-- To disable clicking of a field, remove the <a onclick="document.myform.SelectedField.value=this.parentNode.cellIndex; document.myform.SelectedID.value='7'; document.myform.submit(); return false;" href="blogs_view.php?SelectedID=7" style="display: block; padding:0px;"> and </a> formatters around it-->
                 
                 <!-- If you wish to hide the table view header that contains the column titles, -->
                 <!-- add the following to the blogs_init() hook (in hooks/blogs.php file) -->
                 <!--     $options->ShowTableHeader = 0;     -->
                 
-                    <td id="blogs-title-7" class="blogs-title"><a onclick="document.myform.SelectedField.value=this.parentNode.cellIndex; document.myform.SelectedID.value='7'; document.myform.submit(); return false;" href="blogs_view.php?SelectedID=7" style="display: block; padding:0px;">life of a copper</a></td>
-                    <td id="blogs-category-7" class="blogs-category"><a onclick="document.myform.SelectedField.value=this.parentNode.cellIndex; document.myform.SelectedID.value='7'; document.myform.submit(); return false;" href="blogs_view.php?SelectedID=7" style="display: block; padding:0px;">entertainment</a></td>
-                    <td id="blogs-tags-7" class="blogs-tags"><a onclick="document.myform.SelectedField.value=this.parentNode.cellIndex; document.myform.SelectedID.value='7'; document.myform.submit(); return false;" href="blogs_view.php?SelectedID=7" style="display: block; padding:0px;">#md #see #life</a></td>
-                    <td id="blogs-content-7" class="blogs-content"><a onclick="document.myform.SelectedField.value=this.parentNode.cellIndex; document.myform.SelectedID.value='7'; document.myform.submit(); return false;" href="blogs_view.php?SelectedID=7" style="display: block; padding:0px;"><font color="#006600">i was given a chance to life at a new phase with a little time to decide what is good for me to do</font><div>little me of little faith</div></a></td>
-                    <td id="blogs-photo-7" class="blogs-photo"><a href="./images/32945800_1564665775.jpg" data-lightbox="blogs-photo"><img src="thumbnail.php?i=32945800_1564665775.jpg&amp;t=blogs&amp;f=photo&amp;v=tv" class="img-thumbnail"></a></td>
-                    <td id="blogs-date-7" class="blogs-date"><a onclick="document.myform.SelectedField.value=this.parentNode.cellIndex; document.myform.SelectedID.value='7'; document.myform.submit(); return false;" href="blogs_view.php?SelectedID=7" style="display: block; padding:0px;">08/01/2019</a></td>
-                    <td id="blogs-author-7" class="blogs-author"><a onclick="document.myform.SelectedField.value=this.parentNode.cellIndex; document.myform.SelectedID.value='7'; document.myform.submit(); return false;" href="blogs_view.php?SelectedID=7" style="display: block; padding:0px;">clasie</a></td>
-                    <td id="blogs-posted-7" class="blogs-posted"><a onclick="document.myform.SelectedField.value=this.parentNode.cellIndex; document.myform.SelectedID.value='7'; document.myform.submit(); return false;" href="blogs_view.php?SelectedID=7" style="display: block; padding:0px;">publish</a></td>
+                    <td id="blogs-title-7" class="blogs-title"><a  routerLink="../add_blog/{{blogs.blog_id}}" style="display: block; padding:0px;">{{blogs.title}}</a></td>
+                    <td id="blogs-category-7" class="blogs-category" *ngIf="blogs.category == '1'"><a routerLink="../add_blog/{{blogs.blog_id}}" style="display: block; padding:0px;" >Property</a></td>
+                    <td id="blogs-category-7" class="blogs-category" *ngIf="blogs.category == '2'"><a   routerLink="../add_blog/{{blogs.blog_id}}" style="display: block; padding:0px;" >Roomate</a></td>
+                    <td id="blogs-tags-7" class="blogs-tags"><a  routerLink="./add-blog/{{blogs.blog_id}}" style="display: block; padding:0px;">{{blogs.tags}}</a></td>
+                    <td id="blogs-content-7" class="blogs-content"><a  routerLink="../add_blog/{{blogs.blog_id}}" style="display: block; padding:0px;" [innerHtml]="blogs.content"></a></td>
+                    <td id="blogs-photo-7" class="blogs-photo"><a routerLink="../add_blog/{{blogs.blog_id}}" data-lightbox="blogs-photo"><img [src]="blogs.photo" class="img-thumbnail"></a></td>
+                    <td id="blogs-date-7" class="blogs-date"><a  routerLink="../add_blog/{{blogs.blog_id}}" style="display: block; padding:0px;">{{blogs.date}}</a></td>
+                    <td id="blogs-author-7" class="blogs-author"><a  routerLink="../add_blog/{{blogs.blog_id}}" style="display: block; padding:0px;">{{blogs.author}}</a></td>
+                    <td id="blogs-posted-7" class="blogs-posted"><a  routerLink="../add_blog/{{blogs.blog_id}}" style="display: block; padding:0px;">{{blogs.posted}}</a></td>
                 </tr>
                 <!-- tv data above -->
                 </tbody>

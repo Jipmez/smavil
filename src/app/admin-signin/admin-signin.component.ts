@@ -36,7 +36,7 @@ export class AdminSigninComponent implements OnInit {
         let bag=res.message;
         this.cookieService.set('adminID',bag);
         this.nav.navigate(['admin']);
-        
+      
       }
     },
      ()=>{},

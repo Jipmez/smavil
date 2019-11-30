@@ -141,7 +141,7 @@
                       <ul>
                           <li class="active">
                               <h5>750</h5>
-                              {{profile['boosts']}}
+                              <!-- {{profile.boosts}} -->
                           </li>
                           <li>
                               <h5>865</h5>
@@ -296,7 +296,7 @@
                       <div>
                         <label class="Label">Property address</label>
                         <div class="Input-container">
-                            <select name="" ngModel name="category" required class="form-control" id="">
+                            <select  ngModel name="category" required class="form-control" id="">
                                 <option value="" selected disabled>-- Rent/Sale -- </option>
                                 <option value="1">Rent</option>
                                 <option value="2">Sale</option>
@@ -311,13 +311,11 @@
                     <div class="Autocomplete AddPropertyModal-col AddPropertyModal-autocomplete-col">
                       <div class="Autocomplete-InputContainer">
                         <div>
-                          <label class="Label">Property address</label>
+                          <label class="Label">Property Type</label>
                           <div class="Input-container">
-                            <select name="type" ngModel required class="form-control" id="">
+                            <select name="type" ngModel required class="form-control" id="" (change)="getSubprop($event.target.value)">
                               <option value=""> -- Property Type -- </option>
-                              <option value="1">House</option>
-                              <option value="2">Condo / Apartment</option>
-                              <option value="3">Land</option>
+                               <option  *ngFor="let propps of propp" [ngValue]="propps.type_id">{{propps.type_name}}</option>
                             </select>
                           </div>
                         </div>
@@ -325,20 +323,23 @@
                     </div>
                   </div>
 
-
                   <div class="SpacerRow">
                       <div class="Autocomplete AddPropertyModal-col AddPropertyModal-autocomplete-col">
                         <div class="Autocomplete-InputContainer">
                           <div>
-                            <label class="Label">Property address</label>
+                            <label class="Label">SubType</label>
                             <div class="Input-container">
-                              <input type="checkbox" name="" id="">
-                              jfbcvyyb
+                              <select name="sub" ngModel required class="form-control" id="">
+                                <option value=""> -- Sub Type -- </option>
+                                 <option  *ngFor="let subs of sub" [ngValue]="subs.sub_name">{{subs.sub_name}}</option>
+                              </select>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
+
+
 
                     <div class="SpacerRow">
                         <div class="Autocomplete AddPropertyModal-col AddPropertyModal-autocomplete-col">

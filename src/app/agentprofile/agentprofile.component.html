@@ -51,7 +51,7 @@
                 Online Now
             </div>
             <div class="box messaging ">
-                <a class="button start-conversation with_popup bg-success"><i class="fa fa-whatsapp "></i>Message Me</a>
+                <a class="button start-conversation with_popup" href="https://api.whatsapp.com/send?phone={{phone}}" target="_blank"><i class="fa fa-whatsapp fa-2x"></i>Message Me</a>
               </div>
         </div>
       </div>
@@ -98,8 +98,8 @@
                                       <div class="h6 typeWeightNormal mtn">Min</div>
                                   </div>
                                 </div>
-                                <div class="col-md-4 col-4 short_price pln mvn">
-                                  <div class="card">
+                                <div class="col-md-4 col-4 ">
+                                  <div class="card short_price  mvn">
                                       <div class="h4 typeEmphasize mbn">₦<span class="min_sale_price">{{average}}</span></div>
                                       <div class="h6 typeWeightNormal mtn">Average</div>
                                   </div>
@@ -396,7 +396,7 @@
 
                   <div class="line pts pbm mln" *ngIf="list">
                     <div class="row">
-                        <div class="col-md-6" *ngFor="let lists of list">
+                        <div class="col-md-6" *ngFor="let lists of list | paginate: { itemsPerPage: 4, currentPage: p }">
                             <div class="propertie-item set-bg">
                                 <img [src]='lists.pix' alt=""> 
                               <div *ngIf = 'lists.category == "1"' class="rent-notic">FOR Rent</div>
@@ -410,6 +410,17 @@
                               </div>
                             </div>
                           </div>
+
+                          <pagination-controls (pageChange)="p = $event"
+                          maxSize="9"
+                          directionLinks="true"
+                          autoHide="true"
+                          responsive="true"
+                          previousLabel="Previous"
+                          nextLabel="Next"
+                          screenReaderPaginationLabel="Pagination"
+                          screenReaderPageLabel="page"
+                          screenReaderCurrentLabel="You're on page"></pagination-controls>
                           
                     </div>
                   </div>

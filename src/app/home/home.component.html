@@ -127,6 +127,7 @@
     
      <section class="slide" style="margin-top: 10px;">
         <p class="HomeContent__StyledParagraph-sc-10ww3i-1 cQYAME Text-sc-1vuq29o-0 dBvtnv">Recent Listings</p>
+        <div *ngIf="offline">offline</div>
         <div class="HomeContent__StyledLine-sc-10ww3i-0 jqYOHk"></div>
        <div class="container" style="max-width: 1570px;">
           <div class="top-content">
@@ -143,7 +144,9 @@
                                     </button>
                                     <a href="" class="titleLink">
                                          <div class="overlay">
-                                           <div class="imagephoto" style="background-image: url(../../assets/lodges/98477100_1555893564.jpg)"></div>
+                                           <div class="imagephoto">
+                                          <img src="../../assets/lodges/98477100_1555893564.jpg" alt="">
+                                        </div>
                                          </div> 
                                          <div class="info">
                                             <div class="h5 man pan typeEmphasize noWrap typeTruncate">$7,878</div>
@@ -167,7 +170,9 @@
                               </button>
                               <a href="" class="titleLink">
                                    <div class="overlay">
-                                     <div class="imagephoto" [style.background-image]="'url(' + lists.pix + ')'"></div>
+                                     <div class="imagephoto">
+                                       <img [src]="lists.pix" alt="">
+                                     </div>
                                    </div> 
                                    <div class="info">
                                       <div class="h5 man pan typeEmphasize noWrap typeTruncate">${{lists.cost}}</div>

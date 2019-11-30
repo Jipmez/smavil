@@ -26,9 +26,17 @@ cookieValue ;
   imageUrl: string ;
   fileToUpload: File = null;
   formD: FormData;
+  permit: any;
   constructor(private route: ActivatedRoute,private server: DataService,private cookieService: CookieService,private nav:Router,protected localStorage: LocalStorage /* private localstorage : LocalStorageService */) { }
 
   ngOnInit() {
+    this.server.getPermitA().subscribe(
+      (res)=>{this.permit = res.message
+        if(this.permit != (1 || 4)){
+          this.nav.navigate(["admin"]);
+        }
+      }
+    )
     this.cookieValue = this.cookieService.get('adminID');
     this.id = this.route.snapshot.paramMap.get('id');
 

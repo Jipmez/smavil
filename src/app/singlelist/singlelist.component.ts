@@ -21,7 +21,8 @@ export class SinglelistComponent implements OnInit {
   countryA: any;
   stateA: any;
   localA: any;
-  pix: any;
+  pix=[];
+  amen = [];
   constructor(private route: ActivatedRoute,private server: DataService,private cookieService: CookieService,private nav:Router) { }
 list = []
 cookieValue;
@@ -35,11 +36,6 @@ this.cookieValue = this.cookieService.get('logID');
 this.id = this.route.snapshot.paramMap.get('id');
 const location = window.location.href;
 console.log(location);
-
-this.server.getUpro(1).subscribe(
-  (res)=>{console.log(res)}
-)
-
 
     let payload = {
       prop : this.id,
@@ -81,6 +77,7 @@ this.server.getUpro(1).subscribe(
           this.countryA = res.countryA;
           this.stateA = res.stateA;
           this.localA = res.localA;
+          this.amen = res.amens;
           this.server.mapdetails(res.message[0]['locality']).subscribe(
             (res)=>{console.log(res)
               console.log(parseFloat(res[0].lat))

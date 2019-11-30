@@ -1,3 +1,13 @@
+$mobile : 640px;
+$tablet : 800px;
+$desktop : 1024px;
+
+@mixin responsify($breakpont) {
+  @media (max-width: $breakpont){
+    @content;
+  }
+}
+
 .cont{
     width: 100%;
    
@@ -29,6 +39,9 @@
     margin: 0 4px;
 }
 
+editor{
+    height: 300px;
+}
 .toggle{
     display: block;
 }
@@ -62,38 +75,56 @@ input, textarea, input[type=submit]:focus, div {
     outline: none;
 }
 
-.user-form {
-.form-header {
-    padding: 15px 20px;
-    background: #f4f5f4;
-    border-bottom: 1px solid #eaebec;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
+.previewbox{
+    width: 200px;
+    height: 200px;
+    margin : 0 auto;
+    img{
+        border-radius: 30px;
+        border : 4px solid blue;
+       
+        }
+        .bt{
+            position: absolute;
+            top: 210px;
+            border-radius: 36px;
+            width: 180px;
+            margin-left: 10px;
+            align-items: center;
+            text-align: center;
+            color: ghostwhite;
+            background: rgba(42, 63, 84, 0.319);
+            cursor: pointer;
+        }
+}
+.box{
+    width: 100%;
+    height: 150px;
+   @include responsify($mobile){
+     height: inherit;
+   }
+    img{
+        border-radius: 30px;
+        border : 4px solid blue;
+        width: inherit;
+        height: inherit;
+        }
     
-
-    h2{
-        margin: 0;
-    padding: 0!important;
-    font-size: 16px;
-    text-transform: none;
-    font-weight: 400;
-    color: #2f3d46;
-    }
+}
+.form-header{
+    background-color: lightblue;
+    height: 50px;
+    width: 100%;
 }
 
-.form-body{
-    padding: 15px 20px;
-
+label{
+    text-align: left;
+    margin-bottom: 5px;
+    color: #777;
+    font-weight: 600;
+    cursor: pointer;
+    display: block;
 }
-
-
-}
-
- 
-
-
-
-
 
 
 

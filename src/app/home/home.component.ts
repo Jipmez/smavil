@@ -20,6 +20,8 @@ sale  = '1';
   states=[];
   locals=[];
   ngOnInit() { 
+    window.addEventListener('online',  this.onNetworkStatusChange.bind(this));
+    window.addEventListener('offline', this.onNetworkStatusChange.bind(this));
    
     /* this.server.getPermit().subscribe(
      (res)=>{if(res.code == 1){this.permit = res.message}
@@ -72,6 +74,14 @@ $('#carousel-example').on('slide.bs.carousel', function (e) {
     )
 
   }
+
+
+offline: boolean;
+
+onNetworkStatusChange() {
+  this.offline = !navigator.onLine;
+  console.log('offline ' + this.offline);
+}
 
 type(){
   this.toastr.success('Hello world!', 'Toastr fun!');

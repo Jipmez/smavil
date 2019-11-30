@@ -20,6 +20,7 @@ export class AgentprofileComponent implements OnInit {
   min: number;
   max: number;
   average: number;
+  p : number = 1;
   pix: any;
   response: any;
   knowledge: any;
@@ -30,7 +31,7 @@ export class AgentprofileComponent implements OnInit {
   list: [];
 
   constructor(private route: ActivatedRoute,private server: DataService) { }
-
+phone = 245899895;
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
     

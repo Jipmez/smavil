@@ -21,14 +21,33 @@ declare var $;
 export class AddComponent implements OnInit {
   cookieValue: string;
   prop=[];
-  selectedFiles: File[]= [];
+  fileToUpload: File = null;
   urls =new Array<string>();
   ref: any;
   formD: FormData;
-  list =[] ;
   permit: any;
   state: any;
   local: any;
+  list=[];
+  pix: any;
+  title: any;
+  mrkstst: any;
+  cat: any;
+  street: any;
+  bed: any;
+  aff: any;
+  toilet: any;
+  bath: any;
+  tarea: any;
+  park: any;
+  rmsize: any;
+  video: any;
+  des: any;
+  subt: any;
+  town: any;
+  city: any;
+  imageUrl: any;
+  checkedList = [];
 
   constructor(public toastr: ToastrService,private route: ActivatedRoute,private server: DataService,private cookieService: CookieService,private nav:Router,protected localStorage: LocalStorage /* private localstorage : LocalStorageService */) { }
  
@@ -51,9 +70,26 @@ export class AddComponent implements OnInit {
           this.server.SendToPhp(prap).subscribe(
             (res)=>{console.log(res)
               if(res.code ==1){
-                this.list = res.message;
-                console.log(this.list);
-              
+                
+               this.list = res.message
+
+               this.title = res.message[0]['title'];
+               this.mrkstst = res.message[0]['marketS'];
+               this.cat = res.message[0]['category'];
+               this.subt = res.message[0]['Subtype'];
+               this.town = res.message[0]['locality']
+               this.city = res.message[0]['state']
+               this.street = res.message[0]['street'];
+               this.bed = res.message[0]['bedroom'];
+               this.aff = res.message[0]['Affiliated_university'];
+               this.toilet = res.message[0]['toilets'];
+               this.bath = res.message[0]['bathroom'];
+               this.park = res.message[0]['Parking'];
+               this.tarea = res.message[0]['TotalArea'];
+               this.rmsize  =res.message[0]['rmsize'];
+               this.video = res.message[0]['videoL'];
+               this.des = res.message[0]['Description']
+               console.log(this.des)
               }},
             ()=>{},
             ()=>{},
@@ -77,119 +113,138 @@ export class AddComponent implements OnInit {
 
   
   
-  handlePic(event){
-    var $fileUpload = $("input[type='file']");
-    if (parseInt($fileUpload.get(0).files.length)>5){
-     alert("You can only upload a maximum of 5 files");
-    }else{
+// handlePic(event){
+//     var $fileUpload = $("input[type='file']");
+//     if (parseInt($fileUpload.get(0).files.length)>5){
+//      alert("You can only upload a maximum of 5 files");
+//     }else{
 
-      if(event.target.files.length){
-        for(let i = 0 ; i < event.target.files.length ; i++){
-          this.selectedFiles.push(<File>event.target.files[i]);
-        }
-      }
+//       if(event.target.files.length){
+//         for(let i = 0 ; i < event.target.files.length ; i++){
+//           this.selectedFiles.push(<File>event.target.files[i]);
+//         }
+//       }
    
-this.urls = [];
-let files = event.target.files;
-if(files){
- for(let file of files){
-   let reader = new FileReader();
-   reader.onload =(event: any) =>{
-     this.urls.push(event.target.result)
+// this.urls = [];
+// let files = event.target.files;
+// if(files){
+//  for(let file of files){
+//    let reader = new FileReader();
+//    reader.onload =(event: any) =>{
+//      this.urls.push(event.target.result)
+//    }
+//    reader.readAsDataURL(file)
+//  }
+// }
+// }
+
+// }
+
+
+handleFileInput(file: FileList){
+  this.fileToUpload = file.item(0);
+  var reader = new FileReader();
+  reader.onload = (event:any) => {
+    this.imageUrl = event.target.result;
+  }
+  reader.readAsDataURL(this.fileToUpload);
+
+  }
+
+
+  sub(){
+    const fd= new FormData();
+    var tel = fd.append("image",this.fileToUpload,this.fileToUpload.name);
+     fd.append('key','200');
+     fd.append('propID',this.ref);
+     fd.append('id',this.cookieValue);
+ 
+ 
+    
+ 
+   this.server.SendToPhp(fd).subscribe(		
+     (res)=>{
+         if(res.code == 1){
+           this.urls.push(res.message);
+           this.toastr.success('Picture Upload!', 'Successful');
+         }
+     },
+   )
    }
-   reader.readAsDataURL(file)
- }
-}
-}
-
-}
 
 
-sub(){
-  alert('p');
-  this.formD = new FormData();
-  this.formD.append('key', '200');
-
-  
- let p : any = 0;
-
-
-    for(let i=0 ; i < this.selectedFiles.length ; i++){
-      this.formD.append(p, this.selectedFiles[i],this.selectedFiles[i].name);
-
-      p++
-  }
-    this.formD.append('propID',this.ref);
-    this.formD.append('id',this.cookieValue); 
-    console.log(this.formD);
-  this.server.SendToPhp(this.formD).subscribe(
-    (res)=>{console.log(res)
-      if(res.code ==1){
-        this.toastr.success('Picture Upload!', 'Successful');
-      }else if(res.code == 2){
-        this.toastr.success('Picture Upload!', 'Could not upload picture');
-      }
-    },
-    ()=>{},
-    ()=>{},
-  )
-    
-}
-
-
-
-  countryList: Array<any> = [
-    { name: 'Flat', cities: ['Mini-Flat', 'Self-contained(singlerooms)'] },
-    { name: 'House', cities: ['Detached Bungalow','Detached Duplex','Semi-Detached Bungalow','Semi-Detached Duplex','Terraced Bungalow','Terraced Duplex'] },
-    { name: 'Commercial Property', cities: ['Downers Grove'] },
-    { name: 'Land', cities: ['Puebla'] },
-    { name: 'Event Center/ Venue', cities: ['Beijing'] },
-  ];
-  cities: Array<any>;
-
-
-  setVisibility(){
+   onChangeCategory(event: boolean, cat: string){ // Use appropriate model type instead of any
+    if(event) {
+    this.checkedList.push(cat);
+    }else {
+      let index = this.checkedList.indexOf(cat);
+      this.checkedList.splice(index,1);
     
   }
+  console.log(this.checkedList);
+   }
+
+
+// sub(){
+//   alert('p');
+//   this.formD = new FormData();
+//   this.formD.append('key', '200');
 
   
-   changeCountry(count) {
-    this.cities = this.countryList.find(con => con.name == count).cities;
-  } 
+//  let p : any = 0;
+
+
+//     for(let i=0 ; i < this.selectedFiles.length ; i++){
+//       this.formD.append(p, this.selectedFiles[i],this.selectedFiles[i].name);
+
+//       p++
+//   }
+//     this.formD.append('propID',this.ref);
+//     this.formD.append('id',this.cookieValue); 
+//     console.log(this.formD);
+//   this.server.SendToPhp(this.formD).subscribe(
+//     (res)=>{console.log(res)
+//       if(res.code ==1){
+//         this.toastr.success('Picture Upload!', 'Successful');
+//       }else if(res.code == 2){
+//         this.toastr.success('Picture Upload!', 'Could not upload picture');
+//       }
+//     },
+//     ()=>{},
+//     ()=>{},
+//   )
+    
+// }
 
   
   AddP(x:NgForm){
-    
+    console.log(x.value);
     let user = { 
       publish: x.value.optradio,
-      title : x.value.title,
-      status: x.value.marketS,
-      category : x.value.category,
-      type : x.value.type,
-      subtype: x.value.subtype,
-      state: x.value.state,
-      locality: x.value.Locality,
-      street: x.value.Street,
+      title : (x.value.title == '')?this.title : x.value.title,
+      status: (x.value.marketS == '' )? this.mrkstst : x.value.marketS,
+      category : (x.value.category == '')? this.cat : x.value.category,
+      subtype: (x.value.subtype == '') ? this.subt : x.value.subtype,
+      state: (x.value.state == '')? this.city : x.value.state,
+      uni : (x.value.affiliate == '') ? this.aff : x.value.affiliate,
+      locality: (x.value.Locality  == '')? this.town : x.value.city,
+      street: (x.value.Street == '') ?this.street : x.value.Street,
       price: x.value.price,
-      bedroom: x.value.Bedroom,
-      toilets: x.value.Toilets,
-      bathrooms: x.value.Bathrooms,
-      parking: x.value.Parking,
-      totalArea: x.value.TotalArea,
-      roomsize: x.value.romsize,
-      coveredArea: x.value.CoveredArea,
-      furnished: x.value.furnished,
-      serviced: x.value.serviced,
-      service_charge: x.value.service_charge,
-      service_charge_qualifier: x.value.service_charge_qualifier,
-      video:x.value.video,
-      discription: x.value.discription,
+      bedroom: (x.value.Bedroom == '') ? this.bed :x.value.Bedroom,
+      toilets: (x.value.Toilets == '') ? this.toilet : x.value.Toilets,
+      bathrooms: (x.value.Bathrooms == '') ? this.bath : x.value.Bathrooms,
+      parking: (x.value.Parking == '') ? this.park : x.value.Parking,
+      totalArea: (x.value.TotalArea == '') ? this.tarea : x.value.TotalArea,
+      roomsize: (x.value.romsize == '') ? this.rmsize : x.value.romsize,
+      video:(x.value.video == '') ? this.video : x.value.video,
+      discription: (x.value.discription == '') ? this.des: x.value.discription,
+      amenities : this.checkedList,
       id: this.cookieValue,
       propid : this.ref,
       key: 'user'
     }
     
-  return   console.log(user);
+  console.log(user);
 
 
     this.server.SendToPhp(user).subscribe(

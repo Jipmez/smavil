@@ -2,27 +2,28 @@
   <div class="wrapper">
     <div class="row">
       <div class="col-md-12">
-        <h2>Hello admin</h2>
-      
+        <!-- <h2>Hello {{admin.userName}}</h2> -->
           <div class="alert alert-success fade in">
               <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
               <strong><span class="fa fa-bullhorn fa-2x"></span> </strong> <strong>&nbsp;&nbsp;Welcome to your Admin Dashboard!!</strong>.
               </div>
       </div>
 
-      <div id="topbuttons">
+      <div id="topbuttons" *ngIf="permit == 1" class="col-md-12">
           <div class="btn-group btn-group-lg visible-md visible-lg all_records pull-left">
-            <a class="btn btn-success"  data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-circle"></i>Add New</a>
+            <a class="btn btn-success"  data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-circle"></i>Add Admin</a>
           </div>
+          
       </div>
-
+     
     </div>
+    <hr style="margin-top: 5px !important;">
    
 
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-3" *ngIf="permit == 1 || permit == 4">
           <div class="panel panel-info">
-              <div class="panel-heading">
+              <div class="panel-heading bg-gradient-info">
                 <div class="row">
                   <div class="col-md-6 col-6">
                     <i class="fa fa-rss fa-5x"></i>
@@ -47,11 +48,189 @@
               </a>
             </div>
       </div>
+
+      <div class="col-md-3" *ngIf="permit == 1 || permit == 4">
+        <div class="panel panel-info">
+            <div class="panel-heading bg-gradient-primary">
+              <div class="row">
+                <div class="col-md-6 col-6">
+                  <i class="fa fa-building fa-5x"></i>
+                </div>
+                <div class="col-md-6 col-6 text-right">
+                  <p class="announcement-heading">23</p>
+                  <p class="announcement-text"><strong>Property</strong></p>
+                </div>
+              </div>
+            </div>
+            <a routerLink="./blog_view">
+              <div class="panel-footer announcement-bottom">
+                <div class="row">
+                  <div class="col-md-6 col-6">
+                    View
+                  </div>
+                  <div class="col-md-6 col-6 text-right">
+                    <i class="fa fa-arrow-circle-right"></i>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+    </div>
+
+    <div class="col-md-3" *ngIf="permit == 1 || permit == 4">
+      <div class="panel panel-info">
+          <div class="panel-heading bg-gradient-danger">
+            <div class="row">
+              <div class="col-md-6 col-6">
+                <i class="fa fa-home fa-5x"></i>
+              </div>
+              <div class="col-md-6 col-6 text-right">
+                <p class="announcement-heading">50</p>
+                <p class="announcement-text"><strong>Roomates</strong></p>
+              </div>
+            </div>
+          </div>
+          <a routerLink="./blog_view">
+            <div class="panel-footer announcement-bottom">
+              <div class="row">
+                <div class="col-md-6 col-6">
+                  View
+                </div>
+                <div class="col-md-6 col-6 text-right">
+                  <i class="fa fa-arrow-circle-right"></i>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+  </div>
+
+  <div class="col-md-3" *ngIf="permit == 1 || permit == 4">
+    <div class="panel panel-info">
+        <div class="panel-heading bg-gradient-info">
+          <div class="row">
+            <div class="col-md-6 col-6">
+              <i class="fa fa-cog fa-5x"></i>
+            </div>
+            <div class="col-md-6 col-6 text-right">
+              <p class="announcement-heading">50</p>
+              <p class="announcement-text"><strong>Edit profile</strong></p>
+            </div>
+          </div>
+        </div>
+        <a routerLink="./blog_view">
+          <div class="panel-footer announcement-bottom">
+            <div class="row">
+              <div class="col-md-6 col-6">
+                View
+              </div>
+              <div class="col-md-6 col-6 text-right">
+                <i class="fa fa-arrow-circle-right"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+</div>
+
+
+
+     
+    </div>
+    <div class="row">
+      <div class="col-md-4 me">
+          <div class="card shadow">
+            <div class="twt-card blue-bg">
+               <div class="corner-ribon black-ribon">
+                   <i class="fa fa-user"></i>
+               </div>
+               <div class="fa fa-user wtt-mark"></div>
+               <div class="media">
+                   <a href="../../assets/lodges/53814700_1555903252.jpg">
+                       <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="../../assets/lodges/53814700_1555903252.jpg">
+                   </a>
+                   <div class="media-body">
+                       <h2 class="text-white display-6">Jim Doe</h2>
+                       <p class="text-light">Real estate Agent</p>
+                   </div>
+    
+               </div>
+            </div>
+            <div class="twt-category">
+               <ul>
+                   <li class="active">
+                       <h5>750</h5>
+                     Boosts
+                   </li>
+                   <li>
+                       <h5>865</h5>
+                       Following
+                   </li>
+                   <li>
+                       <h5>3645</h5>
+                       Followers
+                   </li>
+               </ul>
+            </div>
+            <footer class="twt-footer">
+               <a href="https://colorlib.com/polygon/sufee/index.html#"><i class="fa fa-map-marker"></i></a>
+               New Castle, UK
+               <span class="pull-right">
+                   32
+               </span>
+           </footer>
+          </div>
+         </div>
+    
+        <div class="col-md-8 me">
+          <div class="card">
+              <div class="card-header">
+                  <!-- Title -->
+                  <h5 class="h3 mb-0">Edit profile</h5>
+                </div>
+                <div class="card-body">
+                  <div class="profile-form">
+                    <form (ngSubmit)='update(so)'  #so='ngForm'>
+                     <div  class="form-inline form-group input-group">
+                         <div  class="input-group-prepend">
+                             <span  class="input-group-text"><i  class="fa fa-user-circle"></i></span>
+                           </div>
+                       <!-- <input  class="inp form-control form-group " [value]="admin.userName" readonly type="text"> -->
+                       <div  class="input-group-prepend">
+                           <span class="input-group-text"><i  class="fa fa-user-circle"></i></span>
+                         </div>
+                       <!-- <input class="inp form-control form-group " [value]="admin.email" readonly type="text">  -->
+                      
+                     </div>
+                     <div  class="form-inline form-group input-group">
+                         <div  class="input-group-prepend">
+                             <span  class="input-group-text"><i  class="fa fa-map-marker"></i></span>
+                           </div>
+                       <!-- <input  class="inp form-control form-group " [value]="admin.memberID"   placeholder="update zip" readonly type="text"> -->
+                       <div class="input-group-prepend">
+                           <span class="input-group-text"><i  class="fa fa-key"></i></span>
+                         </div>
+                       <input class="inp form-control"  placeholder="current password" ngModel name="cpass" required type="password">
+                     </div>
+                     <div _ngcontent-c10="" class="form-inline form-group input-group">
+                         <div _ngcontent-c10="" class="input-group-prepend">
+                             <span _ngcontent-c10="" class="input-group-text"><i _ngcontent-c10="" class="fa fa-key"></i></span>
+                           </div>
+                           
+                       <input class="inp form-control form-group ng-untouched ng-pristine ng-valid" name="newpass" ngModel  placeholder="New Password" type="password">
+                      
+                       <input  class="form-control form-group btn"  [disabled]='!so.valid' style="background: #167095" type="submit" value="Update">
+                     </div>
+                    </form>
+                  </div>
+                </div>
+          </div>
+        </div>
     </div>
   </div>
 </div>
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true" *ngIf="permit == 1">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
   
@@ -63,30 +242,34 @@
   
         <!-- Modal body -->
         <div class="modal-body">
-          <form (ngSubmit)="AddBlog(ad)"  #ad='ngForm'>
+          <form (ngSubmit)="Add_admin(ad)"  #ad='ngForm'>
             <label for="">Email</label>
            <div class="form-group">
-             <input type="text" class="form-control" name="email" id="">
+             <input type="text" class="form-control" ngModel  name="email" id="" required>
            </div>
            <label for="">User</label>
            <div class="form-group">
-            <input type="text" class="form-control" name="user" id="">
+            <input type="text" class="form-control" ngModel name="username" id="" required>
           </div>
           <label for="">Group</label>
-          <select name="group" id="" class="form-control">
+          <select name="group" id="" class="form-control" ngModel required>
             <option value=" " selected>_Select</option>
+            <option value="1">Admin</option>
             <option value="2">Admin(Properties)</option>
             <option value="3">Admin(Roomates)</option>
             <option value="4">Editor</option>
           </select>
           <label for="">Password</label>
            <div class="form-group">
-            <input type="password" class="form-control" name="password" id="">
+            <input type="password" class="form-control" name="password" id="" ngModel required>
           </div>
           <label for="">Confirm password</label>
           <div class="form-group">
-            <input type="password" class="form-control" name="cpass" id="">
+            <input type="password" class="form-control" name="cpass" id="" ngModel required>
           </div>
+          <div class="form-group">
+              <button type="submit" class="btn btn-success form-control"  [disabled]="!ad.valid" >Add</button>
+            </div>
         </form>
         </div>
   

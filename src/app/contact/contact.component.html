@@ -30,9 +30,9 @@
               <label for="request_issue_type_select">Please tell us who you are</label>
               <select   name="request_id" class="form-control" id="" (change)="open($event.target.value)" required>
                 <option value="" disabled >-</option>
-                <option value="9440"  [attr.selected]="this.id == 9440 ? true : null">Consumer</option>
-                <option value="3420" [attr.selected]="this.id == 3420 ? true : null">Real Estate Professional</option>
-                <option value="6380"[attr.selected]="this.id == 6380 ? true : null">Property Manager</option>
+                <option value="9440"  [attr.selected]="this.id == '9440' ? true : null">Consumer</option>
+                <option value="3420" [attr.selected]="this.id == '3420' ? true : null">Real Estate Professional</option>
+                <option value="6380"[attr.selected]="this.id == '6380' ? true : null">Property Manager</option>
                 <option value="4"></option>
               </select>
           </div>

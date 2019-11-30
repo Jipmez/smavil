@@ -45,44 +45,76 @@ export class DataService {
   }
 
   getPermit(){
-    let pem = {
-      permit : this.cookieService.get('logID'),
-      key : 'getpermit',
-    }
-    return this.serviceBoy.post(this.path,pem).pipe(map((res)=>{
-    
-      return  res.json();
-  }))
+    if(this.cookieService.get('logID')){
+      let pem = {
+        permit : this.cookieService.get('logID'),
+        key : 'getpermit',
+      }
+      return this.serviceBoy.post(this.path,pem).pipe(map((res)=>{
+      
+        return  res.json();
+    }))
+    }else{
+      this.nav.navigate([""]);
+    }    
   }
   getPermitA(){
-    let pem = {
-      permit : this.cookieService.get('logID'),
-      key : 'getpermitA',
+    if(this.cookieService.get('adminID')){
+      let pem = {
+        permit : this.cookieService.get('adminID'),
+        key : 'getpermitA',
+      }
+      return this.serviceBoy.post(this.path,pem).pipe(map((res)=>{
+        return  res.json();
+    }))
+    }else{
+      this.nav.navigate([""]);
     }
-    return this.serviceBoy.post(this.path,pem).pipe(map((res)=>{
-      return  res.json();
-  }))
   }
+
   getID(){
-    let pem = {
-      permit : this.cookieService.get('logID'),
-      key : 'getID',
-    }
-    return this.serviceBoy.post(this.path,pem).pipe(map((res)=>{
-      return  res.json();
-  }))
+    if(this.cookieService.get('logID')){
+      let pem = {
+        permit : this.cookieService.get('logID'),
+        key : 'getID',
+      }
+      return this.serviceBoy.post(this.path,pem).pipe(map((res)=>{
+        return  res.json();
+    }))
+    }else{
+      this.nav.navigate([""]);
+    }   
   }
 
   getUpro(x){
-      let pay = {
-        id : this.cookieService.get('logID'),
-        user : x,
-        key : "getUpro"
+    if(x == (1) || x == (2)){
+      if(this.cookieService.get('logID')){
+        let pay = {
+          id : this.cookieService.get('logID'),
+          user : x,
+          key : "getUpro"
+        }
+      return this.serviceBoy.post(this.path,pay).pipe(map((res)=>{
+        return res.json()
+      }))
+      }else{
+        this.nav.navigate([""]);
       }
-    return this.serviceBoy.post(this.path,pay).pipe(map((res)=>{
-      return res.json()
-    }))
-
+    }else if(x == 3){
+      if(this.cookieService.get('adminID')){
+        let pay = {
+          id : this.cookieService.get('adminID'),
+          user : x,
+          key : "getUpro"
+        }
+      return this.serviceBoy.post(this.path,pay).pipe(map((res)=>{
+        return res.json()
+      }))
+      }else{
+        this.nav.navigate([""]);
+      }
+    }
+   
   }
 
  
@@ -120,6 +152,27 @@ export class DataService {
     let pem = {
       state_id : x,
       key : 'getLocal',
+    }
+    return this.serviceBoy.post(this.path,pem).pipe(map((res)=>{
+    
+      return  res.json();
+  }))
+  }
+
+  getProp(){
+    let pem = {
+      key : 'getProtype',
+    }
+    return this.serviceBoy.post(this.path,pem).pipe(map((res)=>{
+    
+      return  res.json();
+  }))
+  }
+
+  getSubprop(x){
+    let pem = {
+      sub_id :x,
+      key : 'getSubtype',
     }
     return this.serviceBoy.post(this.path,pem).pipe(map((res)=>{
     

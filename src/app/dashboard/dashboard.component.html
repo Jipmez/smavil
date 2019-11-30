@@ -33,7 +33,7 @@
           <li class="" id="hide" *ngIf="permit == 3 || permit == 4"><a routerLink='userp' [class.active]="currentUrl == '/dashboard/userp'" class="nav-link"><i class="fa fa-dashboard"></i>Deposit List</a></li>
           <li class="" id="hide" *ngIf="permit == 3 || permit == 4"><a routerLink='packages' [class.active]="currentUrl == '/dashboard/packages'" class="nav-link "><i class="fa fa-dashboard"></i>Subscription</a></li>
           <li class="" id="hide" *ngIf="permit == 3 || permit == 4"><a routerLink='plans' [class.active]="currentUrl == '/dashboard/plans'" class="nav-link "><i class="fa fa-dashboard"></i>Packages</a></li>
-          <li class="" id="hide" *ngIf="permit == 2"><a routerLink='favour'class="nav-link " [class.active]="currentUrl == '/dashboard/favour'"><i class="fa fa-dashboard"></i>Favorite properties</a></li>
+          <li class="" id="hide" *ngIf="permit == 2 || permit == 3 || permit == 4"><a routerLink='favour'class="nav-link " [class.active]="currentUrl == '/dashboard/favour'"><i class="fa fa-dashboard"></i>Favorite properties</a></li>
           <li class="" id="hide" *ngIf="permit == 2"><a routerLink='dcontent'class="nav-link "><i class="fa fa-dashboard"></i>Search properties</a></li>
         </ul>
         </div>

@@ -32,7 +32,7 @@ export class DashComponent implements OnInit {
   this.server.getPermit().subscribe((res)=>{if(res.code == 1){if(res.message != 1){this.nav.navigate([''])}}}) 
     $(".loader").fadeOut(); 
     $("#preloder").delay(400).fadeOut("slow");
-    
+   
    if(this.server.CheckLogin()){
     this.cookieValue = this.cookieService.get('logID');
     this.server.getUpro(2).subscribe(

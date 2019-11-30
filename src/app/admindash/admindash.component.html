@@ -27,29 +27,53 @@
             </div> 
          
         
-              <div class="sidenav-content">
+        <div class="sidenav-content">
           <ul class="navul">
             <li class="active" id="hide"><a routerLink='dcontent'><i class="fa fa-dashboard"></i>Home</a></li>
-            <li class="active" id="hide"><a routerLink='blog_view'><i class="fa fa-rss-square"></i>Deposit List</a></li>
-            <li class="active" id="hide"><a routerLink='packages'><i class="fa fa-dashboard"></i>Subscription</a></li>
-            <li class="active" id="hide"><a routerLink='plans'><i class="fa fa-dashboard"></i>Packages</a></li>
-           
+            <li class="active" id="hide" *ngIf="permit == 1 || permit == 4"><a routerLink='blog_view'><i class="fa fa-rss-square"></i>Blogs</a></li>
+            <li class="active" id="hide" *ngIf="permit == 1 || permit == 2"><a routerLink='adprop'><i class="fa fa-building"></i>Properties</a></li>
+            <li class="active" id="hide" *ngIf="permit == 1 || permit == 3"><a routerLink='adroom'><i class="fa fa-dashboard"></i>Roomates</a></li>
           </ul>
           </div>
         
       </div> 
   
       <div class="container-fluid main-content">
-          <nav class="navbar navbar-expand-lg our-nav navbar-light fixed-top  gray">
-              <i id="tog"  class="fa fa-bars" style="float:left;font-size:30px;color:#12326b;"></i> 
-        
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ml-auto">
-                <li>logout</li>
-                <li>profile</li>
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow our-nav  fixed-top  gray">
+          <i id="tog" (click)="toggleme()" class="fa fa-bars" style="float:left;font-size:30px;"  [ngStyle]="{'color': permit == 3 || permit == 4 ? '#12326b' : '#167095' }"></i> 
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <!-- Nav Item - User Information -->
+                <li class="nav-item dropdown no-arrow">
+                  <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                  </a>
+                  <!-- Dropdown - User Information -->
+                  <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                    <a class="dropdown-item" href="#">
+                      <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                      Profile
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                      Settings
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                      Activity Log
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item"  (click)="logout()">
+                      <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                      Logout
+                    </a>
+                  </div>
+                </li>
+    
               </ul>
-            </div>
-          </nav> 
+        </div>
+      </nav> 
         <router-outlet></router-outlet>
       </div>
   

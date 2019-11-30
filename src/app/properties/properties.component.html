@@ -23,7 +23,7 @@
     <div class="row">
       <div class="col-lg-4 col-md-4 col-sm-3" *ngFor ="let lists of list; let i = index" (click)="select(lists)">
         <!-- feature -->
-        <div class="rp-item smcard shadow">
+        <div class="rp-item smcard " [ngStyle]="{'box-shadow': lists.isApproved == '1' ? '0 0 22px red' : '0 0 22px #e5e5e5'}">
           <div class="rp-pic set-bg">
             <img [src]="lists.pix" alt="">
             <img *ngIf="lists.pix == ''" src="../../assets/images/service-bg.jpg" alt="">
@@ -119,10 +119,11 @@
                           <label class="Label">Property Type</label>
                           <div class="Input-container">
                             <select name="type" ngModel required class="form-control" id="">
-                              <option value=""> -- Property Type -- </option>
-                              <option value="1">House</option>
-                              <option value="2">Condo / Apartment</option>
-                              <option value="3">Land</option>
+                                <option value=""> -- Property Type -- </option>
+                                <option value="1">Family House</option>
+                                <option value="2">Apartment/Flat</option>
+                                <option value="4">Student Lodges</option>
+                                <option value="3">Land</option>
                             </select>
                           </div>
                         </div>

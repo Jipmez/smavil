@@ -1,0 +1,422 @@
+<ng-progress [color]="'#12326b'"></ng-progress>
+<div id="preloder">
+  <div class="loader"></div>
+</div>  
+
+
+<!-- <section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg" style="background-image: url('../../assets/images/page-top-bg.jpg')">
+  <div class="container text-white">
+    <h2>Logde Listings</h2>
+  </div>
+</section>
+<!--  Page top end -->
+
+<!-- Breadcrumb 
+<div class="site-breadcrumb">
+  <div class="container">
+    <a href=""><i class="fa fa-home"></i>Home</a>
+    <span><i class="fa fa-angle-right"></i>Logdes</span>
+  </div>
+  
+</div> -->
+
+
+<section class="page-section categories-page">
+  <div class="container-fluid me">
+    <div class="row">
+   <div class="col-md-6 filter-wrapper">
+     <div class="filter-box">
+      <section class="filter">
+          <div class="wp-block default product-list-quick-filters sort-panel light-gray">
+            <div class="row">
+              <div class="col-xs-12">
+                 <strong>Quick Filters</strong>
+                 <strong class="filterLinkTitle">Types&nbsp;&nbsp;</strong>
+                 <ul class="filterLink">
+                   <li><button itemprop="relatedLink" (click)="ga(1);"><i  class="fa fa-search">Self-contained</i></button><span>|</span></li>
+                   <li><button itemprop="relatedLink" (click)="ga(2);"><i  class="fa fa-search">Single room</i></button><span>|</span></li>
+                  </ul>
+                  <strong class="filterLinkTitle">Furnishing&nbsp;&nbsp;</strong>
+                  
+                </div>
+                <div class="col-xs-12 voffset-5 hidden-lg hidden-md">
+                  <i class="red-text fas fa-filter"></i>
+                  <a href="#demo" data-toggle="collapse" class="red-text underline">
+                    <strong>More filter options</strong>
+                  </a>
+                  <br>
+                  <form action="">
+                      <select  class="form-control" required (change)='university($event.target.value)'>
+                          <option value="" selected disabled>__Select a university</option>
+                          <option value="Abubakar Tafawa Balewa University">Abubakar Tafawa Balewa University</option>
+                          <option value="Ahmadu Bello university"> Ahmadu Bello university</option>
+                          <option value="Bayero University">  Bayero University</option>
+                          <option value="Federal University of Petroleum Resources, Effurun">Federal University of Petroleum Resources, Effurun</option>
+                          <option value="Federal University of Technology, Akure"> Federal University of Technology, Akure</option>
+                          <option value="Federal University of Technology, Minna.">Federal University of Technology, Minna.</option>
+                          <option value="Federal University of Technoloy, Owerri">Federal University of Technoloy, Owerri</option>
+                          <option value="Federal University, Dutse"> Federal University, Dutse</option>
+                          <option value="Federal University, Dutsin-Ma"> Federal University, Dutsin-Ma</option>
+                          <option value="Federal University, Kashere"> Federal University, Kashere</option>
+                          <option value="Federal University, Lafia"> Federal University, Lafia</option>
+                          <option value="Federal University, Lokoja">  Federal University, Lokoja</option>
+                          <option value="Federal University, Ndufu-Alike"> Federal University, Ndufu-Alike</option>
+                          <option value="Federal University, Otuoke"> Federal University, Otuoke</option>
+                          <option value="Federal University, Oye-Ekiti">  Federal University, Oye-Ekiti</option>
+                          <option value="Federal University, Wukari">  Federal University, Wukari</option>
+                          <option value="Michael Okpara University of Agriculture, Umudike"> Michael Okpara University of Agriculture, Umudike</option>
+                          <option value="Modibbo Adama University of Technology, Yola"> Modibbo Adama University of Technology, Yola</option>
+                          <option value="National Open University of Nigeria, Lagos.">  National Open University of Nigeria, Lagos.</option>
+                          <option value="Nnamdi Azikiwe University, Awka"> Nnamdi Azikiwe University, Awka</option>
+                          <option value="Obafemi Awolowo University,Ile-Ife"> Obafemi Awolowo University,Ile-Ife</option>
+                          <option value="University of Abuja, Gwagwalada">University of Abuja, Gwagwalada</option>
+                          <option value="University of Agriculture, Abeokuta">University of Agriculture, Abeokuta</option>
+                          <option value="University of Agriculture, Makurdi.">University of Agriculture, Makurdi.</option>
+                          <option value="University of Benin">University of Benin</option>
+                          <option value="University of Calabar"> University of Calabar</option>
+                          <option value="University of Ibadan"> University of Ibadan</option>
+                          <option value="University of Ilorin">University of Ilorin</option>
+                          <option value="University of Jos">University of Jos</option>
+                          <option value="University of Lagos">University of Lagos</option>
+                          <option value="University of Maiduguri">University of Maiduguri</option>
+                          <option value="University of Nigeria, Nsukka">University of Nigeria, Nsukka</option>
+                          <option value="University of Port-Harcourt"> University of Port-Harcourt</option>
+                          <option value="University of Uyo"> University of Uyo</option>
+                          <option value="Usuman Danfodiyo University"> Usuman Danfodiyo University</option>
+                          <option value="Abia State University, Uturu."> Abia State University, Uturu.</option>
+                          <option value="Adamawa State University Mubi"> Adamawa State University Mubi</option>
+                          <option value="Adekunle Ajasin University, Akungba."> Adekunle Ajasin University, Akungba.</option>
+                          <option value="Akwa Ibom State University of Technology, Uyo"> Akwa Ibom State University of Technology, Uyo</option>
+                          <option value="Ambrose Alli University, Ekpoma">  Ambrose Alli University, Ekpoma</option>
+                          <option value="Anambra State University of Science &amp; Technology,"> Anambra State University of Science &amp; Technology,</option>
+                          <option value="Bauchi State University, Gadau"> Bauchi State University, Gadau</option>
+                          <option value="Benue State University, Makurdi.">  Benue State University, Makurdi.</option>
+                          <option value="Bukar Abba Ibrahim University, Damaturu"> Bukar Abba Ibrahim University, Damaturu</option>
+                          <option value="Cross River State University of Science &amp;Technolo"> Cross River State University of Science &amp;Technolo</option>
+                          <option value="Delta State University Abraka">  Delta State University Abraka</option>
+                          <option value="Ebonyi State University, Abakalik">   Ebonyi State University, Abakalik</option>
+                          <option value="Ekiti State University">  Ekiti State University</option>
+                          <option value="Enugu State University of Science and Technology,"> Enugu State University of Science and Technology,</option>
+                          <option value="Gombe State Univeristy, Gombe"> Gombe State Univeristy, Gombe</option>
+                          <option value="Ibrahim Badamasi Babangida University, Lapai">  Ibrahim Badamasi Babangida University, Lapai</option>
+                          <option value="Ignatius Ajuru University of Education, Rumuoume">  Ignatius Ajuru University of Education, Rumuoume</option>
+                          <option value="Imo State University, Owerri">  Imo State University, Owerri</option>
+                          <option value="Kaduna State University, Kaduna">  Kaduna State University, Kaduna</option>
+                          <option value="Kano University of Science &amp; Technology, Wudil">  Kano University of Science &amp; Technology, Wudil</option>
+                          <option value="Kebbi State University, Kebbi">  Kebbi State University, Kebbi</option>
+                          <option value="Kogi State University, Anyigba">  Kogi State University, Anyigba</option>
+                          <option value="Kwara State University, Ilorin">  Kwara State University, Ilorin</option>
+                          <option value="Ladoke Akintola University of Technology, Ogbomo">  Ladoke Akintola University of Technology, Ogbomo</option>
+                          <option value="Lagos State University Ojo, Lagos.">  Lagos State University Ojo, Lagos.</option>
+                          <option value="Nasarawa State University, Keffi.">  Nasarawa State University, Keffi.</option>
+                          <option value="Niger Delta Unversity, Yenagoa">   Niger Delta Unversity, Yenagoa</option>
+                          <option value="Olabisi Onabanjo University Ago-Iwoye">    Olabisi Onabanjo University Ago-Iwoye</option>
+                          <option value="Ondo State University of Science &amp; Technology,">    Ondo State University of Science &amp; Technology,</option>
+                          <option value="Osun State University, Oshogbo">     Osun State University, Oshogbo</option>
+                          <option value="Plateau State University, Bokkos">     Plateau State University, Bokkos</option>
+                          <option value="Rivers State University of Science &amp; Technology">  Rivers State University of Science &amp; Technology</option>
+                          <option value="Tai Solarin Univ. of Education, Ijebu-Ode">  Tai Solarin Univ. of Education, Ijebu-Ode</option>
+                          <option value="Taraba State University, Jalingo">  Taraba State University, Jalingo</option>
+                          <option value="Umaru Musa Yarâ€™Adua University, Katsina">  Umaru Musa Yarâ€™Adua University, Katsina</option>
+                          <option value="Achievers University, Owo">  Achievers University, Owo</option>
+                          <option value="Afe Babalola University, Ado-Ekiti">  Afe Babalola University, Ado-Ekiti</option>
+                          <option value="African University of Science &amp; Technology, Abuj">  African University of Science &amp; Technology, Abuj</option>
+                          <option value="Ajayi Crowther University, Ibadan">  Ajayi Crowther University, Ibadan</option>
+                          <option value="Al-Hikmah University, Ilorin">   Al-Hikmah University, Ilorin</option>
+                          <option value="American University of Nigeria, Yola">    American University of Nigeria, Yola</option>
+                          <option value="Babcock University,Ilishan-Remo">   Babcock University,Ilishan-Remo</option>
+                          <option value="Baze University">   Baze University</option>
+                          <option value="Bells University of Technology, Otta"> Bells University of Technology, Otta</option>
+                          <option value="Benson Idahosa University">  Benson Idahosa University</option>
+                          <option value="Bingham University, New Karu">  Bingham University, New Karu</option>
+                          <option value="Bowen University, Iwo">  Bowen University, Iwo</option>
+                          <option value="Caleb University, Lagos">  Caleb University, Lagos</option>
+                          <option value="Caritas University, Enugu">  Caritas University, Enugu</option>
+                          <option value="CETEP City University, Lagos">  CETEP City University, Lagos</option>
+                          <option value="Covenant University Ota">   Covenant University Ota</option>
+                          <option value="Crawford University Igbesa">  Crawford University Igbesa</option>
+                          <option value="Crescent University">  Crescent University</option>
+                          <option value="Elizade University, Ilara-Mokin"> Elizade University, Ilara-Mokin</option>
+                          <option value="Evangel University, Akaeze"> Evangel University, Akaeze</option>
+                          <option value="Fountain Unveristy,Oshogbo"> Fountain Unveristy,Oshogbo</option>
+                          <option value="Godfrey Okoye University, Ugwuomu-Nike "> Godfrey Okoye University, Ugwuomu-Nike </option>
+                          <option value="Gregory University, Uturu "> Gregory University, Uturu </option>
+                          <option value="Igbinedion University Okada">  Igbinedion University Okada</option>
+                          <option value="Joseph Ayo Babalola University, Ikeji-Arakeji">    Joseph Ayo Babalola University, Ikeji-Arakeji</option>
+                          <option value="Katsina University, Katsina">    Katsina University, Katsina</option>
+                          <option value="Landmark University,Omu-Aran.">   Landmark University,Omu-Aran.</option>
+                          <option value="Lead City University, Ibadan">   Lead City University, Ibadan</option>
+                          <option value="Madonna University, Okija"> Madonna University, Okija</option>
+                          <option value="Mcpherson University, Seriki Sotayo, Ajebo"> Mcpherson University, Seriki Sotayo, Ajebo</option>
+                          <option value="Nigerian-Turkish Nile University">  Nigerian-Turkish Nile University</option>
+                          <option value="Novena University, Ogume">  Novena University, Ogume</option>
+                          <option value="Obong University, Obong Ntak">   Obong University, Obong Ntak</option>
+                          <option value="Oduduwa University, Ipetumodu ">  Oduduwa University, Ipetumodu </option>
+                          <option value="Pan-African University, Lagos"> Pan-African University, Lagos</option>
+                          <option value="Paul University, Awka ">  Paul University, Awka </option>
+                          <option value="Salem University,Lokoja "> Salem University,Lokoja </option>
+                          <option value="Samuel Adegboyega University,Ogwa.">  Samuel Adegboyega University,Ogwa.</option>
+                          <option value="Southwestern University, Oku Owa">  Southwestern University, Oku Owa</option>
+                          <option value="Tansian University,Umunya">  Tansian University,Umunya</option>
+                          <option value="University of Mkar, Mkar">   University of Mkar, Mkar</option>
+                          <option value="Veritas University"> Veritas University</option>
+                          <option value="Wellspring University, Evbuobanosa"> Wellspring University, Evbuobanosa</option>
+                          <option value="Wesley Univ. of Science &amp; Tech.,Ondo">Wesley Univ. of Science &amp; Tech.,Ondo</option>
+                          <option value="Western Delta University, Oghara">Western Delta University, Oghara</option>
+                          <option value="Wukari Jubilee University">Wukari Jubilee University</option>
+                          <option value="Auchi Polytechnic">Auchi Polytechnic</option>
+                          <option value="Federal Polytechnic, Ado-Ekiti">Federal Polytechnic, Ado-Ekiti</option>
+                          <option value="Federal Polytechnic, Bauchi">Federal Polytechnic, Bauchi</option>
+                          <option value="Federal Polytechnic, Bida">Federal Polytechnic, Bida</option>
+                          <option value="Federal Polytechnic, Damaturu">Federal Polytechnic, Damaturu</option>
+                          <option value="Federal Polytechnic, Ede">Federal Polytechnic, Ede</option>
+                          <option value="Federal Polytechnic, Ida">Federal Polytechnic, Ida</option>
+                          <option value="Fed.s Polytechnic,ILaro">Fed. Polytechnic,ILaro</option>
+                          <option value="Federal Polytechnic,Mubi">Federal Polytechnic,Mubi</option>
+                          <option value="Federal Polytechnic, Namoda">Federal Polytechnic, Namoda</option>
+                          <option value="Federal Polytechnic, Nassarawa">Federal Polytechnic, Nassarawa</option>
+                          <option value="Federal Polytechnic, Nekede">Federal Polytechnic, Nekede</option>
+                          <option value="Federal Polytechnic, Offa">Federal Polytechnic, Offa</option>
+                          <option value="Federal Polytechnic, Oko">Federal Polytechnic, Oko</option>
+                          <option value="Federal School of Dental Technology and Therapy, E">Federal School of Dental Technology and Therapy, E</option>
+                          <option value="Kaduna Polytechnic, Kaduna "> Kaduna Polytechnic, Kaduna </option>
+                          <option value="Hussaini Adamu Federal Polytechnic"> Hussaini Adamu Federal Polytechnic</option>
+                          <option value="Waziri Umaru Fed. Polytechnic Birnin Kebbi"> Waziri Umaru Fed. Polytechnic Birnin Kebbi</option>
+                          <option value="Yaba College of Tech"> Yaba College of Tech</option>
+                          <option value="Abraham Adesanya Polytechnic "> Abraham Adesanya Polytechnic </option>
+                          <option value="Abia State Polytechnic "> Abia State Polytechnic </option>
+                          <option value="Adamawa State Polytechnic "> Adamawa State Polytechnic </option>
+                          <option value="Abdul-Gusau Polytechnic"> Abdul-Gusau Polytechnic</option>
+                          <option value="Akwa-Ibom State Polytechnic, Ikot-Osurua"> Akwa-Ibom State Polytechnic, Ikot-Osurua</option>
+                          <option value="Abubakar Tatari Ali Polytechnic "> Abubakar Tatari Ali Polytechnic </option>
+                          <option value="Akwa Ibom State College of Arts and Science Nung,"> Akwa Ibom State College of Arts and Science Nung,</option>
+                          <option value="Benue State Poly, Ugbokolo "> Benue State Poly, Ugbokolo </option>
+                          <option value="College of Administrative and Business Studies, P"> College of Administrative and Business Studies, P</option>
+                          <option value="Enugu Polytechnic "> Enugu Polytechnic </option>
+                          <option value="Gateway Polytechnic, Igbesa  "> Gateway Polytechnic, Igbesa  </option>
+                          <option value="Rufus Giwa Polytechnic "> Rufus Giwa Polytechnic </option>
+                          <option value="The Polytechnic, Ibadan"> The Polytechnic, Ibadan</option>
+                          <option value="Institute of Management and Tech, Enugu"> Institute of Management and Tech, Enugu</option>
+                          <option value="Imo State Polytechnic, Umuagwo"> Imo State Polytechnic, Umuagwo</option>
+                          <option value="Jigawa State Polytechnic, Dutse"> Jigawa State Polytechnic, Dutse</option>
+                          <option value="Kano State Polytechnic"> Kano State Polytechnic</option>
+                          <option value="Kogi State Polytechnic, Lokoja"> Kogi State Polytechnic, Lokoja</option>
+                          <option value="Kwara State Polytechnic, Ilorin">Kwara State Polytechnic, Ilorin</option>
+                          <option value="Lagos State Poly, Ikorodu">Lagos State Poly, Ikorodu</option>
+                          <option value="Moshood Abiola Poly">Moshood Abiola Poly</option>
+                          <option value="Nasarawa State Polytechnic">Nasarawa State Polytechnic</option>
+                          <option value="Nuhu Bamalli Polytechnic">Nuhu Bamalli Polytechnic</option>
+                          <option value="Delta State Polytechnic, Ogwashi-Uku">Delta State Polytechnic, Ogwashi-Uku</option>
+                          <option value="Delta State Polytechnic, Otefe">Delta State Polytechnic, Otefe</option>
+                          <option value="Osun State Poly, Iree">Osun State Poly, Iree</option>
+                          <option value="Osun State College of Tech, Esa-Oke ">Osun State College of Tech, Esa-Oke </option>
+                          <option value="Delta State Polytechnic, Ozoro ">Delta State Polytechnic, Ozoro </option>
+                          <option value="Plateau State Polytechnic, Barkin-Ladi">Plateau State Polytechnic, Barkin-Ladi</option>
+                          <option value="Polytechnic of Sokoto, Central Administration Offi">Polytechnic of Sokoto, Central Administration Offi</option>
+                          <option value="Adamawa State Poly">Adamawa State Poly</option>
+                          <option value="Ramat Polytechnic">Ramat Polytechnic</option>
+                          <option value="Rivers State College of Arts and Science">Rivers State College of Arts and Science</option>
+                          <option value="Rivers State Poly">Rivers State Poly</option>
+                          <option value="Gateway Polytechnic Saapade"> Gateway Polytechnic Saapade</option>
+                          <option value="Edo State Institute of Technology and Management,"> Edo State Institute of Technology and Management,</option>
+                          <option value="Niger State Poly, Zungeru "> Niger State Poly, Zungeru </option>
+                      </select>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+      
+
+       </section>
+      <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-12" *ngFor ="let lists of list | paginate: { itemsPerPage: 10, currentPage: p }">
+            <!-- feature -->
+            <div class="rp-item smcard"   [ngStyle]="{'box-shadow': lists.Featured == 1 ? '0 0 22px royalblue' : '0 0 22px #e5e5e5'}"  >
+              <div class="rp-pic set-bg">
+                
+                <img [src]="lists.pix" alt="">
+              
+                <div class="sale-notic"  *ngIf = 'lists.category == "1"'>FOR SALE</div>
+                <div class="rent-notic" *ngIf = 'lists.category == "2"'>FOR Rent</div>
+                <div class="boosted" *ngIf="lists.boosted > '0'">boosted ({{lists.boosted}}x)</div>
+                <div class="save-wrap">
+                    <a class="btn-save-listing" (click)="like(lists)">
+                    <span class="icon"><i class="fa fa-heart-o fa-2x" style="color: white;" (click)="like(lists)"></i></span>
+                   </a>
+              </div>
+              </div>
+              <div class="rp-info" (click)="select(lists)" [ngStyle]="{'background': lists.Featured == 1 ? 'rgba(6,103,208, 0.121)' : '#fafafa'}">
+                <h5 style="font-weight: bold;">{{lists.title}}</h5>
+                <p><i class="fa fa-map-marker"></i>{{lists.state}},{{lists.Affiliated_university}}</p>
+              </div>
+              <div class="clearfix amenities" *ngIf="lists.Amenities">
+                <div class="pull-left " style="margin-bottom:5px; margin-left: 10px;" *ngFor="let amens of lists.Amenities | slice:0:5; let i=index">
+                  <i class="fa fa-check-square" *ngIf="i<4">{{amens}}</i> 
+                </div>
+            </div>
+            </div>
+           
+          </div>
+          
+       </div>
+       <pagination-controls (pageChange)="p = $event"
+                      maxSize="9"
+                      directionLinks="true"
+                      autoHide="true"
+                      responsive="true"
+                      previousLabel="Previous"
+                      nextLabel="Next"
+                      screenReaderPaginationLabel="Pagination"
+                      screenReaderPageLabel="page"
+                      screenReaderCurrentLabel="You're on page"></pagination-controls>
+   </div>
+</div>
+
+<div class="col-md-6 filter-box">
+    <div class="panel-heading" data-toggle="collapse" data-target="#demo">
+      <h2>
+        <i class="fa fa-filter"></i>
+        &nbsp; Advanced Filter Options
+      </h2>
+    </div>
+ <div class="panel-body collapse" id="demo">
+    <form (ngSubmit)="filter(ad)" #ad='ngForm'>
+  <div class="section">
+    <div class="form-group">
+      <div class="row">
+    <div class="col-md-9 col-9">
+        <label>Category</label>
+        <select  id="" ngModel name="category" class="form-control">
+        <option selected value="" disabled> -- For Sale / Rent --</option>
+         <option value="1">Sale</option>
+         <option value="2">Rent</option>
+      </select>
+    </div>
+    <div class="col-md-3 col-3">
+        <label>Status</label>
+        <select  id="" ngModel name="status" class="form-control">
+            <option selected value='' disabled> -- Market Staus --</option>
+              <option value="Available">Available</option>
+              <option value="Leased">Leased</option>
+              <option value="Sold">Sold</option>
+        </select>
+    </div>
+    </div>
+    </div>
+  </div>
+  <div class="section">
+      <div class="form-group">
+          <div class="row">
+          <div class="col-md-6 col-6">
+              <label>Market</label>
+              <select  id="" ngModel name="Market" class="form-control">
+                      <option selected value="" disabled> >> </option>
+                      <option value="1">House</option>
+                      <option value="2">Flats</option>
+                      <option value="3">Land</option>
+                </select>
+          </div>
+          <div class="col-md-6 col-6">
+              <label>Add to site</label>
+              <select  id="" ngModel name="time" class="form-control">
+                    <option selected value="" disabled>Anytime</option>
+                    <option value="1">Last 24 hours</option>
+                    <option value="3">Last 3 days</option>
+                    <option value="7">Last 7 days</option>
+                    <option value="14">Last 14 days</option>
+                    <option value="30">Last 30 days</option>
+                </select>
+          </div>
+          </div>
+        </div>
+  </div>
+  <div class="section">
+      <div class="form-group">
+          <div class="row">
+          <div class="col-md-6 col-6">
+              <label>State</label>
+              <select  id="" ngModel name="State" class="form-control">
+                  <option  selected value="" disabled></option>
+                  <option value="Anambra">Anambra</option>
+                  <option value="Enugu">enugu</option>
+                  <option value="Imo">imo</option>
+                </select>
+          </div>
+          <div class="col-md-6 col-6">
+              <label>Locality</label>
+              <select ngModel name="locality" id="" class="form-control">
+                  <option  selected value="" disabled></option>
+                  <option value="Okpuno">Okpuno</option>
+                  <option value="ifite">ifite</option>
+                  <option value="Owerri">Owerri</option>
+                </select>
+          </div>
+          </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="form-group">
+            <div class="row">
+            <div class="col-md-6 col-6">
+                <label>Min Price</label>
+                <input type="number"  id="" ngModel name="Min" class="form-control">
+            </div>
+            <div class="col-md-6 col-6">
+                <label>Max Price</label>
+                <input type="number"  id="" ngModel name="Max" class="form-control">
+            </div>
+            </div>
+          </div>
+      </div>
+       <div class="section">
+          <div class="form-group">
+              <div class="row">
+              <div class="col-md-6 col-6">
+                  <label>Bedroom</label>
+                  <select ngModel name="bedrooms" id="bedrooms" class="form-control">
+                    <option selected value="" disabled> Any </option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6+</option>
+                  </select>
+              </div>
+              <div class="col-md-6 col-6">
+                  <label>State</label>
+                  <select name="" id="" class="form-control">
+                      <option value=""></option>
+                    </select>
+              </div>
+              </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="form-group">
+                <div class="row">
+                <div class="col-md-6 col-6">
+                    <label>Keyword</label>
+                    <input type="text"  id="" ngModel name="Key" class="form-control">
+                </div>
+                <div class="col-md-6 col-6">
+                    <label>Property Ref</label>
+                    <input type="text"  id="" ngModel name="Ref" class="form-control">
+                </div>
+                </div>
+              </div>
+          </div>
+          <input type="submit" value="filter" class=" btn btn-primary form-control">
+  </form>
+  </div>
+  meshhih
+ </div>
+    
+  </div>
+   
+  </div>
+  </section>
+
+
+

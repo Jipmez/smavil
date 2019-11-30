@@ -18,11 +18,33 @@ declare let $;
 })
 export class BlogsViewComponent implements OnInit {
   cookieValue: string;
+  permit: any;
+  blog = [];
 
   constructor(private route: ActivatedRoute,private server: DataService,private cookieService: CookieService,private nav:Router,protected localStorage: LocalStorage /* private localstorage : LocalStorageService */) { }
 
   ngOnInit() {
-    this.cookieValue = this.cookieService.get('logID');
+    this.cookieValue = this.cookieService.get('adminID');
+    this.server.getPermitA().subscribe(
+      (res)=>{this.permit = res.message
+        console.log(this.permit);
+         if(this.permit != (1 || 4)){
+           this.nav.navigate(["admin"]);
+         }
+      }
+    )
+
+    let getblog = {
+        id :  this.cookieValue,
+        key :  'allblog'
+    }
+    this.server.SendToPhp(getblog).subscribe(
+      (res)=>{
+       if(res.code == 1){
+         this.blog = res.message
+       }
+      }
+    )
   }
 
 

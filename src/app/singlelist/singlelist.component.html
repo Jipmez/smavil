@@ -13,23 +13,46 @@
     <div class="col-md-8">
       <div class="row">
         <div class="col-md-12">
-            <div class="thanos" style="background-color: #f5f6f7">
-                <div class="container hero-container"  style="margin-bottom: 10px; margin-top:10px;">
+            <div class="thanos">
+                <div class="ontainer hero-container"  style="margin-bottom: 10px; margin-top:10px;">
                   <div class="row" style="margin-bottom: 10px;">
                     <div class="col-md-12">
-                      <div class="bx" [ngStyle]="{'background-image': 'url(' + lists.pix + ')'}" data-toggle="modal" data-toggle="modal" data-target="#myPix">
-                        
-                       <div class="media" style="height: 578px; width: 992px;" >
-                         <!-- <a target="_blank" [href]="lists.pix1"> <img [src]="lists.pix1" alt="Los Angeles" width="1100" height="628"></a>  -->
-                         <div id="mediaCount" class="overlayLowlight overlayRight overlayBottom pas mam backgroundInverse boxHighlight baz"   data-toggle="modal" data-target="#myPix">
-                            <span class="noWrap">
-                              See {{lists.pixcount}} photos
-                            </span>
-                          </div>
-                         <!-- <button type="button" class="Button__ButtonBase-sc-1ea9wz-0 PrimaryButton-sc-16zopmz-0 AddReviewButton__StyledPrimaryButton-wbg9gb-1 jHgjvE" data-toggle="modal" data-target="#pic">Add Your Review</button> -->
-                       </div>
+                        <div class="bit" style="margin: 0 auto; color: white;">
+                            <div id="demo" class="carousel slide" data-interval="false">
+      
+                                <!-- Indicators -->
+                                <ul class="carousel-indicators">
+                                  <li data-target="#demo" data-slide-to="0" class="active"></li>
+                                  <li data-target="#demo" data-slide-to="1"></li>
+                                  <li data-target="#demo" data-slide-to="2"></li>
+                                </ul>
+                              
+                                <!-- The slideshow -->
+                                <div class="carousel-inner">
+                                  <div class="carousel-item active">
+                                    <img [src]="lists.pix" alt="Los Angeles">
+                                  </div>
+                                  <div class="carousel-item" *ngFor="let get of pix">
+                                    <img [src]="get.pix" alt="Chicago">
+                                  </div>
+                                  
+                                </div>
+                              
+                                <!-- Left and right controls -->
+                                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                                  <span class="carousel-control-prev-icon"></span>
+                                </a>
+                                <a class="carousel-control-next" href="#demo" data-slide="next">
+                                  <span class="carousel-control-next-icon"></span>
+                                </a>
+                              
+                              </div>
+                         </div>
+                      <!-- <div class="bx"data-toggle="modal" data-toggle="modal" data-target="#myPix">
+                        <img [src]="lists.pix" alt="">
                       
-                       </div>
+                      
+                       </div> -->
                     </div>
                   </div>
                 </div>
@@ -40,19 +63,17 @@
                 <div class="single-list-content">
                   <div class="row">
                     <div class="col-md-12">
-                      <div class="Grid__CellBox-sc-144isrp-0 HomeDetailsContentOverview__HiddenExceptLargeCell-sc-1lql7o5-1 eNNXco">
+                      <div class="HomeDetailsContentOverview__HiddenExceptLargeCell-sc-1lql7o5-1 eNNXco">
                         <div class="cadd">
                       <div class="home-detail">
-                        <h5 style="margin-bottom: 30px;">
+                        <h1 style="margin-bottom: 30px;">
                           <span>{{lists.title}}</span>
-                        </h5>
+                        </h1>
                         <div class="row">
                           <div class="col-md-8">
-                            <h1 class="homeh1">
-                              <span>{{lists.address}}</span>
-                              <br>
-                              <span class="HomeSummaryShared__CityStateAddress-vqaylf-0 fyHNRA Text__TextBase-sc-1cait9d-0 hUlhgk">{{lists.state}},{{lists.locality}}</span>
-                            </h1>
+                        <div  class="alert alert- dig"> <h5>Address : {{lists.address}}</h5></div>
+                        <div  class="alert alert-info dig"> <h5>{{lists.state}},{{lists.locality}}</h5></div>
+                        <div  class="alert alert-info dig"> <h5>Neighbourhood : {{lists.Neighbourhood}}</h5></div>
                           </div>
                           <div class="col-md-4">
                               <a href="#" class="price-btn">N{{lists.cost}}</a>
@@ -80,7 +101,7 @@
                           <div class="property-spec-item">
                              <div class="property-sepc">
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-md-2 col-4">
                                         <div class="qodef-spec-item qodef-label-items-item">
                                         <span class="qodef-spec-item-label qodef-label-items-label">
                                         <span class="qodef-label-icon">
@@ -95,7 +116,7 @@
                                        </div>
 
 
-                                       <div class="col-6">
+                                       <div class="col-md-2 col-4">
                                           <div class="qodef-spec-item qodef-label-items-item">
                                           <span class="qodef-spec-item-label qodef-label-items-label">
                                           <span class="qodef-label-icon">
@@ -108,6 +129,48 @@
                                           8 </span>
                                           </div>
                                          </div>
+
+                                         <div class="col-md-2 col-4">
+                                            <div class="qodef-spec-item qodef-label-items-item">
+                                            <span class="qodef-spec-item-label qodef-label-items-label">
+                                            <span class="qodef-label-icon">
+                                                <i class="fa fa-car"></i>
+                                            </span>
+                                            <span class="qodef-label-text">
+                                            Bedrooms: </span>
+                                            </span>
+                                            <span class="qodef-spec-item-value qodef-label-items-value">
+                                            8 </span>
+                                            </div>
+                                           </div>
+
+                                           <div class="col-md-2 col-4">
+                                              <div class="qodef-spec-item qodef-label-items-item">
+                                              <span class="qodef-spec-item-label qodef-label-items-label">
+                                              <span class="qodef-label-icon">
+                                                  <i class="fa fa-car"></i>
+                                              </span>
+                                              <span class="qodef-label-text">
+                                              Bedrooms: </span>
+                                              </span>
+                                              <span class="qodef-spec-item-value qodef-label-items-value">
+                                              8 </span>
+                                              </div>
+                                             </div>
+
+                                             <div class="col-md-2 col-4">
+                                                <div class="qodef-spec-item qodef-label-items-item">
+                                                <span class="qodef-spec-item-label qodef-label-items-label">
+                                                <span class="qodef-label-icon">
+                                                    <i class="fa fa-car"></i>
+                                                </span>
+                                                <span class="qodef-label-text">
+                                                Bedrooms: </span>
+                                                </span>
+                                                <span class="qodef-spec-item-value qodef-label-items-value">
+                                                8 </span>
+                                                </div>
+                                               </div>
             
           
                                 </div>
@@ -117,6 +180,15 @@
                          
 
                         </div> 
+                        <div class="bbs mbl homeDetailsHeading">
+                            <span class="h5 prm backgroundBasic">Amenities</span>
+                        </div>
+                        <div class="clearfix amenities" >
+                            <div class="pull-left " style="margin-bottom:5px; margin-left: 10px;" *ngFor="let amens of amen">
+                              <i class="fa fa-check-square"></i> {{amens}}
+                            </div>
+                        </div>
+                        
                         <div class="bbs mbl homeDetailsHeading">
                           <span class="h5 prm backgroundBasic">Description</span>
                       </div>
@@ -161,7 +233,8 @@
                                   <ul class="qodef-comment-list">
                                     <li *ngFor = "let reviews of review">
                           <div class="qodef-comment clearfix">
-                                  <div class="qodef-comment-image"> <img src="https://static.trulia-cdn.com/userimg/user_m_00_s.gif" style="width: 85px; height: 85px;"> </div>
+                            <div class="row">
+                                <div class="qodef-comment-image"><i class="fa fa-user fa-2x"></i></div>
                                 <div class="qodef-comment-text">
                               <div class="qodef-comment-arrow"></div>
                               <div class="qodef-comment-info">
@@ -169,12 +242,13 @@
                                   {{reviews.name}}				</h5>
                                 
                               </div>
-                                      <div class="qodef-text-holder" id="comment-41">
+                                <div class="qodef-text-holder" id="comment-41">
                                   <p>{{reviews.review}}</p>
                                   <span class="qodef-comment-date">
                                                     March 30, 2018                        </span>
                                 </div>
                                   </div>
+                            </div>
                           </div>
                         <!-- li is closed by wordpress after comment rendering --></li><!-- #comment-## -->
                                   </ul>
@@ -202,7 +276,7 @@
                       
                         <!-- Modal Header -->
                         <div class="modal-header">
-                          <h1 class="modal-title">Modal Heading</h1>
+                          <h1 class="modal-title">Review Neighbourhood</h1>
                           <button type="button" class="close" data-dismiss="modal">×</button>
                         </div>
                         
@@ -210,7 +284,7 @@
                         <div class="modal-body">
                           <div class="FlexContainers__Row-zvngfq-1 kTfOhQ">
                             <div class="ReviewContent__ContentHeader-sc-1qnvgmu-0 fYrouA">
-                              <h3>Kingsbridge</h3>
+                              <h3>{{lists.Neighbourhood}}</h3>
                             </div>
                             <form (ngSubmit) = "Rev(ad)"  #ad='ngForm' >
                               <div class="AddReviewCard__DialogText-sc-19fp3v2-0 etLKX">
@@ -238,20 +312,15 @@
                                 </label>
                               </li>
                             </ul>
-                            <div class="Padding-sc-1tki7vp-0 bsJNRb">
-                              <span class="AddReviewCard__DisplayMeText-sc-19fp3v2-12 fFyuTM Text__TextBase-sc-1cait9d-0 eJlYAH">display me as</span>
-                            </div>
                             <div class="AddReviewCard__StyledDisplayNameBlock-sc-19fp3v2-7 kwsPrA MediaBlock__MediaContainer-skmvlj-0 bOGJGe">
                               <div style="display: flex; flex-direction: column;">
                                 
                                   <div size="35" class="CircleBox-n5nj62-0 eohylV">
-                                    <img src="https://static.trulia-cdn.com/userimg/user_m_00_s.gif" style="width: 24px; height: 24px;">
+                                  <i class="fa fa-user fa-2x"></i>
                                   </div>
-                                
-                        
                               </div>
                               <div class="MediaBlock__MediaContent-skmvlj-1 fkyExN">
-                               
+                                <input type="text" class="form-control" ngModel name="displayName">
                               </div>
                             </div>
                             <div class="Padding-sc-1tki7vp-0 IWxMN">
@@ -426,30 +495,6 @@
           </div>
         </div>
       </div>
-      <div class="modal" style="background: black !important;" id="myPix" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-full" style="background: black !important;" role="document">
-            <div class="modal-content" style="background: black !important;">
-                <div class="modal-header">
-                    <button type="button" class="close" style="color: white" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body p-4" style="padding: 0 !important;" id="result">
-                      <div class="grid">
-                        <div class="span-col-3"> <img [src]="lists.pix" style="width:100%; height:500px"></div>
-                        <div *ngFor="let pixs of pix"> 
-                          <a [href]="pixs.pix">
-                              <img [src]="pixs.pix" style="width:100%">
-                          </a>
-                        </div>
-                      </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </section>
 
 

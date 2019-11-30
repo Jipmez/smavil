@@ -105,9 +105,10 @@ $desktop : 1024px;
             i{
                 display: inline-block;
                 line-height: 1;
-                margin-right: 5px;
+                margin-right: 20px;
                 position: relative;
                 top: 1px;
+                color: green;
             }
         }
         .button{
@@ -119,7 +120,7 @@ $desktop : 1024px;
             color: #595959;
             display: inline-block;
             box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.3);
-            border: solid 1px transparent;
+            border: 2px solid greenyellow;
             font-family: "Source Sans Pro", "OpenSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
             font-size: 1rem;
             font-weight: 600;
@@ -246,6 +247,7 @@ ul{
 }
 .about_statistics .has_sales .short_price {
     background-color: #fff;
+    width: 100% !important;
 }
 .typeWeightNormal {
     font-weight: 400!important;
@@ -298,6 +300,7 @@ ul{
 }
 .has_sales .short_price {
     background-color: #fff;
+    width: 100%;
 }
 .pts {
     padding-top: 5px!important;

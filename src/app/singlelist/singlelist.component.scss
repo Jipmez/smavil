@@ -73,7 +73,7 @@
        
         .qodef-label-items-item{
             position: relative;
-           
+            margin-bottom: 33px;
 
          .qodef-label-items-label{
           padding-right: 3px;
@@ -403,12 +403,23 @@ a {
 	background-color: rgb(232, 233, 234);
     position: relative;
     cursor: pointer;
-    width: 992px;
+    width: 800px;
     mask-image: -webkit-radial-gradient(center, white, black);
     height: 500px;
     border-radius: 8px;
     overflow: hidden;
     margin: auto;
+    img{
+        position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    }
 }
 
 .cardItem {
@@ -460,11 +471,20 @@ a {
 .hero-container{
 	box-sizing: border-box;
     position: relative;
-    display: flex;
-    -webkit-box-pack: center;
     justify-content: center;
+    margin: 0 auto;
     height: 500px;
+    width: 800px;
     overflow: hidden;
+  .carousel-item{
+      height: 500px;
+  }
+    img {
+        vertical-align: middle;
+        border-style: none;
+        height: 100%;
+        width: 100% !important;
+    }
 }
 
 
@@ -1017,6 +1037,28 @@ h5, .h5 {
 .span-col-3{grid-column: span 3 / auto;}
 
 
+.amenities {
+  margin-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 100px;
+    padding-right: 5px;
+    color: #f26b21;
+    font-weight: 600;
+     .pull-left {
+         float: left;
+         margin-right: 15px;
+}
+}
+.dig{
+    color: #0c5460;
+    background-color: #bee5eb;
+    border-color: #bee5eb;
+    position: relative;
+    padding: 1px 1px !important;
+    margin-bottom: 2px !important;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
 
 
 

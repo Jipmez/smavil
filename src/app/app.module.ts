@@ -71,6 +71,12 @@ import { VConfirmComponent } from './v-confirm/v-confirm.component';
 import { VerifyComponent } from './verify/verify.component';
 import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
 import { ResetPassComponent } from './reset-pass/reset-pass.component';
+import { AdminPropComponent } from './admin-prop/admin-prop.component';
+import { AdminRoomComponent } from './admin-room/admin-room.component';
+import { PropViewComponent } from './prop-view/prop-view.component';
+import { StudentsComponent } from './students/students.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 const route:Routes = [
@@ -79,6 +85,7 @@ const route:Routes = [
     {path:"register",component:RegisterComponent},
     {path:"login",component:LoginComponent},
     {path:"logdes",component:LogdesComponent},
+    {path:"students",component:StudentsComponent},
     {path:'Agent/:id',component:AgentprofileComponent},
     {path:"adsignIn",component:AdminSigninComponent},
     {path:"blog",component:PropertyBlogComponent},
@@ -133,9 +140,13 @@ const route:Routes = [
   ]},
 
   {path:'admin',component:AdmindashComponent,children:[
+    {path:'adcontent',component:AdcontentComponent},
     {path:"",component:AdcontentComponent},
     {path:"blog_view",component:BlogsViewComponent},
-    {path:"add_blog/:id",component:AddBlogComponent}
+    {path:"add_blog/:id",component:AddBlogComponent},
+    {path:"adprop",component:AdminPropComponent},
+    {path:"adroom",component:AdminRoomComponent},
+    {path:"prop_view/:id",component:PropViewComponent},
   ]}
   
 
@@ -196,6 +207,10 @@ const route:Routes = [
     VerifyComponent,
     ForgotPassComponent,
     ResetPassComponent,
+    AdminPropComponent,
+    AdminRoomComponent,
+    PropViewComponent,
+    StudentsComponent,
    ],
   imports: [
     BrowserModule,
@@ -215,6 +230,7 @@ const route:Routes = [
     EditorModule,
     AngularFontAwesomeModule,
     NgxPaginationModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   
   ],
   providers: [DataService,CookieService],
