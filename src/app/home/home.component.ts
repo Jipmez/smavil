@@ -59,7 +59,8 @@ $('#carousel-example').on('slide.bs.carousel', function (e) {
  
     
     let md ={
-      key : 'me'
+      key : 'me',
+      cache: 'cache'
     }
 
     this.server.SendToPhp(md).subscribe(

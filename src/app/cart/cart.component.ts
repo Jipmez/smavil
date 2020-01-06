@@ -36,8 +36,8 @@ export class CartComponent implements OnInit {
   ngOnInit() {
 
     this.server.getPermit().subscribe(
-      (res)=>{if(res.code == 1){
-        this.permit = res.message
+      (res)=>{if(res['code'] == 1){
+        this.permit = res['message']
         console.log(this.permit);
         if(this.permit != 2 || this.permit != 3 || this.permit != 4){
           console.log('inaccecible');
@@ -122,9 +122,9 @@ export class CartComponent implements OnInit {
     this.server.Pay(this.med).subscribe(
       (res)=>{ 
       console.log(res)
-        if(res.code == 1){
-            this.amountTopay = res.amount_btc;
-            this.addressTopay = res.address;
+        if(res['code'] == 1){
+            this.amountTopay = res['amount_btc'];
+            this.addressTopay = res['address'];
         }
     },
     )

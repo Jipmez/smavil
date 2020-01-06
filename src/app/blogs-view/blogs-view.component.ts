@@ -26,7 +26,7 @@ export class BlogsViewComponent implements OnInit {
   ngOnInit() {
     this.cookieValue = this.cookieService.get('adminID');
     this.server.getPermitA().subscribe(
-      (res)=>{this.permit = res.message
+      (res)=>{this.permit = res['message']
         console.log(this.permit);
          if(this.permit != (1 || 4)){
            this.nav.navigate(["admin"]);

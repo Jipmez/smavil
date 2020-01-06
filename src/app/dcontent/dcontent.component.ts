@@ -19,25 +19,25 @@ export class DcontentComponent implements OnInit {
 
   ngOnInit() {
     this.server.getPermit().subscribe(
-      (res)=>{if(res.code == 1){this.permit = res.message}}) 
+      (res)=>{if(res['code'] == 1){this.permit = res['message']}}) 
       
     this.cookieValue = this.cookieService.get('logID');
 
     this.server.getUpro(1).subscribe(
       (res)=>{ console.log(res);
-        this.profile = res.message[0]
+        this.profile = res['message'][0]
         console.log(this.profile);
       }
     )
 
     this.server.getProp().subscribe(
-      (res)=>{this.propp = res.property}
+      (res)=>{this.propp = res['property']}
     )
   }
 
   getSubprop(x){
    this.server.getSubprop(x).subscribe(
-     res=>{this.sub = res.subtype;}
+     res=>{this.sub = res['subtype'];}
    )
   }
 

@@ -54,7 +54,7 @@ export class AddComponent implements OnInit {
   
   ngOnInit() {
     this.server.getPermit().subscribe(
-      (res)=>{if(res.code == 1){this.permit = res.message}
+      (res)=>{if(res['code'] == 1){this.permit = res['message']}
         if(this.permit == 3 || this.permit == 4 ){
 
           this.cookieValue = this.cookieService.get('logID');
@@ -97,8 +97,8 @@ export class AddComponent implements OnInit {
 
                 this.server.getState().subscribe(
                   (res)=>{console.log(res)
-                  if(res.code ==1){
-                    this.state = res.states 
+                  if(res['code'] ==1){
+                    this.state = res['state'] 
                   }}
                 )
         }else{
@@ -301,8 +301,8 @@ handleFileInput(file: FileList){
   getLocal(x){
     this.server.getLocals(x).subscribe(
       (res)=>{console.log(res)
-        if(res.code ==1 ){
-          this.local = res.locals;
+        if(res['code'] ==1 ){
+          this.local = res['locals'];
         }
       }
     )

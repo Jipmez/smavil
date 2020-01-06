@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterModule, Routes } from "@angular/router";
-import { HttpModule } from "@angular/http";
+import { HttpClientModule } from '@angular/common/http';
 import { NgProgressModule } from 'ngx-progressbar';
 import { DataService } from './data.service';
 import { AngularRaveModule } from 'angular-rave';
@@ -216,7 +216,7 @@ const route:Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     RatingModule,
     ToastrModule.forRoot(),
     Angular4PaystackModule,

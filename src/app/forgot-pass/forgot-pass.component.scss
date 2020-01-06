@@ -63,11 +63,12 @@
 
 .page-section{
     background-color: #0667d0;
-    height: 100vh;
+    height: 100%;
     .session{
         max-width: 560px;
         margin: 0px auto 40px auto;
         padding-top: 90px;
+        padding-bottom: 90px;
        form{
         input, textarea {
             background: top right no-repeat #edf0f6;

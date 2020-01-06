@@ -22,8 +22,8 @@ export class ChatmsgComponent implements OnInit {
   ngOnInit() {
     this.server.getID().subscribe(
       (res)=>{console.log(res)
-       if(res.code == 1){
-          this.user = res.message
+       if(res['code'] == 1){
+          this.user = res['message']
        }
       },
       ()=>{},

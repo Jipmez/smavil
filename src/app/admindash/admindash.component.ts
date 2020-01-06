@@ -18,7 +18,7 @@ export class AdmindashComponent implements OnInit {
     $("#preloder").delay(400).fadeOut("slow");
     
     this.server.getPermitA().subscribe(
-      (res)=>{this.permit = res.message}
+      (res)=>{this.permit = res['message']}
     )
   }
   logout(){

@@ -54,7 +54,6 @@ export class ResetPassComponent implements OnInit {
   } else {
     document.getElementById("id_pass").style.borderBottom  = "2px solid red";
   }
-
   }
   ChangePass(x:NgForm){
    console.log(x.value);

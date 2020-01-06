@@ -31,7 +31,7 @@ cookieValue ;
 
   ngOnInit() {
     this.server.getPermitA().subscribe(
-      (res)=>{this.permit = res.message
+      (res)=>{this.permit = res['message']
         if(this.permit != (1 || 4)){
           this.nav.navigate(["admin"]);
         }

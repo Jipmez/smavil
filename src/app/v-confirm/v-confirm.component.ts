@@ -69,7 +69,7 @@ process(){
   this.server.Pay(this.med).subscribe(
     (res)=>{ 
     console.log(res)
-      if(res.code == 1){
+      if(res['code'] == 1){
          
       }
   },

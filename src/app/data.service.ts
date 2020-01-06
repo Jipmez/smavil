@@ -1,21 +1,32 @@
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { Observable} from 'rxjs';
+import { SwUpdate } from '@angular/service-worker';
 import "rxjs/Rx";
 import { BehaviorSubject } from 'rxjs';
-import { TemplateBindingParseResult } from '@angular/compiler';
 import { Meta, Title } from '@angular/platform-browser';
-
+const maxAge = 30000;
 @Injectable()
 export class DataService {
+  promptEvent;
 
 
-  constructor(private serviceBoy:Http,private nav:Router,private cookieService: CookieService,private title: Title, private meta: Meta) { }
+  constructor(private serviceBoy:HttpClient,private nav:Router,private cookieService: CookieService,private title: Title, private meta: Meta,private swUpdate: SwUpdate) { 
+    swUpdate.available.subscribe(event => {
+      if (true) {
+        window.location.reload();
+      }
+    });
+  
+    window.addEventListener('beforeinstallprompt', event => {
+      this.promptEvent = event;
+    });
+  }
 
- 
+  cache = new Map();
 
   private messageSource = new BehaviorSubject('https://res.cloudinary.com/dauqcz0i6/image/upload/v1569775976/51125300_1569775931.jpg.jpg');
   currentMessage = this.messageSource.asObservable();
@@ -26,22 +37,47 @@ export class DataService {
   }
 
   SendToPhp(x){
-     return this.serviceBoy.post(this.path,x).pipe(map((res)=>{
-      return  res.json();
-  }))
+    if(x['cache']){
+      if(x['cache']  == 'cache'){
+        const cached = this.cache.get(x['key']);
+        console.log(cached);
+        if(!cached){
+
+         const key = x['key'];
+         const entry  = [key, this.SendToPhpReturn(x).subscribe((res)=>{res}), Date.now];
+         this.cache.set(key,entry);
+        console.log(this.cache);
+         const expired = Date.now() - maxAge;
+         this.cache.forEach(expiredEntry => {
+           if (expiredEntry[2] < expired) {
+             this.cache.delete(expiredEntry[0]);
+           }
+         });
+         return this.serviceBoy.post(this.path,x);
+        }else if(cached){
+         const isExpired = cached[2] < (Date.now() - maxAge);
+         console.log(cached[1]);
+          const expired = isExpired ? 'expired ' : ''; return cached[1];
+        }
+     }
+    }else{
+      return this.serviceBoy.post(this.path,x)
+    }
   }
+
+  SendToPhpReturn(x){
+    return this.serviceBoy.post(this.path,x)
+  }
+
+
   Pay(x){
     let p:string='http://localhost/lodges/generate.php';
-     return this.serviceBoy.post(p,x).pipe(map((res)=>{
-      return  res.json();
-  }))
-}
+     return this.serviceBoy.post(p,x)
+  }
 
   mapdetails(x){
     let p:string=`http://nominatim.openstreetmap.org/search?q=${x}&format=json&polygon=1&addressdetails=1`;
-    return this.serviceBoy.get(p).pipe(map((res)=>{
-      return res.json();
-    }))
+    return this.serviceBoy.get(p)
   }
 
   getPermit(){
@@ -50,23 +86,19 @@ export class DataService {
         permit : this.cookieService.get('logID'),
         key : 'getpermit',
       }
-      return this.serviceBoy.post(this.path,pem).pipe(map((res)=>{
-      
-        return  res.json();
-    }))
+      return this.serviceBoy.post(this.path,pem)
     }else{
       this.nav.navigate([""]);
     }    
   }
+
   getPermitA(){
     if(this.cookieService.get('adminID')){
       let pem = {
         permit : this.cookieService.get('adminID'),
         key : 'getpermitA',
       }
-      return this.serviceBoy.post(this.path,pem).pipe(map((res)=>{
-        return  res.json();
-    }))
+      return this.serviceBoy.post(this.path,pem)
     }else{
       this.nav.navigate([""]);
     }
@@ -78,9 +110,7 @@ export class DataService {
         permit : this.cookieService.get('logID'),
         key : 'getID',
       }
-      return this.serviceBoy.post(this.path,pem).pipe(map((res)=>{
-        return  res.json();
-    }))
+      return this.serviceBoy.post(this.path,pem)
     }else{
       this.nav.navigate([""]);
     }   
@@ -94,9 +124,7 @@ export class DataService {
           user : x,
           key : "getUpro"
         }
-      return this.serviceBoy.post(this.path,pay).pipe(map((res)=>{
-        return res.json()
-      }))
+      return this.serviceBoy.post(this.path,pay)
       }else{
         this.nav.navigate([""]);
       }
@@ -107,9 +135,7 @@ export class DataService {
           user : x,
           key : "getUpro"
         }
-      return this.serviceBoy.post(this.path,pay).pipe(map((res)=>{
-        return res.json()
-      }))
+      return this.serviceBoy.post(this.path,pay)
       }else{
         this.nav.navigate([""]);
       }
@@ -117,8 +143,6 @@ export class DataService {
    
   }
 
- 
-  
   CheckLogin(){
    if(this.cookieService.get('logID')){
      return true
@@ -143,30 +167,22 @@ export class DataService {
     let pem = {
       key : 'getState',
     }
-    return this.serviceBoy.post(this.path,pem).pipe(map((res)=>{
-    
-      return  res.json();
-  }))
+    return this.serviceBoy.post(this.path,pem)
   }
+
   getLocals(x){
     let pem = {
       state_id : x,
       key : 'getLocal',
     }
-    return this.serviceBoy.post(this.path,pem).pipe(map((res)=>{
-    
-      return  res.json();
-  }))
+    return this.serviceBoy.post(this.path,pem)
   }
 
   getProp(){
     let pem = {
       key : 'getProtype',
     }
-    return this.serviceBoy.post(this.path,pem).pipe(map((res)=>{
-    
-      return  res.json();
-  }))
+    return this.serviceBoy.post(this.path,pem)
   }
 
   getSubprop(x){
@@ -174,10 +190,7 @@ export class DataService {
       sub_id :x,
       key : 'getSubtype',
     }
-    return this.serviceBoy.post(this.path,pem).pipe(map((res)=>{
-    
-      return  res.json();
-  }))
+    return this.serviceBoy.post(this.path,pem)
   }
 }
 

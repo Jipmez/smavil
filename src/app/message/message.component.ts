@@ -21,8 +21,8 @@ constructor(private server: DataService,private cookieService: CookieService,pri
     this.cookieValue  = this.cookieService.get('logID');
     this.server.getID().subscribe(
       (res)=>{
-        if(res.code == 1){console.log(res)
-          this.id = res.message;
+        if(res['code'] == 1){console.log(res)
+          this.id = res['message'];
          
         }
       },

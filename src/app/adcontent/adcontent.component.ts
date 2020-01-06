@@ -22,12 +22,12 @@ export class AdcontentComponent implements OnInit {
 
   ngOnInit() {
     this.server.getPermitA().subscribe(
-      (res)=>{this.permit = res.message}
+      (res)=>{this.permit = res['message']}
     )
 
     this.server.getUpro(3).subscribe(
       (res)=>{
-        this.admin = res.message[0];
+        this.admin = res['message'][0];
       }
     )
   }

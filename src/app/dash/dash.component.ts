@@ -29,7 +29,7 @@ export class DashComponent implements OnInit {
  
 
   ngOnInit() {
-  this.server.getPermit().subscribe((res)=>{if(res.code == 1){if(res.message != 1){this.nav.navigate([''])}}}) 
+  this.server.getPermit().subscribe((res)=>{if(res['code'] == 1){if(res['message'] != 1){this.nav.navigate([''])}}}) 
     $(".loader").fadeOut(); 
     $("#preloder").delay(400).fadeOut("slow");
    
@@ -37,11 +37,11 @@ export class DashComponent implements OnInit {
     this.cookieValue = this.cookieService.get('logID');
     this.server.getUpro(2).subscribe(
       (res)=>{console.log(res)
-       if(res.code ==1){
-         if(res.message[0]['ProPix'] == ''){
+       if(res['code'] ==1){
+         if(res['message'][0]['ProPix'] == ''){
           this.server.currentMessage.subscribe(message => this.pix = message);
          }else{
-          this.server.currentMessage.subscribe(message => this.pix = res.message[0]['ProPix']);
+          this.server.currentMessage.subscribe(message => this.pix = res['message'][0]['ProPix']);
          }
        }
       },
@@ -70,7 +70,7 @@ if (aMonth > 11) {
    this.server.getState().subscribe(
      (res)=>{
        console.log(res);
-       this.state =res.states
+       this.state =res['states']
      }
    )
   
@@ -111,7 +111,7 @@ if (aMonth > 11) {
   getLocal(x){
     this.server.getLocals(x).subscribe(
       (res)=>{
-        this.local = res.locals
+        this.local = res['locals']
       }
     )
   }
@@ -234,7 +234,7 @@ FileInput(file: FileList){
     fd.append('token',this.cookieValue);
   this.server.SendToPhp(fd).subscribe(		
     (res)=>{
-        if(res.code ==1){
+        if(res['code'] ==1){
           $('#adpro').click();
         }
     },

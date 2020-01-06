@@ -58,7 +58,7 @@ list=[];
     
         this.server.SendToPhp(md).subscribe(
           (res)=>{console.log(res)
-            if(res.code == 1){
+            if(res['code'] == 1){
               this.localStorage.removeItem('F_r_o_n_t_s_e_a_r_c_h').subscribe(
                 (p)=>{
                   if(p){
@@ -98,7 +98,9 @@ list=[];
     )
   }
 
-
+  installPwa(): void {
+    this.server.promptEvent.prompt();
+  }
   
   filter(x:NgForm){
     console.log(x.value);

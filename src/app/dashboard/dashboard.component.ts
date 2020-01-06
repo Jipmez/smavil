@@ -15,17 +15,17 @@ export class DashboardComponent implements OnInit {
   }
 pix ;
   ngOnInit() {
-    this.server.getPermit().subscribe((res)=>{if(res.code == 1){ this.permit = res.message; if(res.message == 1){this.nav.navigate([''])}}}) 
+    this.server.getPermit().subscribe((res)=>{if(res['code'] == 1){ this.permit = res['message']; if(res['message'] == 1){this.nav.navigate([''])}}}) 
     this.server.CheckLogin();
     $(".loader").fadeOut(); 
     $("#preloder").delay(400).fadeOut("slow");
     this.server.getUpro(1).subscribe(
       (res)=>{console.log(res)
-       if(res.code ==1){
-         if(res.message[0]['ProPix'] == ''){
+       if(res['code'] ==1){
+         if(res['message'][0]['ProPix'] == ''){
           this.server.currentMessage.subscribe(message => this.pix = message);
          }else{
-          this.server.currentMessage.subscribe(message => this.pix = res.message[0]['pix']);
+          this.server.currentMessage.subscribe(message => this.pix = res['message'][0]['pix']);
          }
        }
       },

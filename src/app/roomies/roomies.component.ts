@@ -47,7 +47,7 @@ if (aMonth > 11) {
 this.server.getState().subscribe(
   (res)=>{
     console.log(res);
-    this.state =res.states
+    this.state =res['states']
   }
 )
  
@@ -57,7 +57,7 @@ this.server.getState().subscribe(
   getLocal(x){
     this.server.getLocals(x).subscribe(
       (res)=>{
-        this.local = res.locals
+        this.local = res['locals']
       }
     )
   }
@@ -196,6 +196,6 @@ this.server.getState().subscribe(
      }
 
      editAc(x:NgForm){
-       
+
      }
 }
